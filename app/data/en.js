@@ -1,3 +1,8 @@
+import retrospectedImage from '../images/projects/retrospected.png';
+import weskImage from '../images/projects/wesk.png';
+import underpassImage from '../images/projects/underpass.jpg';
+import vrPlayerImage from '../images/projects/vr-player.jpg';
+
 const lr = '  ';
 
 export default {
@@ -248,6 +253,34 @@ Related techologies I have experience with:
 - NHibernate
 - NUnit, MSpec, NAnt
 - SQL Server, MySQL`
+        }
+    ],
+    projects: [
+        {
+            name: 'Retrospected',
+            description: `Agile Retrospective Board, using **React**, **Redux** and **Socket-io**${lr}
+Available on GitHub here: [github.com/antoinejaussoin/retro-board](https://github.com/antoinejaussoin/retro-board).`,
+            website: 'https://www.retrospected.com',
+            picture: retrospectedImage
+        },
+        {
+            name: 'Wesk',
+            description: 'HTML App in a Window App, similar to Electron, based on **Chromium**',
+            website: 'https://www.wesk.com',
+            picture: weskImage
+        },
+        {
+            name: 'Underpass',
+            description: `A life-saver for when you need to download a tool and your corporate proxy doesn't play ball.${lr}
+This will simply download it for you and give it back as an archive that shouldn't be blocked by your firewall.`,
+            website: 'https://underpass.jaussoin.com',
+            picture: underpassImage
+        },
+        {
+            name: 'React VR Player',
+            description: '360° Virtual Reality video player component (Oculus Rift)',
+            website: 'https://antoinejaussoin.github.io',
+            picture: vrPlayerImage
         }
     ]
 };

@@ -1,2 +1,7 @@
 a.github-icon:hover { background-color: purple !important; }
 a.stack-overflow-icon:hover { background-color: orange !important; }
+
+div.projects div.project-item img {
+    padding: 5px;
+    border: 1px solid #dadada;
+}

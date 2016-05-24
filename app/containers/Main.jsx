@@ -12,6 +12,7 @@ import Work from '../components/Work';
 import Profile from '../components/Profile';
 import Education from '../components/Education';
 import Skills from '../components/Skills';
+import Project from '../components/Project';
 import reverse from 'lodash/reverse';
 
 const Main = () => (
@@ -63,6 +64,19 @@ const Main = () => (
                     </div>
                     <div className="span9">
                         <Profile profile={cv.profile} />
+                    </div>
+                </div>
+
+                <div className="row cv-section">
+                    <div className="span3">
+                        <div className="cv-section-title">
+                            <h2>Portfolio</h2>
+                        </div>
+                    </div>
+                    <div className="span9">
+                        <div className="projects">
+                            {cv.projects.map((item, i) => <Project item={item} key={i} />)}
+                        </div>
                     </div>
                 </div>
 
