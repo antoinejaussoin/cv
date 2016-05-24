@@ -128,18 +128,6 @@ const Main = () => (
                 </div>
             </div>
         </div>
-
-        <a id="back-to-top" href="#">
-            <i className="fa fa-angle-up"></i>
-        </a>
-
-        <a id="print" href="javascript:window.print()" title="Print the CV">
-            <i className="fa fa-print"></i>
-        </a>
-
-        <a id="pdf" href="#" title="Download it as a .pdf">
-            <i className="fa fa-download"></i>
-        </a>
     </div>
 );
 
