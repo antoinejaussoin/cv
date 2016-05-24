@@ -84,8 +84,7 @@ These are some of the areas of the system that I've been designing:
 - **Charting**: I've introduced Dundas Chart, and implemented most of the pages using this library
 - **Web Pages**: I've introduced the use of master pages, as the previous project was using frames
 - **Security**: I made most of the pages viewable in a "read-only" mode, with a combination of techniques I designed
-- **Documents**: All documents can be linked to any entity (funds, users, universes...), and all their content are indexed
-`
+- **Documents**: All documents can be linked to any entity (funds, users, universes...), and all their content are indexed`
         },
         {
             title: 'Front Office Developer, Derivatives',
@@ -139,8 +138,7 @@ I have also scored 100th percentile (worldwide) on the Brain Bench test while ap
 The front end is based on **ASP.NET MVC 3** (using the **Razor** engine), and **ExtJS**.${lr}
 The back end is C# 4 with **NHibernate** as the ORM (using Fluent NH for the mapping).${lr}
 The server side is using my open source project ([http://fta.codeplex.com](http://fta.codeplex.com)) as a base for the data access layer.${lr}
-The Dependency Injection framework used for this project is AutoFac.
-`
+The Dependency Injection framework used for this project is AutoFac.`
         },
         {
             title: 'ASP.NET MVC Front-end Developer',
@@ -152,8 +150,7 @@ The Dependency Injection framework used for this project is AutoFac.
             description: `Maintenance of a risk application, developed in **C#** and **ASP.NET MVC**, and using **NHibernate** as its Object Relational Mapping (ORM) framework.${lr}
 The application interacts with **MSCI Risk Metrics**, which is a risk analysis web service, and is responsible for loading and reconciling various positions files from custodians, fund managers etc.${lr}
 Over 5,000 unit tests have been written for this application, using frameworks such as **NUnit**, **Moq**, **SpecFlow** and **Selenium**.${lr}
-The web application was originally written in classic ASP.NET and then (partially) migrated to MVC 3 (**Razor**), and **ExtJS** (Ext.NET).${lr}
-`
+The web application was originally written in classic ASP.NET and then (partially) migrated to MVC 3 (**Razor**), and **ExtJS** (Ext.NET).${lr}`
         },
         {
             title: 'Front Office / Front-end React Developer',
@@ -165,8 +162,7 @@ The web application was originally written in classic ASP.NET and then (partiall
             description: `Front-End developer on RBS’ flagship platform “Agile Markets”.${lr}
 Implementation of several modules, from FX options tickets (Peg, TWAP, OCO, IDO…) to analysis tools.${lr}
 These modules were developed using Angular JS, React, or plain JavaScript (with D3). They are connected to back-end services using REST endpoints and websockets (Caplin), and tested using Mocha or Karma against a Node instance.${lr}
-These projects are built using Grunt, including some custom Grunt tasks. They are highly modularised, using Stash / Git as their repository.
-`
+These projects are built using Grunt, including some custom Grunt tasks. They are highly modularised, using Stash / Git as their repository.`
         }
     ],
     education: [
@@ -191,6 +187,67 @@ These projects are built using Grunt, including some custom Grunt tasks. They ar
             date: '2006-06-01',
             description: `Supinfo is a three year engineering school, resulting in a European Master in Computer Science.${lr}
 I spent the last year in Oxford Brookes University, in the Msc in Computer Science section.`
+        }
+    ],
+    skills: [
+        {
+            name: 'HTML & CSS',
+            level: 'Expert',
+            experience: 7,
+            description: `Almost all my work experiences included HTML and CSS developement, but only in the last few years it became a full time focus.${lr}
+My current position involves a front-end single page app (React), using **HTML 5** and **CSS 3**.`
+        },
+        {
+            name: 'Javascript',
+            level: 'Expert',
+            experience: 7,
+            description: `Expert knowledge of ES6 (ECMAScript 2015):${lr}
+- const / let
+- default parameters, spread operator
+- destructuring
+- modules (import / export)
+- class
+- generators
+- promises
+
+And ES7 (async/await, decorators...)
+
+Related technologies:
+- AngularJS
+- Lodash / Underscore
+- Moment.js
+- Mocha, Karma, Jasmine, Sinon, Chai, Istanbul`
+        },
+        {
+            name: 'React',
+            level: 'Advanced',
+            experience: 2,
+            description: `2-year full time experience of React, and related technologies:
+- Redux
+- Reselect
+- redux-saga
+- socket-io
+- Webpack (hot-reloading)`
+        },
+        {
+            name: 'Node',
+            level: 'Advanced',
+            experience: 2,
+            description: `2-year experience with Node, at RBS.
+
+Experience with Node from 0.12 to the latest 6 (on personal projects), and NPM (on both v2 and v3).`
+        },
+        {
+            name: '.NET',
+            level: 'Expert',
+            experience: 8,
+            description: `.NET was my the technology stack I started working with.${lr}
+Related techologies I have experience with:
+- C#
+- ASP.NET MVC
+- NHibernate
+- NUnit, MSpec, NAnt
+- SQL Server, MySQL`
         }
     ]
 };

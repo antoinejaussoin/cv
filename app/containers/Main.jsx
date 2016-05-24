@@ -10,6 +10,7 @@ import cv from '../data/en';
 import Work from '../components/Work';
 import Profile from '../components/Profile';
 import Education from '../components/Education';
+import Skills from '../components/Skills';
 import reverse from 'lodash/reverse';
 
 const Main = () => (
@@ -29,16 +30,16 @@ const Main = () => (
                     <div className="span3">
                         <div className="cv-item">
                             <div className="social-media fixed">
-                                <a href="#" className="facebook-icon social-icon">
+                                <a href="https://www.facebook.com/antoine.jaussoin" className="facebook-icon social-icon">
                                     <i className="fa fa-facebook"></i>
                                 </a>
-                                <a href="#" className="twitter-icon social-icon">
+                                <a href="https://twitter.com/antjaus" className="twitter-icon social-icon">
                                     <i className="fa fa-twitter"></i>
                                 </a>
-                                <a href="#" className="googleplus-icon social-icon">
-                                    <i className="fa fa-google-plus"></i>
+                                <a href="https://stackoverflow.com/users/641124/antoine-jaussoin" className="googleplus-icon social-icon">
+                                    <i className="fa fa-stack-overflow"></i>
                                 </a>
-                                <a href="#" className="linkedin-icon social-icon">
+                                <a href="https://www.linkedin.com/in/jantoine" className="linkedin-icon social-icon">
                                     <i className="fa fa-linkedin"></i>
                                 </a>
                             </div>
@@ -77,60 +78,12 @@ const Main = () => (
 
                 <div className="row cv-section">
                     <div className="span3">
-
                         <div className="cv-section-title">
-
                             <h2>Technical Skills</h2>
-
                         </div>
-
                     </div>
                     <div className="span9">
-
-                        <div className="cv-item">
-
-                            <p className="period">Expert, 4 Years</p>
-
-                            <h3 className="text-uppercase"><strong>Html5 &amp; Css3</strong></h3>
-
-                            <br className="clear" />
-
-                            <p className="last">Vestibulum feugiat gravida est nec ultrices. Pellentesque habitant morbi tristique senectus et netus
-                            et malesuada fames ac turpis egestas. Etiam vel velit quam. Donec quis porta libero.</p>
-
-                        </div>
-
-                        <div className="cv-item">
-
-                            <p className="period">Advanced, 2 Years</p>
-
-                            <h3><strong>Javascript</strong></h3>
-
-                            <br className="clear" />
-
-                            <p className="last">Morbi in mi non velit dapibus tincidunt ut vel dolor. Class aptent taciti sociosqu ad litora torquent
-                            per conubia nostra, per inceptos himenaeos. Morbi elementum urna vitae justo vehicula, in lacinia magna
-                            ornare. Aenean porttitor, quam quis fermentum consequat.</p>
-
-                        </div>
-
-                        <div className="cv-item">
-
-                            <p className="period">Beginer, 1 Year</p>
-
-                            <h3><strong>jQuerry</strong></h3>
-
-                            <br className="clear" />
-
-                            <p>Nunc imperdiet placerat diam et aliquet. Suspendisse massa neque, rhoncus eget posuere ac, aliquet ut
-                            mi. Etiam rhoncus placerat lorem eu posuere.</p>
-
-                            <p className="last">Nunc dignissim commodo urna, eget bibendum nisl vehicula nec. Mauris faucibus erat elit, nec malesuada
-                            augue varius sit amet. Morbi sit amet scelerisque risus. Duis vulputate, dolor ut mattis aliquam, massa diam
-                            imperdiet ante, vel viverra tortor risus sit amet eros. </p>
-
-                        </div>
-
+                        {cv.skills.map((item, i) => <Skills item={item} key={i} />)}
                     </div>
                 </div>
 
@@ -150,7 +103,7 @@ const Main = () => (
             <div id="footer">
                 <div className="row">
                     <div className="span12">
-                        <h4 className="copyright">&copy; 2014 John Smith. <span className="hidden-phone">All rights reserved.</span></h4>
+                        <h4 className="copyright">&copy; 2016 Antoine Jaussoin. <span className="hidden-phone">All rights reserved.</span></h4>
                     </div>
                 </div>
             </div>
