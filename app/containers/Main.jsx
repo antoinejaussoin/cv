@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import '../css/base.css';
 import '../css/grid.css';
-import '../css/elements.css';
+// import '../css/elements.css';
 import '../css/layout.css';
 import '../css/skins/blue.css';
 import '../css/custom.css';

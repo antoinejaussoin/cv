@@ -9,8 +9,8 @@ import preRenderMiddleware from 'middlewares/preRenderMiddleware';
 import header from 'components/Meta';
 
 const clientConfig = {
-  host: process.env.HOSTNAME || 'localhost',
-  port: process.env.PORT || '3000'
+    host: process.env.HOSTNAME || 'localhost',
+    port: process.env.PORT || '3000'
 };
 
 // configure baseURL for axios requests (for serverside API calls)
@@ -22,9 +22,9 @@ axios.defaults.baseURL = `http://${clientConfig.host}:${clientConfig.port}`;
  * and pass it into the Router.run function.
  */
 export default function render(req, res) {
-  const history = createMemoryHistory();
-  const store = configureStore({}, history);
-  const routes = createRoutes(store);
+    const history = createMemoryHistory();
+    const store = configureStore({}, history);
+    const routes = createRoutes(store);
 
   /*
    * From the react-router docs:
