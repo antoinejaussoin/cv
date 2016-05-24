@@ -6,6 +6,7 @@ import '../css/elements.css';
 import '../css/layout.css';
 import '../css/skins/blue.css';
 import img140x140 from '../images/140x140.png';
+import portrait from '../images/portrait.jpg';
 import cv from '../data/en';
 import Work from '../components/Work';
 import Profile from '../components/Profile';
@@ -20,7 +21,7 @@ const Main = () => (
                 <div className="row cv-section">
                     <div className="span9">
                         <div className="cv-section-title">
-                            <img src={img140x140} alt="" />
+                            <img src={portrait} alt="Photo" style={{width: 140}} />
                             <h1>
                                 {cv.name}
                                 <small>{cv.title}</small>
