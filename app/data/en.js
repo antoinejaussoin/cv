@@ -9,6 +9,7 @@ export default {
     name: 'Antoine Jaussoin',
     bio: '33 years old, married, French',
     title: 'Full Stack Developer',
+    subtitle: 'React, Node.JS, .NET',
     email: 'antoine@jaussoin.com',
     phone: '+44 77 22 55 77 39',
     website: 'http://www.jaussoin.com',
@@ -17,8 +18,9 @@ export default {
 
     profile: `I'm an **experienced Full-Stack developer**, with strong **creative** skills and a strong experience within the finance industry.${lr}
 My most significant mission allowed me to **design**, **implement** and **maintain** a Quantitative Analysis and Document Management tool that is now used by 50+ multi-management analysts around the world, in London, Boston, Paris, Germany and South Africa.${lr}
-I also had the opportunity to **create my own software company**, Everydev, in France a few years ago.${lr}
-On my free time, I’m developing a windows application shell for web apps ([http://www.weskapp.com](http://www.weskapp.com)).`,
+I also had the opportunity to **create my own software company**, Everydev, in France a few years ago.
+
+I'm also the author of a few **open-source projects**, one of which is an Agile Retrospective board ([www.retrospected.com](https://www.retrospected.com)).`,
 
     work: [
         {
@@ -164,10 +166,11 @@ The web application was originally written in classic ASP.NET and then (partiall
             dates: { from: '2012-07-01' },
             techs: ['React', 'Redux', 'AngularJS', 'Node.js'],
             website: 'https://www.agilemarkets.com',
-            description: `Front-End developer on RBS’ flagship platform “Agile Markets”.${lr}
+            description: `Front-End developer on RBS’ flagship platform “**Agile Markets**”.${lr}
 Implementation of several modules, from FX options tickets (Peg, TWAP, OCO, IDO…) to analysis tools.${lr}
-These modules were developed using Angular JS, React, or plain JavaScript (with D3). They are connected to back-end services using REST endpoints and websockets (Caplin), and tested using Mocha or Karma against a Node instance.${lr}
-These projects are built using Grunt, including some custom Grunt tasks. They are highly modularised, using Stash / Git as their repository.`
+These modules were developed using **React**, **AngularJS**, or plain JavaScript (with **D3**) depending on the requirements.
+They are connected to back-end services using REST endpoints and websockets (**Caplin**), and tested using Mocha or Karma against a Node server.${lr}
+These projects are built using **Grunt**, including some custom Grunt tasks. They are highly modularised, using **Stash** / **Git** for source control.`
         }
     ],
     education: [

@@ -24,7 +24,11 @@ export default ({ item }) => {
             <h3><strong>{item.title}</strong></h3>
             <h4>{item.company}, {item.type}</h4>
 
-            <br />
+            <ul className="techs">
+                {item.techs.map(t => <li>{t}</li>)}
+            </ul>
+
+            <a href={item.website}>{item.website}</a>
 
             <p dangerouslySetInnerHTML={description}></p>
         </div>

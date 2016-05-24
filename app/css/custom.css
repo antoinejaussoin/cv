@@ -39,6 +39,11 @@ a.github-icon:hover { background-color: purple !important; }
 a.stack-overflow-icon:hover { background-color: orange !important; }
 
 
+small.subtitle {
+    font-size: 0.3em !important;
+    position: relative;
+    top: -15px;
+}
 
 div.projects div.project-item img {
     padding: 5px;
@@ -55,4 +60,25 @@ div.projects div.project-item:last-child {
     border-bottom: none;
     padding-bottom: 0;
     margin-bottom: 0;
+}
+
+ul.techs {
+
+}
+
+ul.techs:after {
+ visibility: hidden;
+ display: block;
+ font-size: 0;
+ content: " ";
+ clear: both;
+ height: 0;
+}
+
+ul.techs li {
+    list-style: none;
+    color: #2767a4;
+    float: left;
+    padding-right: 10px;
+    font-variant: small-caps;
 }

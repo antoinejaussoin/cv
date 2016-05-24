@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import '../css/base.css';
 import '../css/grid.css';
-// import '../css/elements.css';
 import '../css/layout.css';
 import '../css/skins/blue.css';
 import '../css/custom.css';
@@ -14,6 +13,8 @@ import Education from '../components/Education';
 import Skills from '../components/Skills';
 import Project from '../components/Project';
 import reverse from 'lodash/reverse';
+import frFlag from '../images/fr.png';
+import ukFlag from '../images/uk.png';
 
 const Main = () => (
     <div>
@@ -26,6 +27,7 @@ const Main = () => (
                             <h1>
                                 {cv.name}
                                 <small>{cv.title}</small>
+                                <small className="subtitle">{cv.subtitle}</small>
                             </h1>
                         </div>
                     </div>
@@ -47,7 +49,10 @@ const Main = () => (
                             </div>
 
                             <p className="last">
-                                <span className="hidden-tablet">Email: </span><a href={'mailto:' + cv.email}>{cv.email}</a>
+                                <img src={frFlag} alt="French Flag" />&nbsp;<img src={ukFlag} alt="UK Flag" />
+                                <br />
+                                <br />{cv.bio}
+                                <br /><span className="hidden-tablet">Email: </span><a href={'mailto:' + cv.email}>{cv.email}</a>
                                 <br /><span className="hidden-tablet">Phone: </span>{cv.phone}
                                 <br /><span className="hidden-tablet">Web: </span><a href={cv.website}>{cv.website}</a>
                             </p>
