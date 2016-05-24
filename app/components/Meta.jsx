@@ -7,7 +7,7 @@ import config from 'helmconfig.js';
 // Remove stylesheets because we do not extract them into a css file
 // in development mode
 if (__DEVSERVER__) {
-  config.link = config.link.filter(l => l.rel !== 'stylesheet');
+  config.link = config.link.filter(l => l.href !== '/assets/styles/main.css');
 }
 
 const Meta = () => (

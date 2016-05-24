@@ -23,13 +23,7 @@ axios.defaults.baseURL = `http://${clientConfig.host}:${clientConfig.port}`;
  */
 export default function render(req, res) {
   const history = createMemoryHistory();
-  const store = configureStore({
-    user: {
-      isWaiting: false,
-      message: '',
-      isLogin: true
-    }
-  }, history);
+  const store = configureStore({}, history);
   const routes = createRoutes(store);
 
   /*
