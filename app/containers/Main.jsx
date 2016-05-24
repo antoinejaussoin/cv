@@ -5,7 +5,7 @@ import '../css/grid.css';
 import '../css/elements.css';
 import '../css/layout.css';
 import '../css/skins/blue.css';
-import img140x140 from '../images/140x140.png';
+import '../css/custom.css';
 import portrait from '../images/portrait.jpg';
 import cv from '../data/en';
 import Work from '../components/Work';
@@ -21,7 +21,7 @@ const Main = () => (
                 <div className="row cv-section">
                     <div className="span9">
                         <div className="cv-section-title">
-                            <img src={portrait} alt="Photo" style={{width: 140}} />
+                            <img src={portrait} alt="CV" style={{ width: 140 }} />
                             <h1>
                                 {cv.name}
                                 <small>{cv.title}</small>
@@ -31,17 +31,17 @@ const Main = () => (
                     <div className="span3">
                         <div className="cv-item">
                             <div className="social-media fixed">
-                                <a href="https://www.facebook.com/antoine.jaussoin" className="facebook-icon social-icon">
-                                    <i className="fa fa-facebook"></i>
+                                <a href="https://www.linkedin.com/in/jantoine" className="linkedin-icon social-icon">
+                                    <i className="fa fa-linkedin"></i>
+                                </a>
+                                <a href="https://github.com/antoinejaussoin" className="github-icon social-icon">
+                                    <i className="fa fa-github"></i>
                                 </a>
                                 <a href="https://twitter.com/antjaus" className="twitter-icon social-icon">
                                     <i className="fa fa-twitter"></i>
                                 </a>
-                                <a href="https://stackoverflow.com/users/641124/antoine-jaussoin" className="googleplus-icon social-icon">
+                                <a href="https://stackoverflow.com/users/641124/antoine-jaussoin" className="stack-overflow-icon social-icon">
                                     <i className="fa fa-stack-overflow"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/jantoine" className="linkedin-icon social-icon">
-                                    <i className="fa fa-linkedin"></i>
                                 </a>
                             </div>
 
