@@ -1,15 +1,5 @@
 import React from 'react';
-import moment from 'moment';
 import marked from 'marked';
-
-const buildPeriod = dates => {
-    const from = moment(dates.from, 'YYYY-MM-DD').format('MMMM YYYY');
-    if (!dates.to) {
-        return from + ' - Present';
-    }
-    const to = moment(dates.to, 'YYYY-MM-DD').format('MMMM YYYY');
-    return from + ' - ' + to;
-};
 
 export default ({ item }) => {
     const description = {

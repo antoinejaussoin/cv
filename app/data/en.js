@@ -269,7 +269,7 @@ Available on GitHub here: [github.com/antoinejaussoin/retro-board](https://githu
         {
             name: 'Wesk',
             description: 'HTML App in a Window App, similar to Electron, based on **Chromium**',
-            website: 'https://www.wesk.com',
+            website: 'https://www.weskapp.com',
             picture: weskImage
         },
         {
