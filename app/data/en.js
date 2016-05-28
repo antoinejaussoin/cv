@@ -8,7 +8,7 @@ const lr = '  ';
 export default {
     name: 'Antoine Jaussoin',
     bio: '33 years old, married, French',
-    title: 'Full Stack Developer',
+    title: 'Full Stack Engineer',
     subtitle: 'React, Node.JS, .NET',
     email: 'antoine@jaussoin.com',
     phone: '+44 77 22 55 77 39',
@@ -167,10 +167,11 @@ The web application was originally written in classic ASP.NET and then (partiall
             techs: ['React', 'Redux', 'AngularJS', 'Node.js'],
             website: 'https://www.agilemarkets.com',
             description: `Front-End developer on RBS’ flagship platform “**Agile Markets**”.${lr}
-Implementation of several modules, from FX options tickets (Peg, TWAP, OCO, IDO…) to analysis tools.${lr}
-These modules were developed using **React**, **AngularJS**, or plain JavaScript (with **D3**) depending on the requirements.
+Implementation of several modules, from **FX options tickets** (Peg, TWAP, OCO, IDO…) to analysis tools.${lr}
+These modules were developed using **React**, **AngularJS**, or plain JavaScript (with **D3**) depending on the requirements.${lr}
 They are connected to back-end services using REST endpoints and websockets (**Caplin**), and tested using Mocha or Karma against a Node server.${lr}
-These projects are built using **Grunt**, including some custom Grunt tasks. They are highly modularised, using **Stash** / **Git** for source control.`
+These projects are built using **Grunt**, including some custom Grunt tasks. They are highly modularised, using **Stash** / **Git** for source control.${lr}
+**Webpack** is going to be introduced soon, and I will be trialing the technology.`
         }
     ],
     education: [
