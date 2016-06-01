@@ -1,31 +1,30 @@
 
 div.projects div.project-item {
-    padding: 5px;
-    border: 1px solid #dadada;
+
 }
 
 div.projects div.project-item {
-    background-size: cover;
     margin:20px;
-    width: 240px;
-    height:152px;
+    width: 430px;
+    height:400px;
     float: left;
 }
 
-div.projects div.project-item div.project-item-overlay {
-    display:none;
-    height: 100%;
-    background-color: rgba(128, 128, 128, 0.3)
+div.projects div.project-item div.project-card img {
+    width: 430px;
+    height:245px;
+    background:none !important;
 }
 
-div.projects div.project-item:hover div.project-item-overlay {
-    display:block;
-
-
+div.projects div.project-item div.project-card {
+    background: white;
 }
 
-div.projects div.project-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0;
+div.projects div.project-item div.project-card div.project-details {
+    padding: 10px;
+    background-color: #FAFAFA;
+}
+
+div.projects div.project-item div.project-card div.project-details h4 {
+    font-weight: bold;
 }

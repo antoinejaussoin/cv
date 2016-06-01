@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import marked from 'marked';
 import './Project.css';
+import ParallaxImage from './ParallaxImage';
 
 export default ({ item }) => {
     const description = {
-        __html: marked(item.description)
+        __html: marked(item.shortDescription)
     };
 
     return (
-        <div className="project-item" style={{ backgroundImage: "url('" + item.picture + "')" }}>
-            <div className="project-item-overlay">
-                <p>Hello World</p>
-            </div>
+        <div className="project-item">
+            <ParallaxImage width={430} height={400} onClick={() => { document.location = item.website; }}>
+                <div className="project-card">
+                    <img src={item.picture} alt={item.description} />
+                    <div className="project-details">
+                        <h4>{item.name}</h4>
+                        <p className="link">{item.website}</p>
+                        <p dangerouslySetInnerHTML={description}></p>
+                    </div>
+                </div>
+            </ParallaxImage>
         </div>
     );
 };
