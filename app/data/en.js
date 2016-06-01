@@ -109,7 +109,7 @@ The front end was ASP.NET based, with a back end in C#.`
             company: 'Royal Bank of Scotland',
             location: 'London',
             type: 'Contractor',
-            dates: { from: '2003-11-01', to: '2004-12-01' },
+            dates: { from: '2010-03-01', to: '2010-12-01' },
             techs: ['Silverlight', 'C#', 'NHibernate', 'WCF', 'Autofac', 'SQL Server'],
             website: 'http://www.rbs.co.uk',
             description: `Design and implementation of a global technology platform which allows the bank to browse content stored in legal and credit documentation.${lr}
