@@ -15,6 +15,7 @@ import Project from '../components/Project';
 import reverse from 'lodash/reverse';
 import frFlag from '../images/fr.png';
 import ukFlag from '../images/uk.png';
+import Mailto from 'react-encoded-mailto';
 
 const Main = () => (
     <div>
@@ -52,7 +53,7 @@ const Main = () => (
                                 <img src={frFlag} alt="French Flag" />&nbsp;<img src={ukFlag} alt="UK Flag" />
                                 <br />
                                 <br />{cv.bio}
-                                <br /><span className="hidden-tablet">Email: </span><a href={'mailto:' + cv.email}>{cv.email}</a>
+                                <br /><span className="hidden-tablet">Email: </span><Mailto email={cv.email} obfuscate>{cv.email.replace('@', '(at)')}</Mailto>
                                 <br /><span className="hidden-tablet">Phone: </span>{cv.phone}
                                 <br /><span className="hidden-tablet">Web: </span><a href={cv.website}>{cv.website}</a>
                             </p>
