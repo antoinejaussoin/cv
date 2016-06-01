@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import marked from 'marked';
 import Pill from './Pill';
+import './Work.css';
 
 const buildPeriod = dates => {
     const from = moment(dates.from, 'YYYY-MM-DD').format('MMMM YYYY');
@@ -18,7 +19,7 @@ export default ({ item }) => {
     };
 
     return (
-        <div className="cv-item">
+        <div className="cv-item work">
 
             <p className="period">{buildPeriod(item.dates)}</p>
 
@@ -31,7 +32,10 @@ export default ({ item }) => {
 
             <a href={item.website}>{item.website}</a>
 
-            <p dangerouslySetInnerHTML={description}></p>
+            <div className="see-more">See more...</div>
+            <div className="description">
+                <p dangerouslySetInnerHTML={description}></p>
+            </div>
         </div>
     );
 };

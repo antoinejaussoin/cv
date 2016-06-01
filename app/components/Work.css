@@ -1,0 +1,15 @@
+div.work div.see-more {
+    display: block;
+}
+
+div.work div.description {
+    display: none;
+}
+
+div.work:hover div.see-more {
+    display: none;
+}
+
+div.work:hover div.description {
+    display: block;
+}
