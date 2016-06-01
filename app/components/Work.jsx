@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import marked from 'marked';
+import Pill from './Pill';
 
 const buildPeriod = dates => {
     const from = moment(dates.from, 'YYYY-MM-DD').format('MMMM YYYY');
@@ -25,7 +26,7 @@ export default ({ item }) => {
             <h4>{item.company}, {item.type}</h4>
 
             <ul className="techs">
-                {item.techs.map(t => <li>{t}</li>)}
+                {item.techs.map(t => <li><Pill text={t} /></li>)}
             </ul>
 
             <a href={item.website}>{item.website}</a>

@@ -63,7 +63,7 @@ div.projects div.project-item:last-child {
 }
 
 ul.techs {
-
+	margin-top: 10px;
 }
 
 ul.techs:after {
@@ -77,8 +77,14 @@ ul.techs:after {
 
 ul.techs li {
     list-style: none;
-    color: #2767a4;
     float: left;
     padding-right: 10px;
     font-variant: small-caps;
+}
+
+span.pill {
+	border-radius: 5px;
+	background-color: #2767a4;
+	color:white;
+	padding: 2px 8px;
 }

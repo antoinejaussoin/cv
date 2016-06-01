@@ -11,6 +11,7 @@ export default ({ item }) => {
 
             <h3><strong>{item.school}</strong></h3>
             <h4>{item.diploma}</h4>
+            <h4>{item.location}</h4>
 
             <br />
 
