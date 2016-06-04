@@ -5,7 +5,6 @@ import '../css/grid.css';
 import '../css/layout.css';
 import '../css/skins/blue.css';
 import '../css/custom.css';
-import portrait from '../images/portrait.jpg';
 import cv from '../data/en';
 import Work from '../components/Work';
 import Profile from '../components/Profile';
@@ -16,15 +15,24 @@ import reverse from 'lodash/reverse';
 import frFlag from '../images/fr.png';
 import ukFlag from '../images/uk.png';
 import Mailto from 'react-encoded-mailto';
+import WorkDetailsSwitch from '../components/WorkDetailsSwitch';
+import ResponsiveImage from '../components/ResponsiveImage';
 
 const Main = () => (
     <div>
+        <a href="https://github.com/antoinejaussoin/cv">
+            <img style={{ position: 'absolute', top: 0, left: 0, border: 0 }} src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png" />
+        </a>
         <div id="wrap">
             <div id="header">
                 <div className="row cv-section">
                     <div className="span9">
                         <div className="cv-section-title">
-                            <img src={portrait} alt="CV" style={{ width: 140 }} />
+                            <ResponsiveImage
+                                sources={cv.portrait}
+                                alt="CV Photo"
+                                style={{ width: 140 }}
+                            />
                             <h1>
                                 {cv.name}
                                 <small>{cv.title}</small>
@@ -74,12 +82,7 @@ const Main = () => (
                 </div>
 
                 <div className="row cv-section">
-                    <div className="span3">
-                        <div className="cv-section-title">
-                            <h2>Portfolio</h2>
-                        </div>
-                    </div>
-                    <div className="span9">
+                    <div className="span12">
                         <div className="projects">
                             {cv.projects.map((item, i) => <Project item={item} key={i} />)}
                         </div>
@@ -91,6 +94,7 @@ const Main = () => (
                         <div className="cv-section-title">
                             <h2>Work Experience</h2>
                         </div>
+                        Show details: &nbsp;&nbsp;<WorkDetailsSwitch />
                     </div>
                     <div className="span9">
                         {reverse(cv.work).map((item, i) => <Work item={item} key={i} />)}

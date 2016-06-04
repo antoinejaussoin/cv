@@ -1,7 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import moment from 'moment';
 import marked from 'marked';
 import Pill from './Pill';
+import { shouldDisplayWorkDetails } from '../selectors';
+import './Work.css';
 
 const buildPeriod = dates => {
     const from = moment(dates.from, 'YYYY-MM-DD').format('MMMM YYYY');
@@ -12,13 +15,13 @@ const buildPeriod = dates => {
     return from + ' - ' + to;
 };
 
-export default ({ item }) => {
+const Work = ({ item, displayDetails }) => {
     const description = {
         __html: marked(item.description)
     };
 
     return (
-        <div className="cv-item">
+        <div className="cv-item work">
 
             <p className="period">{buildPeriod(item.dates)}</p>
 
@@ -26,12 +29,28 @@ export default ({ item }) => {
             <h4>{item.company}, {item.type}</h4>
 
             <ul className="techs">
-                {item.techs.map(t => <li><Pill text={t} /></li>)}
+                {item.techs.map(t => <li key={t}><Pill text={t} /></li>)}
             </ul>
 
             <a href={item.website}>{item.website}</a>
 
-            <p dangerouslySetInnerHTML={description}></p>
+            {displayDetails ?
+                <div className="description">
+                    <p dangerouslySetInnerHTML={description}></p>
+                </div> : null
+            }
         </div>
     );
 };
+
+const stateToProps = state => ({
+    displayDetails: shouldDisplayWorkDetails(state)
+});
+
+const mergeProps = (stateProps, dispatchProps, ownProps) => ({
+    ...stateProps,
+    ...dispatchProps,
+    ...ownProps
+});
+
+export default connect(stateToProps, null, mergeProps)(Work);
