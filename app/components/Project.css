@@ -1,18 +1,15 @@
 
 div.projects div.project-item {
-
-}
-
-div.projects div.project-item {
     margin:20px;
     width: 430px;
     height:400px;
     float: left;
+    background: white;
 }
 
 div.projects div.project-item div.project-card img {
     width: 430px;
-    height:245px;
+    height:250px;
     background:none !important;
 }
 
@@ -22,6 +19,8 @@ div.projects div.project-item div.project-card {
 
 div.projects div.project-item div.project-card div.project-details {
     padding: 10px;
+    padding-top: 20px;
+    margin-top: -10px;
     background-color: #FAFAFA;
 }
 

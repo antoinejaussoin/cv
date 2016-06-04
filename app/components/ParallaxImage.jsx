@@ -5,7 +5,7 @@ import React from 'react';
 
 const config = {
     scale: 1.03, // How large to scale the item: 1.00 -> 1.10~
-    rotation: 0.3, // Rotation modifier: 0.1 (more) -> 0.5 (less)
+    rotation: 0.5, // Rotation modifier: 0.1 (more) -> 0.5 (less)
     alpha: 0.4, // Alpha channel modifer: 1.01 -> 1.1~
     shadow: 8 // How much the shadow moves
 };

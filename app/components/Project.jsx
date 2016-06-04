@@ -27,13 +27,3 @@ export default ({ item }) => {
         </div>
     );
 };
-
-/*
-<div className="span5">
-    <h3><strong>{item.name}</strong></h3>
-    <h4><a href={item.website} target="_blank">{item.website}</a></h4>
-
-    <p dangerouslySetInnerHTML={description}></p>
-</div>
-</div>
-*/
