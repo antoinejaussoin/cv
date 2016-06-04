@@ -5,7 +5,6 @@ import '../css/grid.css';
 import '../css/layout.css';
 import '../css/skins/blue.css';
 import '../css/custom.css';
-import portrait from '../images/portrait.jpg';
 import cv from '../data/en';
 import Work from '../components/Work';
 import Profile from '../components/Profile';
@@ -17,6 +16,7 @@ import frFlag from '../images/fr.png';
 import ukFlag from '../images/uk.png';
 import Mailto from 'react-encoded-mailto';
 import WorkDetailsSwitch from '../components/WorkDetailsSwitch';
+import ResponsiveImage from '../components/ResponsiveImage';
 
 const Main = () => (
     <div>
@@ -28,7 +28,11 @@ const Main = () => (
                 <div className="row cv-section">
                     <div className="span9">
                         <div className="cv-section-title">
-                            <img src={portrait} alt="CV" style={{ width: 140 }} />
+                            <ResponsiveImage
+                                sources={cv.portrait}
+                                alt="CV Photo"
+                                style={{ width: 140 }}
+                            />
                             <h1>
                                 {cv.name}
                                 <small>{cv.title}</small>
