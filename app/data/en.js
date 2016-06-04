@@ -6,6 +6,8 @@ import underpassImage1x from '../images/projects/underpass-1x.jpg';
 import underpassImage2x from '../images/projects/underpass-2x.jpg';
 import vrPlayerImage1x from '../images/projects/vr-player-1x.jpg';
 import vrPlayerImage2x from '../images/projects/vr-player-2x.jpg';
+import portraitImage1x from '../images/portrait-1x.jpg';
+import portraitImage2x from '../images/portrait-2x.jpg';
 
 const lr = '  ';
 
@@ -19,6 +21,11 @@ export default {
     website: 'http://www.jaussoin.com',
     address1: '53a Nansen Road',
     address2: 'London SW11 5NS',
+
+    portrait: [
+        { src: portraitImage2x, width: 280 },
+        { src: portraitImage1x, width: 140 }
+    ],
 
     profile: `I'm an **experienced Full-Stack developer**, with strong **creative** skills and a strong experience within the finance industry.${lr}
 My most significant mission allowed me to **design**, **implement** and **maintain** a Quantitative Analysis and Document Management tool that is now used by 50+ multi-management analysts around the world, in London, Boston, Paris, Germany and South Africa.${lr}
