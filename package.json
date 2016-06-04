@@ -1,6 +1,6 @@
 {
   "name": "cv",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Antoine Jaussoin's CV, as a React Universal app",
   "repository": "https://github.com/antoinejaussoin/cv",
   "main": "index.js",
