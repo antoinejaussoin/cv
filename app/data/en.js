@@ -1,7 +1,11 @@
-import retrospectedImage from '../images/projects/retrospected.png';
-import weskImage from '../images/projects/wesk.png';
-import underpassImage from '../images/projects/underpass.jpg';
-import vrPlayerImage from '../images/projects/vr-player.jpg';
+import retrospectedImage1x from '../images/projects/retrospected-1x.png';
+import retrospectedImage2x from '../images/projects/retrospected-2x.png';
+import weskImage1x from '../images/projects/wesk-1x.png';
+import weskImage2x from '../images/projects/wesk-2x.png';
+import underpassImage1x from '../images/projects/underpass-1x.jpg';
+import underpassImage2x from '../images/projects/underpass-2x.jpg';
+import vrPlayerImage1x from '../images/projects/vr-player-1x.jpg';
+import vrPlayerImage2x from '../images/projects/vr-player-2x.jpg';
 
 const lr = '  ';
 
@@ -262,33 +266,41 @@ Related techologies I have experience with:
     projects: [
         {
             name: 'Retrospected',
-            shortDescription: 'Agile Retrospective Board (**React**, **Redux** and **Socket-io**)',
             description: `Agile Retrospective Board, using **React**, **Redux** and **Socket-io**${lr}
 Available on GitHub here: [github.com/antoinejaussoin/retro-board](https://github.com/antoinejaussoin/retro-board).`,
             website: 'https://www.retrospected.com',
-            picture: retrospectedImage
+            pictures: [
+                { src: retrospectedImage2x, width: 860 },
+                { src: retrospectedImage1x, width: 430 }
+            ]
         },
         {
             name: 'Wesk',
-            shortDescription: 'Electron-like container, based on **Chromium**',
             description: 'HTML App in a Window App, similar to Electron, based on **Chromium**',
             website: 'https://www.weskapp.com',
-            picture: weskImage
+            pictures: [
+                { src: weskImage2x, width: 860 },
+                { src: weskImage1x, width: 430 }
+            ]
         },
         {
             name: 'Underpass',
-            shortDescription: 'Get around **corporate proxies** and download what you need',
             description: `A life-saver for when you need to download a tool and your corporate proxy doesn't play ball.${lr}
 This will simply download it for you and give it back as an archive that shouldn't be blocked by your firewall.`,
             website: 'https://underpass.jaussoin.com',
-            picture: underpassImage
+            pictures: [
+                { src: underpassImage2x, width: 860 },
+                { src: underpassImage1x, width: 430 }
+            ]
         },
         {
             name: 'React VR Player',
-            shortDescription: '360° Virtual Reality video player (**React**, **Oculus**)',
             description: '360° Virtual Reality video player component (Oculus Rift)',
             website: 'https://antoinejaussoin.github.io',
-            picture: vrPlayerImage
+            pictures: [
+                { src: vrPlayerImage2x, width: 860 },
+                { src: vrPlayerImage1x, width: 430 }
+            ]
         }
     ]
 };
