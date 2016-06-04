@@ -45,22 +45,6 @@ small.subtitle {
     top: -15px;
 }
 
-div.projects div.project-item img {
-    padding: 5px;
-    border: 1px solid #dadada;
-}
-
-div.projects div.project-item {
-    border-bottom: 1px solid #dadada;
-    padding-bottom: 20px;
-    margin-bottom: 25px;
-}
-
-div.projects div.project-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
 
 ul.techs {
 	margin-top: 10px;

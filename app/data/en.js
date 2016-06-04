@@ -262,6 +262,7 @@ Related techologies I have experience with:
     projects: [
         {
             name: 'Retrospected',
+            shortDescription: 'Agile Retrospective Board (**React**, **Redux** and **Socket-io**)',
             description: `Agile Retrospective Board, using **React**, **Redux** and **Socket-io**${lr}
 Available on GitHub here: [github.com/antoinejaussoin/retro-board](https://github.com/antoinejaussoin/retro-board).`,
             website: 'https://www.retrospected.com',
@@ -269,12 +270,14 @@ Available on GitHub here: [github.com/antoinejaussoin/retro-board](https://githu
         },
         {
             name: 'Wesk',
+            shortDescription: 'Electron-like container, based on **Chromium**',
             description: 'HTML App in a Window App, similar to Electron, based on **Chromium**',
             website: 'https://www.weskapp.com',
             picture: weskImage
         },
         {
             name: 'Underpass',
+            shortDescription: 'Get around **corporate proxies** and download what you need',
             description: `A life-saver for when you need to download a tool and your corporate proxy doesn't play ball.${lr}
 This will simply download it for you and give it back as an archive that shouldn't be blocked by your firewall.`,
             website: 'https://underpass.jaussoin.com',
@@ -282,6 +285,7 @@ This will simply download it for you and give it back as an archive that shouldn
         },
         {
             name: 'React VR Player',
+            shortDescription: '360° Virtual Reality video player (**React**, **Oculus**)',
             description: '360° Virtual Reality video player component (Oculus Rift)',
             website: 'https://antoinejaussoin.github.io',
             picture: vrPlayerImage

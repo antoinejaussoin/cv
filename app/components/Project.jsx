@@ -1,24 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import marked from 'marked';
+import './Project.css';
+import ParallaxImage from './ParallaxImage';
 
 export default ({ item }) => {
     const description = {
-        __html: marked(item.description)
+        __html: marked(item.shortDescription)
     };
 
     return (
-        <div className="row project-item">
-            <div className="span4">
-                <a href={item.website} target="_blank">
-                    <img src={item.picture} alt={item.name} style={{ width: '100%' }} />
-                </a>
-            </div>
-            <div className="span5">
-                <h3><strong>{item.name}</strong></h3>
-                <h4><a href={item.website} target="_blank">{item.website}</a></h4>
-
-                <p dangerouslySetInnerHTML={description}></p>
-            </div>
+        <div className="project-item">
+            <ParallaxImage width={430} height={400} onClick={() => { document.location = item.website; }}>
+                <div className="project-card">
+                    <img src={item.picture} alt={item.description} />
+                    <div className="project-details">
+                        <h4>{item.name}</h4>
+                        <p className="link">{item.website}</p>
+                        <p dangerouslySetInnerHTML={description}></p>
+                    </div>
+                </div>
+            </ParallaxImage>
         </div>
     );
 };
+
+/*
+<div className="span5">
+    <h3><strong>{item.name}</strong></h3>
+    <h4><a href={item.website} target="_blank">{item.website}</a></h4>
+
+    <p dangerouslySetInnerHTML={description}></p>
+</div>
+</div>
+*/

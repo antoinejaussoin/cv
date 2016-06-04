@@ -1,0 +1,30 @@
+
+div.projects div.project-item {
+
+}
+
+div.projects div.project-item {
+    margin:20px;
+    width: 430px;
+    height:400px;
+    float: left;
+}
+
+div.projects div.project-item div.project-card img {
+    width: 430px;
+    height:245px;
+    background:none !important;
+}
+
+div.projects div.project-item div.project-card {
+    background: white;
+}
+
+div.projects div.project-item div.project-card div.project-details {
+    padding: 10px;
+    background-color: #FAFAFA;
+}
+
+div.projects div.project-item div.project-card div.project-details h4 {
+    font-weight: bold;
+}

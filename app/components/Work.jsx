@@ -29,7 +29,7 @@ const Work = ({ item, displayDetails }) => {
             <h4>{item.company}, {item.type}</h4>
 
             <ul className="techs">
-                {item.techs.map(t => <li><Pill text={t} /></li>)}
+                {item.techs.map(t => <li key={t}><Pill text={t} /></li>)}
             </ul>
 
             <a href={item.website}>{item.website}</a>
