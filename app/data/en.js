@@ -23,8 +23,8 @@ export default {
     address2: 'London SW11 5NS',
 
     portrait: [
-        { src: portraitImage2x, width: 280 },
-        { src: portraitImage1x, width: 140 }
+        { src: portraitImage1x, width: 140, height: 196 },
+        { src: portraitImage2x, width: 280, height: 392 }
     ],
 
     profile: `I'm an **experienced Full-Stack developer**, with strong **creative** skills and a strong experience within the finance industry.${lr}
@@ -278,8 +278,8 @@ Available on GitHub here: [github.com/antoinejaussoin/retro-board](https://githu
             shortDescription: 'Agile Retrospective Board (**React**, **Redux** and **Socket-io**)',
             website: 'https://www.retrospected.com',
             pictures: [
-                { src: retrospectedImage2x, width: 860 },
-                { src: retrospectedImage1x, width: 430 }
+                { src: retrospectedImage1x, width: 430, height: 225 },
+                { src: retrospectedImage2x, width: 860, height: 450 }
             ]
         },
         {
@@ -288,8 +288,8 @@ Available on GitHub here: [github.com/antoinejaussoin/retro-board](https://githu
             description: 'HTML App in a Window App, similar to Electron, based on **Chromium**',
             website: 'https://www.weskapp.com',
             pictures: [
-                { src: weskImage2x, width: 860 },
-                { src: weskImage1x, width: 430 }
+                { src: weskImage1x, width: 430, height: 225 },
+                { src: weskImage2x, width: 860, height: 450 }
             ]
         },
         {
@@ -299,8 +299,8 @@ Available on GitHub here: [github.com/antoinejaussoin/retro-board](https://githu
 This will simply download it for you and give it back as an archive that shouldn't be blocked by your firewall.`,
             website: 'https://underpass.jaussoin.com',
             pictures: [
-                { src: underpassImage2x, width: 860 },
-                { src: underpassImage1x, width: 430 }
+                { src: underpassImage1x, width: 430, height: 225 },
+                { src: underpassImage2x, width: 860, height: 450 }
             ]
         },
         {
@@ -309,8 +309,8 @@ This will simply download it for you and give it back as an archive that shouldn
             description: '360° Virtual Reality video player component (Oculus Rift)',
             website: 'https://antoinejaussoin.github.io',
             pictures: [
-                { src: vrPlayerImage2x, width: 860 },
-                { src: vrPlayerImage1x, width: 430 }
+                { src: vrPlayerImage1x, width: 430, height: 225 },
+                { src: vrPlayerImage2x, width: 860, height: 450 }
             ]
         }
     ]

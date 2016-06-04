@@ -9,6 +9,8 @@ const ResponsiveImage = ({ sources, alt, style }) => {
           alt={alt}
           style={style}
           srcSet={set}
+          width={sources[0].width}
+          height={sources[0].height}
         />
     );
 };
