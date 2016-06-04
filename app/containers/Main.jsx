@@ -16,6 +16,7 @@ import reverse from 'lodash/reverse';
 import frFlag from '../images/fr.png';
 import ukFlag from '../images/uk.png';
 import Mailto from 'react-encoded-mailto';
+import WorkDetailsSwitch from '../components/WorkDetailsSwitch';
 
 const Main = () => (
     <div>
@@ -94,6 +95,7 @@ const Main = () => (
                         <div className="cv-section-title">
                             <h2>Work Experience</h2>
                         </div>
+                        Show details: &nbsp;&nbsp;<WorkDetailsSwitch />
                     </div>
                     <div className="span9">
                         {reverse(cv.work).map((item, i) => <Work item={item} key={i} />)}

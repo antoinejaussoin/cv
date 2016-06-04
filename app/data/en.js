@@ -9,7 +9,7 @@ export default {
     name: 'Antoine Jaussoin',
     bio: '33 years old, married, French',
     title: 'Full Stack Engineer',
-    subtitle: 'React, Node.JS, .NET',
+    subtitle: 'React - Angular - Node - .NET',
     email: 'antoine@jaussoin.com',
     phone: '+44 77 22 55 77 39',
     website: 'http://www.jaussoin.com',
