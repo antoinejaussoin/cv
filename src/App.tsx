@@ -11,7 +11,7 @@ import Education from "./components/Education";
 import Skills from "./components/Skills";
 import Project from "./components/Project";
 import Mailto from "./components/MailTo";
-import { reverse } from "lodash";
+import { orderBy } from "lodash";
 import frFlag from "./images/fr.png";
 import ukFlag from "./images/uk.png";
 import WorkDetailsSwitch from "./components/WorkDetailsSwitch";
@@ -129,7 +129,7 @@ const Main = () => {
               <WorkDetailsSwitch enabled={toggled} onChange={toggle} />
             </div>
             <div className="span9">
-              {reverse(cv.work).map((item, i) => (
+              {orderBy(cv.work, w => w.dates.from, "desc").map((item, i) => (
                 <Work item={item} key={i} displayDetails={toggled} />
               ))}
             </div>
@@ -155,7 +155,7 @@ const Main = () => {
               </div>
             </div>
             <div className="span9">
-              {reverse(cv.education).map((item, i) => (
+              {orderBy(cv.education, e => e.date, "desc").map((item, i) => (
                 <Education item={item} key={i} />
               ))}
             </div>
