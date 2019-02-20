@@ -1,9 +1,9 @@
 import retrospectedImage1x from "../images/projects/retrospected-1x.png";
 import retrospectedImage2x from "../images/projects/retrospected-2x.png";
-import weskImage1x from "../images/projects/wesk-1x.png";
-import weskImage2x from "../images/projects/wesk-2x.png";
-import underpassImage1x from "../images/projects/underpass-1x.jpg";
-import underpassImage2x from "../images/projects/underpass-2x.jpg";
+// import weskImage1x from "../images/projects/wesk-1x.png";
+// import weskImage2x from "../images/projects/wesk-2x.png";
+// import underpassImage1x from "../images/projects/underpass-1x.jpg";
+// import underpassImage2x from "../images/projects/underpass-2x.jpg";
 import vrPlayerImage1x from "../images/projects/vr-player-1x.jpg";
 import vrPlayerImage2x from "../images/projects/vr-player-2x.jpg";
 import portraitImage1x from "../images/portrait-1x.jpg";
@@ -15,7 +15,7 @@ export default {
   name: "Antoine Jaussoin",
   bio: "36 years old, married, French",
   title: "Full Stack Engineer",
-  subtitle: "React - Angular - Node - .NET",
+  subtitle: "React - TypeScript/JavaScript - Node - .NET",
   email: "antoine@jaussoin.com",
   phone: "+44 77 22 55 77 39",
   website: "http://www.jaussoin.com",
@@ -27,8 +27,9 @@ export default {
     { src: portraitImage2x, width: 280, height: 392 }
   ],
 
-  profile: `I'm an **experienced Full-Stack developer**, with strong **creative** skills and a strong experience within the finance industry.${lr}
-My most significant mission allowed me to **design**, **implement** and **maintain** a Quantitative Analysis and Document Management tool that is now used by 50+ multi-management analysts around the world, in London, Boston, Paris, Germany and South Africa.${lr}
+  profile: `I'm an **experienced Full-Stack developer**, with strong **creative** skills and a strong experience within the **finance** industry.${lr}
+I started my career as a **C#/ASP.NET** engineer, and specialised more recently on the Front-End by working on **React** projects.${lr}
+I'm currently working for **Two Sigma** in London, a systematic trading hedge-fund based in New-York.${lr}
 I also had the opportunity to **create my own software company**, Everydev, in France a few years ago.
 
 I'm also the author of a few **open-source projects**, one of which is an Agile Retrospective board ([www.retrospected.com](https://www.retrospected.com)).`,
@@ -202,11 +203,16 @@ These projects are built using **Grunt**, including some custom Grunt tasks. The
     {
       title: "Senior Front-End React Engineer",
       company: "Two Sigma",
-      type: "Contractor / Permanent",
+      type: "Permanent",
       dates: { from: "2017-03-01" },
       techs: ["React", "TypeScript", "Styled Components", "Node.js"],
       website: "https://tsvenn.com/",
-      description: `Front-End engineer on Two Sigma's **Venn** platform.${lr}`
+      description: `Front-End engineer on Two Sigma's **Venn** platform.${lr}
+      Venn is a platform that makes it simpler to select managers, choose assets and manage risk, via Two Sigma's factors analysis.${lr}
+      On the technical side, the front-end was originaly written in JavaScript (ES6), React, Redux, Redux-Saga and SCSS (with CSS Modules).${lr}
+      It was then rewritten to TypeScript, replacing Redux by React's context and more local state. We also replaced SCSS and CSS Modules by Styled Components.
+      
+      `
     }
   ],
   education: [
@@ -243,6 +249,16 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
 My current position involves a front-end single page app (React), using **HTML 5** and **CSS 3**.`
     },
     {
+      name: "TypeScript",
+      level: "Expert",
+      experience: 2,
+      description: `Complete rewrite of an entire codebase from JavaScript to TypeScript.${lr}
+
+  Related technologies:
+
+  - TS Lint`
+    },
+    {
       name: "Javascript",
       level: "Expert",
       experience: 7,
@@ -266,8 +282,8 @@ Related technologies:
     {
       name: "React",
       level: "Advanced",
-      experience: 2,
-      description: `2-year full time experience of React, and related technologies:
+      experience: 4,
+      description: `4-year full time experience of React, and related technologies:
 - Redux
 - Reselect
 - redux-saga
@@ -286,7 +302,7 @@ Experience with Node from 0.12 to the latest 6 (on personal projects), and NPM (
       name: ".NET",
       level: "Expert",
       experience: 8,
-      description: `.NET was my the technology stack I started working with.${lr}
+      description: `.NET was the technology stack I started working with.${lr}
 Related techologies I have experience with:
 - C#
 - ASP.NET MVC
@@ -308,29 +324,29 @@ Available on GitHub here: [github.com/antoinejaussoin/retro-board](https://githu
         { src: retrospectedImage2x, width: 860, height: 450 }
       ]
     },
-    {
-      name: "Wesk",
-      shortDescription: "Electron-like container, based on **Chromium**",
-      description:
-        "HTML App in a Window App, similar to Electron, based on **Chromium**",
-      website: "https://www.weskapp.com",
-      pictures: [
-        { src: weskImage1x, width: 430, height: 225 },
-        { src: weskImage2x, width: 860, height: 450 }
-      ]
-    },
-    {
-      name: "Underpass",
-      shortDescription:
-        "Get around **corporate proxies** and download what you need",
-      description: `A life-saver for when you need to download a tool and your corporate proxy doesn't play ball.${lr}
-This will simply download it for you and give it back as an archive that shouldn't be blocked by your firewall.`,
-      website: "https://underpass.jaussoin.com",
-      pictures: [
-        { src: underpassImage1x, width: 430, height: 225 },
-        { src: underpassImage2x, width: 860, height: 450 }
-      ]
-    },
+    // {
+    //   name: "Wesk",
+    //   shortDescription: "Electron-like container, based on **Chromium**",
+    //   description:
+    //     "HTML App in a Window App, similar to Electron, based on **Chromium**",
+    //   website: "https://www.weskapp.com",
+    //   pictures: [
+    //     { src: weskImage1x, width: 430, height: 225 },
+    //     { src: weskImage2x, width: 860, height: 450 }
+    //   ]
+    // },
+    //     {
+    //       name: "Underpass",
+    //       shortDescription:
+    //         "Get around **corporate proxies** and download what you need",
+    //       description: `A life-saver for when you need to download a tool and your corporate proxy doesn't play ball.${lr}
+    // This will simply download it for you and give it back as an archive that shouldn't be blocked by your firewall.`,
+    //       website: "https://underpass.jaussoin.com",
+    //       pictures: [
+    //         { src: underpassImage1x, width: 430, height: 225 },
+    //         { src: underpassImage2x, width: 860, height: 450 }
+    //       ]
+    //     },
     {
       name: "React VR Player",
       shortDescription:

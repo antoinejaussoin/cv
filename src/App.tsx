@@ -165,7 +165,7 @@ const Main = () => {
           <div className="row">
             <div className="span12">
               <h4 className="copyright">
-                &copy; 2016 Antoine Jaussoin.{" "}
+                &copy; 2019 Antoine Jaussoin.{" "}
                 <span className="hidden-phone">All rights reserved.</span>
               </h4>
             </div>
