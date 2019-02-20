@@ -4,6 +4,7 @@ import "./css/grid.css";
 import "./css/layout.css";
 import "./css/skins/blue.css";
 import "./css/custom.css";
+import "./css/print.css";
 import cv from "./data/en";
 import Work from "./components/Work";
 import Profile from "./components/Profile";
@@ -18,7 +19,7 @@ import WorkDetailsSwitch from "./components/WorkDetailsSwitch";
 import ResponsiveImage from "./components/ResponsiveImage";
 
 const Main = () => {
-  const [toggled, toggle] = useState(false);
+  const [toggled, toggle] = useState(true);
   return (
     <div>
       <a href="https://github.com/antoinejaussoin/cv">
@@ -110,7 +111,7 @@ const Main = () => {
             </div>
           </div>
 
-          <div className="row cv-section">
+          <div className="row cv-section noprint">
             <div className="span12">
               <div className="projects">
                 {cv.projects.map((item, i) => (
@@ -125,8 +126,10 @@ const Main = () => {
               <div className="cv-section-title">
                 <h2>Work Experience</h2>
               </div>
-              Show details: &nbsp;&nbsp;
-              <WorkDetailsSwitch enabled={toggled} onChange={toggle} />
+              <div className="noprint">
+                Show details: &nbsp;&nbsp;
+                <WorkDetailsSwitch enabled={toggled} onChange={toggle} />
+              </div>
             </div>
             <div className="span9">
               {orderBy(cv.work, w => w.dates.from, "desc").map((item, i) => (
@@ -161,7 +164,7 @@ const Main = () => {
             </div>
           </div>
         </div>
-        <div id="footer">
+        <div id="footer" className="noprint">
           <div className="row">
             <div className="span12">
               <h4 className="copyright">

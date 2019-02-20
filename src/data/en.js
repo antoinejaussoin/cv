@@ -208,10 +208,9 @@ These projects are built using **Grunt**, including some custom Grunt tasks. The
       techs: ["React", "TypeScript", "Styled Components", "Node.js"],
       website: "https://tsvenn.com/",
       description: `Front-End engineer on Two Sigma's **Venn** platform.${lr}
-      Venn is a platform that makes it simpler to select managers, choose assets and manage risk, via Two Sigma's factors analysis.${lr}
-      On the technical side, the front-end was originaly written in JavaScript (ES6), React, Redux, Redux-Saga and SCSS (with CSS Modules).${lr}
-      It was then rewritten to TypeScript, replacing Redux by React's context and more local state. We also replaced SCSS and CSS Modules by Styled Components.
-      
+Venn is a platform that makes it simpler to select managers, choose assets and manage risk, via Two Sigma's factors analysis.${lr}
+On the technical side, the front-end was originaly written in JavaScript (ES6), React, Redux, Redux-Saga and SCSS (with CSS Modules).${lr}
+It was then rewritten to TypeScript, replacing Redux by React's context and more local state. We also replaced SCSS and CSS Modules by Styled Components.
       `
     }
   ],
@@ -242,26 +241,26 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
   ],
   skills: [
     {
-      name: "HTML & CSS",
-      level: "Expert",
-      experience: 7,
-      description: `Almost all my work experiences included HTML and CSS developement, but only in the last few years it became a full time focus.${lr}
-My current position involves a front-end single page app (React), using **HTML 5** and **CSS 3**.`
-    },
-    {
       name: "TypeScript",
       level: "Expert",
       experience: 2,
-      description: `Complete rewrite of an entire codebase from JavaScript to TypeScript.${lr}
-
-  Related technologies:
-
-  - TS Lint`
+      related: ["TS Lint"],
+      description: `Complete rewrite of an entire codebase from JavaScript to TypeScript.${lr}`
     },
     {
       name: "Javascript",
       level: "Expert",
       experience: 7,
+      related: [
+        "AngularJS",
+        "Lodash",
+        "Moment.js",
+        "Mocha",
+        "Karma",
+        "Jest",
+        "Prettier",
+        "Enzyme"
+      ],
       description: `Expert knowledge of ES6 (ECMAScript 2015):${lr}
 - const / let
 - default parameters, spread operator
@@ -271,29 +270,35 @@ My current position involves a front-end single page app (React), using **HTML 5
 - generators
 - promises
 
-And ES7 (async/await, decorators...)
-
-Related technologies:
-- AngularJS
-- Lodash / Underscore
-- Moment.js
-- Mocha, Karma, Jasmine, Sinon, Chai, Istanbul`
+And ES7 (async/await, decorators...)`
     },
     {
       name: "React",
       level: "Advanced",
       experience: 4,
-      description: `4-year full time experience of React, and related technologies:
-- Redux
-- Reselect
-- redux-saga
-- socket-io
-- Webpack (hot-reloading)`
+      related: [
+        "Redux",
+        "Reselect",
+        "Redux-Saga",
+        "Socket.IO",
+        "Webpack",
+        "Jest"
+      ],
+      description: `4-year full time experience of React.`
+    },
+    {
+      name: "HTML & CSS",
+      level: "Expert",
+      experience: 7,
+      related: ["CSS Modules", "SCSS/SASS", "Styled Components"],
+      description: `Almost all my work experiences included HTML and CSS developement, but only in the last few years it became a full time focus.${lr}
+My current position involves a front-end single page app (React), using **HTML 5** and **CSS 3**.`
     },
     {
       name: "Node",
       level: "Advanced",
       experience: 2,
+      related: ["Create-React-App", "Express"],
       description: `2-year experience with Node, at RBS.
 
 Experience with Node from 0.12 to the latest 6 (on personal projects), and NPM (on both v2 and v3).`
@@ -302,13 +307,17 @@ Experience with Node from 0.12 to the latest 6 (on personal projects), and NPM (
       name: ".NET",
       level: "Expert",
       experience: 8,
-      description: `.NET was the technology stack I started working with.${lr}
-Related techologies I have experience with:
-- C#
-- ASP.NET MVC
-- NHibernate
-- NUnit, MSpec, NAnt
-- SQL Server, MySQL`
+      related: [
+        "C#",
+        "ASP.NET MVC",
+        "NHibernate",
+        "NUnit",
+        "MSpec",
+        "NAnt",
+        "SQL Server",
+        "MySQL"
+      ],
+      description: `.NET was the technology stack I started working with.`
     }
   ],
   projects: [
