@@ -10,7 +10,7 @@ const lr = "  ";
 export default {
   name: "Antoine Jaussoin",
   bio: "36 years old, married, French",
-  title: "Full Stack Engineer",
+  title: "Senior Full Stack Engineer",
   subtitle: "React - TypeScript/JavaScript - Node - .NET",
   email: "antoine@jaussoin.com",
   phone: "+44 77 22 55 77 39",
@@ -18,7 +18,8 @@ export default {
   address1: "17 Jedburgh Street",
   address2: "London SW11 5QA",
 
-  portrait: [{
+  portrait: [
+    {
       src: portraitImage1x,
       width: 140,
       height: 196
@@ -30,14 +31,14 @@ export default {
     }
   ],
 
-  profile: `I'm an **experienced Full-Stack developer**, with strong **creative** skills and a strong experience within the **finance** industry.${lr}
-I started my career as a **C#/ASP.NET** engineer, and specialised more recently on the Front-End by working on **React** projects.${lr}
-I'm currently working for **Two Sigma** in London, a systematic trading hedge-fund based in New-York.${lr}
-I also had the opportunity to **create my own software company**, Everydev, in France a few years ago.
-
+  profile: `I'm a **Senior Full-Stack Engineer**, with a strong experience in the **financial industry**.${lr}
+My current role at **Two Sigma**, a systematic trading hedge-fund based in New-York, allowed me to develop my **expertise in React** and **Front-End architecture**
+while delivering the best **experience for our customer**.${lr}
+I had the opportunity to work on various **greenfield projects** in my career, from the **Cudos platform** at BNP (still live 10 years after!) to **creating my own software company**.${lr}
 I'm also the author of a few **open-source projects**, one of which is an Agile Retrospective board ([www.retrospected.com](https://www.retrospected.com)).`,
 
-  work: [{
+  work: [
+    {
       title: "Software Developer",
       company: "Intuition Informatique",
       location: "Evreux (France)",
@@ -246,7 +247,8 @@ Part of the original team of 2 Front-End developers, I was able to play a decisi
       `
     }
   ],
-  education: [{
+  education: [
+    {
       school: "Passy-Buzenval",
       diploma: "BAC STI (French A-Level) - With Honours",
       location: "Rueil-Malmaison (France)",
@@ -258,7 +260,8 @@ Part of the original team of 2 Front-End developers, I was able to play a decisi
       diploma: "Cours Préparatoires aux Grandes Ecoles",
       location: "Rueil-Malmaison (France)",
       date: "2003-06-01",
-      description: "Math sup/Math Spé is preparing French students for the Grandes Ecoles (mainly in physics and mathematics)."
+      description:
+        "Math sup/Math Spé is preparing French students for the Grandes Ecoles (mainly in physics and mathematics)."
     },
     {
       school: "Supinfo Paris - Oxford Brookes University",
@@ -269,7 +272,8 @@ Part of the original team of 2 Front-End developers, I was able to play a decisi
 I spent the last year in Oxford Brookes University, in the Msc in Computer Science section.`
     }
   ],
-  skills: [{
+  skills: [
+    {
       name: "TypeScript",
       level: "Expert",
       experience: 2,
@@ -280,14 +284,7 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
       name: "Javascript",
       level: "Expert",
       experience: 7,
-      related: [
-        "Angular",
-        "Lodash",
-        "Moment.js",
-        "Jest",
-        "Prettier",
-        "Enzyme"
-      ],
+      related: ["Angular", "Lodash", "Moment.js", "Jest", "Prettier", "Enzyme"],
       description: `Expert knowledge of ES6 (ECMAScript 2015):${lr}
 - const / let
 - default parameters, spread operator
@@ -341,18 +338,21 @@ Experience with Node from 0.12 to the latest 6 (on personal projects), and NPM (
         "NHibernate",
         "NUnit",
         "MSpec",
-        "SQL Server",
+        "SQL Server"
       ],
       description: `.NET was the technology stack I started working with.`
     }
   ],
-  projects: [{
+  projects: [
+    {
       name: "Retrospected",
       description: `Agile Retrospective Board, using **React**, **Redux** and **Socket-io**${lr}
 Available on GitHub here: [github.com/antoinejaussoin/retro-board](https://github.com/antoinejaussoin/retro-board).`,
-      shortDescription: "Agile Retrospective Board (**React**, **Redux** and **Socket-io**)",
+      shortDescription:
+        "Agile Retrospective Board (**React**, **Redux** and **Socket-io**)",
       website: "https://www.retrospected.com",
-      pictures: [{
+      pictures: [
+        {
           src: retrospectedImage1x,
           width: 430,
           height: 225
@@ -389,10 +389,12 @@ Available on GitHub here: [github.com/antoinejaussoin/retro-board](https://githu
     //     },
     {
       name: "React VR Player",
-      shortDescription: "360° Virtual Reality video player (**React**, **Oculus**)",
+      shortDescription:
+        "360° Virtual Reality video player (**React**, **Oculus**)",
       description: "360° Virtual Reality video player component (Oculus Rift)",
       website: "https://antoinejaussoin.github.io",
-      pictures: [{
+      pictures: [
+        {
           src: vrPlayerImage1x,
           width: 430,
           height: 225
