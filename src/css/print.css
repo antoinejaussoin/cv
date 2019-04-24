@@ -1,8 +1,10 @@
 @media print {
   body {
     background: none;
+    font-size: 1.2em;
   }
-  #root > div:first-child > a {
+
+  #root>div:first-child>a {
     display: none;
   }
 
@@ -21,6 +23,7 @@
     width: inherit;
     padding: 20px 0;
     margin: 0 40px;
+    color: black;
   }
 
   .row {
@@ -33,6 +36,14 @@
 
   .row .span9 {
     flex: 9;
+  }
+
+  .rov.cv-section {
+    page-break-inside: avoid;
+  }
+
+  .xp {
+    page-break-after: always;
   }
 
   .row .cv-item {

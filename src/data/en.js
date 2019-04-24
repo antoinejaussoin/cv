@@ -1,9 +1,5 @@
 import retrospectedImage1x from "../images/projects/retrospected-1x.png";
 import retrospectedImage2x from "../images/projects/retrospected-2x.png";
-// import weskImage1x from "../images/projects/wesk-1x.png";
-// import weskImage2x from "../images/projects/wesk-2x.png";
-// import underpassImage1x from "../images/projects/underpass-1x.jpg";
-// import underpassImage2x from "../images/projects/underpass-2x.jpg";
 import vrPlayerImage1x from "../images/projects/vr-player-1x.jpg";
 import vrPlayerImage2x from "../images/projects/vr-player-2x.jpg";
 import portraitImage1x from "../images/portrait-1x.jpg";
@@ -22,9 +18,16 @@ export default {
   address1: "17 Jedburgh Street",
   address2: "London SW11 5QA",
 
-  portrait: [
-    { src: portraitImage1x, width: 140, height: 196 },
-    { src: portraitImage2x, width: 280, height: 392 }
+  portrait: [{
+      src: portraitImage1x,
+      width: 140,
+      height: 196
+    },
+    {
+      src: portraitImage2x,
+      width: 280,
+      height: 392
+    }
   ],
 
   profile: `I'm an **experienced Full-Stack developer**, with strong **creative** skills and a strong experience within the **finance** industry.${lr}
@@ -34,25 +37,30 @@ I also had the opportunity to **create my own software company**, Everydev, in F
 
 I'm also the author of a few **open-source projects**, one of which is an Agile Retrospective board ([www.retrospected.com](https://www.retrospected.com)).`,
 
-  work: [
-    {
+  work: [{
       title: "Software Developer",
       company: "Intuition Informatique",
       location: "Evreux (France)",
       type: "Internship",
-      dates: { from: "2003-11-01", to: "2004-12-01" },
+      dates: {
+        from: "2003-11-01",
+        to: "2004-12-01"
+      },
       techs: ["C#", "MySQL"],
       website: "http://www.intuition-informatique.com",
       description: `Part-time job in this company, 14h per week along with my studies, as a programmer, website designer, and system administrator.${lr}
 The main task was to build a management software to manage their assistance contracts in C#.${lr}
-It integrates itself with an ERP software and is now used every day by 5 technicians, and handles thousands of contracts.`
+It integrates itself with an ERP software and is now used every day by 5 technicians, and handles thousands of contracts.${lr}`
     },
     {
       title: "Full-Stack Developer",
       company: "Everydev",
       location: "Evreux (France)",
       type: "Associate & Co-founder",
-      dates: { from: "2004-12-01", to: "2008-07-01" },
+      dates: {
+        from: "2004-12-01",
+        to: "2008-07-01"
+      },
       techs: ["C#", "WinForm", "ASP.NET", "MySQL"],
       website: "http://www.everydev.fr",
       description: `Foundation of a computer services company, in December 2004.${lr}
@@ -75,7 +83,10 @@ Managed a trainee during summer 2005. `
       company: "British Telecom PLC",
       location: "London",
       type: "Full-Time",
-      dates: { from: "2006-09-01", to: "2007-01-01" },
+      dates: {
+        from: "2006-09-01",
+        to: "2007-01-01"
+      },
       techs: ["ASP.NET", "C#", "VB.NET", "DotNetNuke"],
       website: "http://www.bt.com",
       description: `Development of a portal (http://sdk.bt.com) in ASP.NET using DotNetNuke. Deployment, testing, and writing of a sample application using the new BT SDK.${lr}
@@ -88,7 +99,10 @@ We also used the continuous integration procedure (CruiseControl.net).`
       company: "BNP Paribas - FundQuest UK",
       location: "London",
       type: "Full-Time",
-      dates: { from: "2007-01-01", to: "2009-11-01" },
+      dates: {
+        from: "2007-01-01",
+        to: "2009-11-01"
+      },
       techs: ["ASP.NET", "C#", "NHibernate", "MySQL"],
       website: "http://www.invms.co.uk",
       description: `Design, implementation and maintenance of a Quantitative, Document Management and Trading Web Application.${lr}
@@ -110,7 +124,10 @@ These are some of the areas of the system that I've been designing:
       company: "Credit Suisse",
       location: "London",
       type: "Full-Time, AVP",
-      dates: { from: "2009-11-01", to: "2010-03-01" },
+      dates: {
+        from: "2009-11-01",
+        to: "2010-03-01"
+      },
       techs: ["ASP.NET", "C#", "SQL Server"],
       website: "http://www.credit-suisse.com",
       description: `Design, maintenance and improvements of a derivatives trading platform, used both internally and externally by Credit Suisse customers.${lr}
@@ -121,7 +138,10 @@ The front end was ASP.NET based, with a back end in C#.`
       company: "Royal Bank of Scotland",
       location: "London",
       type: "Contractor",
-      dates: { from: "2010-03-01", to: "2010-12-01" },
+      dates: {
+        from: "2010-03-01",
+        to: "2010-12-01"
+      },
       techs: [
         "Silverlight",
         "C#",
@@ -157,7 +177,10 @@ I have also scored 100th percentile (worldwide) on the Brain Bench test while ap
       title: "ASP.NET MVC Front-end Developer",
       company: "Royal Bank of Scotland",
       type: "Contractor",
-      dates: { from: "2011-01-01", to: "2011-03-01" },
+      dates: {
+        from: "2011-01-01",
+        to: "2011-03-01"
+      },
       techs: ["C#", "NHibernate", "MVC 3", "ExtJS", "AutoFac", "SQL Server"],
       website: "http://www.rbs.co.uk",
       description: `Design and implementation of a Human Resource system aiming to replace a multitude of existing systems within RBS and consolidating the data.${lr}
@@ -170,7 +193,10 @@ The Dependency Injection framework used for this project is AutoFac.`
       title: "ASP.NET MVC Front-end Developer",
       company: "Bank of America Merrill Lynch",
       type: "Contractor",
-      dates: { from: "2011-04-01", to: "2012-06-01" },
+      dates: {
+        from: "2011-04-01",
+        to: "2012-06-01"
+      },
       techs: [
         "C#",
         "NHibernate",
@@ -190,7 +216,10 @@ The web application was originally written in classic ASP.NET and then (partiall
       title: "Front Office / Front-end React Engineer",
       company: "Royal Bank of Scotland",
       type: "Contractor / Permanent",
-      dates: { from: "2012-07-01", to: "2017-03-01" },
+      dates: {
+        from: "2012-07-01",
+        to: "2017-03-01"
+      },
       techs: ["React", "Redux", "AngularJS", "Node.js"],
       website: "https://www.agilemarkets.com",
       description: `Front-End developer on RBS’ flagship platform “**Agile Markets**”.${lr}
@@ -204,18 +233,20 @@ These projects are built using **Grunt**, including some custom Grunt tasks. The
       title: "Senior Front-End React Engineer",
       company: "Two Sigma",
       type: "Permanent",
-      dates: { from: "2017-03-01" },
+      dates: {
+        from: "2017-03-01"
+      },
       techs: ["React", "TypeScript", "Styled Components", "Node.js"],
       website: "https://tsvenn.com/",
       description: `Front-End engineer on Two Sigma's **Venn** platform.${lr}
 Venn is a platform that makes it simpler to select managers, choose assets and manage risk, via Two Sigma's factors analysis.${lr}
 On the technical side, the front-end was originaly written in JavaScript (ES6), React, Redux, Redux-Saga and SCSS (with CSS Modules).${lr}
-It was then rewritten to TypeScript, replacing Redux by React's context and more local state. We also replaced SCSS and CSS Modules by Styled Components.
+It was then rewritten to TypeScript, replacing Redux by React's context and more local state. We also replaced SCSS and CSS Modules by Styled Components.${lr}
+Part of the original team of 2 Front-End developers, I was able to play a decisive role on the original architecture and then the rewrite of the application.${lr}
       `
     }
   ],
-  education: [
-    {
+  education: [{
       school: "Passy-Buzenval",
       diploma: "BAC STI (French A-Level) - With Honours",
       location: "Rueil-Malmaison (France)",
@@ -227,8 +258,7 @@ It was then rewritten to TypeScript, replacing Redux by React's context and more
       diploma: "Cours Préparatoires aux Grandes Ecoles",
       location: "Rueil-Malmaison (France)",
       date: "2003-06-01",
-      description:
-        "Math sup/Math Spé is preparing French students for the Grandes Ecoles (mainly in physics and mathematics)."
+      description: "Math sup/Math Spé is preparing French students for the Grandes Ecoles (mainly in physics and mathematics)."
     },
     {
       school: "Supinfo Paris - Oxford Brookes University",
@@ -239,8 +269,7 @@ It was then rewritten to TypeScript, replacing Redux by React's context and more
 I spent the last year in Oxford Brookes University, in the Msc in Computer Science section.`
     }
   ],
-  skills: [
-    {
+  skills: [{
       name: "TypeScript",
       level: "Expert",
       experience: 2,
@@ -252,11 +281,9 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
       level: "Expert",
       experience: 7,
       related: [
-        "AngularJS",
+        "Angular",
         "Lodash",
         "Moment.js",
-        "Mocha",
-        "Karma",
         "Jest",
         "Prettier",
         "Enzyme"
@@ -274,7 +301,7 @@ And ES7 (async/await, decorators...)`
     },
     {
       name: "React",
-      level: "Advanced",
+      level: "Expert",
       experience: 4,
       related: [
         "Redux",
@@ -282,7 +309,8 @@ And ES7 (async/await, decorators...)`
         "Redux-Saga",
         "Socket.IO",
         "Webpack",
-        "Jest"
+        "Jest",
+        "Hooks"
       ],
       description: `4-year full time experience of React.`
     },
@@ -313,24 +341,27 @@ Experience with Node from 0.12 to the latest 6 (on personal projects), and NPM (
         "NHibernate",
         "NUnit",
         "MSpec",
-        "NAnt",
         "SQL Server",
-        "MySQL"
       ],
       description: `.NET was the technology stack I started working with.`
     }
   ],
-  projects: [
-    {
+  projects: [{
       name: "Retrospected",
       description: `Agile Retrospective Board, using **React**, **Redux** and **Socket-io**${lr}
 Available on GitHub here: [github.com/antoinejaussoin/retro-board](https://github.com/antoinejaussoin/retro-board).`,
-      shortDescription:
-        "Agile Retrospective Board (**React**, **Redux** and **Socket-io**)",
+      shortDescription: "Agile Retrospective Board (**React**, **Redux** and **Socket-io**)",
       website: "https://www.retrospected.com",
-      pictures: [
-        { src: retrospectedImage1x, width: 430, height: 225 },
-        { src: retrospectedImage2x, width: 860, height: 450 }
+      pictures: [{
+          src: retrospectedImage1x,
+          width: 430,
+          height: 225
+        },
+        {
+          src: retrospectedImage2x,
+          width: 860,
+          height: 450
+        }
       ]
     },
     // {
@@ -358,13 +389,19 @@ Available on GitHub here: [github.com/antoinejaussoin/retro-board](https://githu
     //     },
     {
       name: "React VR Player",
-      shortDescription:
-        "360° Virtual Reality video player (**React**, **Oculus**)",
+      shortDescription: "360° Virtual Reality video player (**React**, **Oculus**)",
       description: "360° Virtual Reality video player component (Oculus Rift)",
       website: "https://antoinejaussoin.github.io",
-      pictures: [
-        { src: vrPlayerImage1x, width: 430, height: 225 },
-        { src: vrPlayerImage2x, width: 860, height: 450 }
+      pictures: [{
+          src: vrPlayerImage1x,
+          width: 430,
+          height: 225
+        },
+        {
+          src: vrPlayerImage2x,
+          width: 860,
+          height: 450
+        }
       ]
     }
   ]
