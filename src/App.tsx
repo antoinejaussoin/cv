@@ -35,11 +35,13 @@ const Main = () => {
           <div className="row cv-section">
             <div className="span9">
               <div className="cv-section-title">
-                <ResponsiveImage
-                  sources={cv.portrait}
-                  alt="CV Photo"
-                  style={{ width: 140 }}
-                />
+                <div className="noprint">
+                  <ResponsiveImage
+                    sources={cv.portrait}
+                    alt="CV Photo"
+                    style={{ width: 140 }}
+                  />
+                </div>
                 <h1>
                   {cv.name}
                   <small>{cv.title}</small>
@@ -111,7 +113,7 @@ const Main = () => {
             </div>
           </div>
 
-          <div className="row cv-section noprint">
+          <div className="row cv-section projects noprint">
             <div className="span12">
               <div className="projects">
                 {cv.projects.map((item, i) => (
