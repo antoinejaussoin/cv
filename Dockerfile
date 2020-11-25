@@ -24,6 +24,5 @@ FROM nginx:alpine
 
 COPY --from=Node /home/node/app/build /usr/share/nginx/html
 COPY ./docker/nginx.conf /etc/nginx/conf.d/default.conf
-COPY ./docker/frontend-entrypoint.sh /
 
 CMD ["nginx", "-g", "daemon off;"]
