@@ -10,7 +10,7 @@ const lr = "  ";
 
 const myCv: Cv = {
   name: "Antoine Jaussoin",
-  bio: "36 years old, married, French",
+  bio: "38 years old, married, French",
   title: "Senior Full Stack Engineer",
   subtitle: "React - TypeScript/JavaScript - Node - .NET",
   email: "antoine@jaussoin.com",
@@ -33,8 +33,9 @@ const myCv: Cv = {
   ],
 
   profile: `I'm a **Senior Full-Stack Engineer**, with a strong experience in the **financial industry**.${lr}
-My current role at **Two Sigma**, a systematic trading hedge-fund based in New-York, allowed me to develop my **expertise in React** and **Front-End architecture**
-while delivering the best **experience for our customer**.${lr}
+  I am currently working at **Wayve**, an autonomous driving company, as the **UI Tech Lead**. My focus at Wayve is to deliver
+  the best UI experience for our researchers and, ultimately to our future customers.${lr}
+I previously worked at **Two Sigma**, a systematic trading hedge-fund based in New-York, and before that, 
 I had the opportunity to work on various **greenfield projects** in my career, from the **Cudos platform** at BNP (still live 10 years after!) to **creating my own software company**.${lr}
 I'm also the author of a few **open-source projects**, one of which is an Agile Retrospective board ([www.retrospected.com](https://www.retrospected.com)).`,
 
@@ -241,6 +242,7 @@ These projects are built using **Grunt**, including some custom Grunt tasks. The
       type: "Permanent",
       dates: {
         from: "2017-03-01",
+        to: "2020-01-01",
       },
       techs: ["React", "TypeScript", "Styled Components", "Node.js"],
       website: "https://tsvenn.com/",
@@ -249,6 +251,26 @@ Venn is a platform that makes it simpler to select managers, choose assets and m
 On the technical side, the front-end was originaly written in JavaScript (ES6), React, Redux, Redux-Saga and SCSS (with CSS Modules).${lr}
 It was then rewritten to TypeScript, replacing Redux by React's context and more local state. We also replaced SCSS and CSS Modules by Styled Components.${lr}
 Part of the original team of 2 Front-End developers, I was able to play a decisive role on the original architecture and then the rewrite of the application.${lr}
+      `,
+    },
+    {
+      title: "UI Tech Lead",
+      company: "Wayve",
+      location: "London",
+      type: "Permanent",
+      dates: {
+        from: "2020-01-01",
+      },
+      techs: [
+        "React",
+        "TypeScript",
+        "Styled Components",
+        "Node",
+        "Docker / K8s",
+        "Python",
+      ],
+      website: "https://wayve.ai/",
+      description: `TBD
       `,
     },
   ],
