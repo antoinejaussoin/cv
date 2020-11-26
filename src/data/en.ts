@@ -43,7 +43,7 @@ I'm also the author of a few **open-source projects**, one of which is an Agile 
     {
       title: "Software Developer",
       company: "Intuition Informatique",
-      location: "Evreux (France)",
+      location: "Évreux (France)",
       type: "Internship",
       dates: {
         from: "2003-11-01",
@@ -58,7 +58,7 @@ It integrates itself with an ERP software and is now used every day by 5 technic
     {
       title: "Full-Stack Developer",
       company: "Everydev",
-      location: "Evreux (France)",
+      location: "Évreux (France)",
       type: "Associate & Co-founder",
       dates: {
         from: "2004-12-01",
@@ -194,7 +194,7 @@ The server side is using my open source project ([http://fta.codeplex.com](http:
 The Dependency Injection framework used for this project is AutoFac.`,
     },
     {
-      title: "ASP.NET MVC Front-end Developer",
+      title: "ASP.NET MVC Front-End Developer",
       company: "Bank of America Merrill Lynch",
       location: "London",
       type: "Contractor",
@@ -391,29 +391,6 @@ Available on GitHub here: [github.com/antoinejaussoin/retro-board](https://githu
         },
       ],
     },
-    // {
-    //   name: "Wesk",
-    //   shortDescription: "Electron-like container, based on **Chromium**",
-    //   description:
-    //     "HTML App in a Window App, similar to Electron, based on **Chromium**",
-    //   website: "https://www.weskapp.com",
-    //   pictures: [
-    //     { src: weskImage1x, width: 430, height: 225 },
-    //     { src: weskImage2x, width: 860, height: 450 }
-    //   ]
-    // },
-    //     {
-    //       name: "Underpass",
-    //       shortDescription:
-    //         "Get around **corporate proxies** and download what you need",
-    //       description: `A life-saver for when you need to download a tool and your corporate proxy doesn't play ball.${lr}
-    // This will simply download it for you and give it back as an archive that shouldn't be blocked by your firewall.`,
-    //       website: "https://underpass.jaussoin.com",
-    //       pictures: [
-    //         { src: underpassImage1x, width: 430, height: 225 },
-    //         { src: underpassImage2x, width: 860, height: 450 }
-    //       ]
-    //     },
     {
       name: "React VR Player",
       shortDescription:
