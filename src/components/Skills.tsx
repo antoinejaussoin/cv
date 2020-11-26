@@ -1,10 +1,15 @@
 import React from "react";
 import marked from "marked";
 import Pill from "./Pill";
+import { Skill } from "../types";
 
-export default ({ item }) => {
+interface SkillsProps {
+  item: Skill;
+}
+
+export default function Skills({ item }: SkillsProps) {
   const description = {
-    __html: marked(item.description)
+    __html: marked(item.description),
   };
 
   return (
@@ -17,7 +22,7 @@ export default ({ item }) => {
       </h3>
       {item.related && item.related.length ? (
         <ul className="techs">
-          {item.related.map(t => (
+          {item.related.map((t) => (
             <li key={t}>
               <Pill text={t} />
             </li>
@@ -28,4 +33,4 @@ export default ({ item }) => {
       <p dangerouslySetInnerHTML={description} />
     </div>
   );
-};
+}
