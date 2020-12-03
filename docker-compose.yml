@@ -1,0 +1,11 @@
+version: "3"
+services:
+  frontend:
+    image: antoinejaussoin/cv:latest
+    ports:
+      - "3600:80" # Change the first 80 to whatever port you want to access Retrospected from
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"

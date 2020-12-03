@@ -134,7 +134,7 @@ const Main = () => {
               </div>
             </div>
             <div className="span9">
-              {orderBy(cv.work, w => w.dates.from, "desc").map((item, i) => (
+              {orderBy(cv.work, (w) => w.dates.from, "desc").map((item, i) => (
                 <Work item={item} key={i} displayDetails={toggled} />
               ))}
             </div>
@@ -160,7 +160,7 @@ const Main = () => {
               </div>
             </div>
             <div className="span9">
-              {orderBy(cv.education, e => e.date, "desc").map((item, i) => (
+              {orderBy(cv.education, (e) => e.date, "desc").map((item, i) => (
                 <Education item={item} key={i} />
               ))}
             </div>

@@ -3,8 +3,9 @@ import moment from "moment";
 import marked from "marked";
 import Pill from "./Pill";
 import "./Work.css";
+import { DateRange, Job } from "../types";
 
-const buildPeriod = dates => {
+const buildPeriod = (dates: DateRange) => {
   const from = moment(dates.from, "YYYY-MM-DD").format("MMMM YYYY");
   if (!dates.to) {
     return from + " - Present";
@@ -13,9 +14,14 @@ const buildPeriod = dates => {
   return from + " - " + to;
 };
 
-const Work = ({ item, displayDetails }) => {
+interface WorkProps {
+  item: Job;
+  displayDetails: boolean;
+}
+
+export default function WorkComponent({ item, displayDetails }: WorkProps) {
   const description = {
-    __html: marked(item.description)
+    __html: marked(item.description),
   };
 
   return (
@@ -30,7 +36,7 @@ const Work = ({ item, displayDetails }) => {
       </h4>
 
       <ul className="techs">
-        {item.techs.map(t => (
+        {item.techs.map((t) => (
           <li key={t}>
             <Pill text={t} />
           </li>
@@ -46,6 +52,4 @@ const Work = ({ item, displayDetails }) => {
       ) : null}
     </div>
   );
-};
-
-export default Work;
+}
