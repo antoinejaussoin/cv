@@ -270,8 +270,7 @@ Part of the original team of 2 Front-End developers, I was able to play a decisi
         "Python",
       ],
       website: "https://wayve.ai/",
-      description: `TBD
-      `,
+      description: ``,
     },
   ],
   education: [
