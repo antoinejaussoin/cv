@@ -2,8 +2,7 @@ import retrospectedImage1x from "../images/projects/retrospected-1x.png";
 import retrospectedImage2x from "../images/projects/retrospected-2x.png";
 import vrPlayerImage1x from "../images/projects/vr-player-1x.jpg";
 import vrPlayerImage2x from "../images/projects/vr-player-2x.jpg";
-import portraitImage1x from "../images/portrait-1x.jpg";
-import portraitImage2x from "../images/portrait-2x.jpg";
+import portraitImage1x from "../images/portrait2020.jpg";
 import { Cv } from "../types";
 
 const lr = "  ";
@@ -22,13 +21,8 @@ const myCv: Cv = {
   portrait: [
     {
       src: portraitImage1x,
-      width: 140,
-      height: 196,
-    },
-    {
-      src: portraitImage2x,
-      width: 280,
-      height: 392,
+      width: 969,
+      height: 1085,
     },
   ],
 
@@ -270,7 +264,11 @@ Part of the original team of 2 Front-End developers, I was able to play a decisi
         "Python",
       ],
       website: "https://wayve.ai/",
-      description: ``,
+      description: `As Wayve's UI Tech lead, I'm working on various projects across the company:${lr}
+      The in-car UI, delivering a high performance UI, which is critical to safety. The UI receives about 300 websocket frames
+      per second, and yet can boast a constant 60 fps.${lr}
+      
+      `,
     },
   ],
   education: [
