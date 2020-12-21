@@ -299,16 +299,16 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
     {
       name: "TypeScript",
       level: "Expert",
-      experience: 2,
-      related: ["TS Lint"],
-      description: `Complete rewrite of an entire codebase from JavaScript to TypeScript.${lr}`,
+      experience: 3,
+      related: ["ESLint", "Jest", "Create-React-App"],
+      description: `All my projects have been in TypeScript for the last 3 years.`,
     },
     {
       name: "Javascript",
       level: "Expert",
       experience: 7,
-      related: ["Angular", "Lodash", "Moment.js", "Jest", "Prettier", "Enzyme"],
-      description: `Expert knowledge of ES6 (ECMAScript 2015):${lr}
+      related: ["React", "Lodash", "date-fns", "Jest", "Prettier", "ESLint"],
+      description: `Expert knowledge of JavaScript:${lr}
 - const / let
 - default parameters, spread operator
 - destructuring
@@ -316,13 +316,13 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
 - class
 - generators
 - promises
-
-And ES7 (async/await, decorators...)`,
+- async/await
+- decorators`,
     },
     {
       name: "React",
       level: "Expert",
-      experience: 4,
+      experience: 5,
       related: [
         "Redux",
         "Reselect",
@@ -331,8 +331,9 @@ And ES7 (async/await, decorators...)`,
         "Webpack",
         "Jest",
         "Hooks",
+        "Recoil.js",
       ],
-      description: `4-year full time experience of React.`,
+      description: `5-year full time experience of React.`,
     },
     {
       name: "HTML & CSS",
@@ -340,16 +341,16 @@ And ES7 (async/await, decorators...)`,
       experience: 7,
       related: ["CSS Modules", "SCSS/SASS", "Styled Components"],
       description: `Almost all my work experiences included HTML and CSS developement, but only in the last few years it became a full time focus.${lr}
-My current position involves a front-end single page app (React), using **HTML 5** and **CSS 3**.`,
+My current position involves multiples front-end single page app (React), using **HTML 5** and **CSS 3**.`,
     },
     {
       name: "Node",
       level: "Advanced",
-      experience: 2,
+      experience: 4,
       related: ["Create-React-App", "Express"],
-      description: `2-year experience with Node, at RBS.
+      description: `4-year experience with Node, at RBS and on personal projects.
 
-Experience with Node from 0.12 to the latest 6 (on personal projects), and NPM (on both v2 and v3).`,
+Experience with Node from 0.12 to the latest 15 (on personal projects), NPM and Yarn.`,
     },
     {
       name: ".NET",
@@ -371,8 +372,7 @@ Experience with Node from 0.12 to the latest 6 (on personal projects), and NPM (
       name: "Retrospected",
       description: `Agile Retrospective Board, using **React**, **Redux** and **Socket-io**${lr}
 Available on GitHub here: [github.com/antoinejaussoin/retro-board](https://github.com/antoinejaussoin/retro-board).`,
-      shortDescription:
-        "Agile Retrospective Board (**React**, **Redux** and **Socket-io**)",
+      shortDescription: "Agile Retrospective Board (**React**, **Socket-io**)",
       website: "https://www.retrospected.com",
       pictures: [
         {
