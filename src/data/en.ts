@@ -265,9 +265,8 @@ Part of the original team of 2 Front-End developers, I was able to play a decisi
       ],
       website: "https://wayve.ai/",
       description: `As Wayve's UI Tech lead, I'm working on various projects across the company:${lr}
-      The in-car UI, delivering a high performance UI, which is critical to safety. The UI receives about 300 websocket frames
+      The most challenging one is the in-car UI, delivering a high performance experience, which is critical to safety. The UI receives about 300 websocket frames
       per second, and yet can boast a constant 60 fps.${lr}
-      
       `,
     },
   ],
