@@ -5,23 +5,36 @@ div.projects div.project-item {
     height:400px;
     float: left;
     background: white;
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+div.projects div.project-item:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 div.projects div.project-item div.project-card img {
     width: 430px;
-    height:250px;
+    height: 250px;
     background:none !important;
 }
 
 div.projects div.project-item div.project-card {
     background: white;
+    height:400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 div.projects div.project-item div.project-card div.project-details {
     padding: 10px;
     padding-top: 20px;
     margin-top: -10px;
+    padding-bottom: 0;
     background-color: #FAFAFA;
+    flex: 1;
 }
 
 div.projects div.project-item div.project-card div.project-details h4 {
