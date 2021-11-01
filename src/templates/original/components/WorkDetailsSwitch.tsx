@@ -1,4 +1,3 @@
-import React from "react";
 import Switch from "rc-switch";
 import "rc-switch/assets/index.css";
 

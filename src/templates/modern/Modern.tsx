@@ -1,4 +1,4 @@
-import { Cv } from "../types";
+import { Cv } from "../../types";
 
 type ModernProps = {
   cv: Cv;
