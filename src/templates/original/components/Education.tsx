@@ -1,6 +1,6 @@
 import React from "react";
 import marked from "marked";
-import { Education } from "../types";
+import { Education } from "../../../types";
 
 interface EducationProps {
   item: Education;

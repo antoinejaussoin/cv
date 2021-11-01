@@ -3,7 +3,7 @@ import moment from "moment";
 import marked from "marked";
 import Pill from "./Pill";
 import "./Work.css";
-import { DateRange, Job } from "../types";
+import { DateRange, Job } from "../../../types";
 
 const buildPeriod = (dates: DateRange) => {
   const from = moment(dates.from, "YYYY-MM-DD").format("MMMM YYYY");

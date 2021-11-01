@@ -3,7 +3,7 @@ import marked from "marked";
 import "./Project.css";
 import ParallaxImage from "./ParallaxImage";
 import ResponsiveImage from "./ResponsiveImage";
-import { Project } from "../types";
+import { Project } from "../../../types";
 
 interface ProjectProps {
   item: Project;

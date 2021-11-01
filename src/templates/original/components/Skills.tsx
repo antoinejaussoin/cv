@@ -1,7 +1,7 @@
 import React from "react";
 import marked from "marked";
 import Pill from "./Pill";
-import { Skill } from "../types";
+import { Skill } from "../../../types";
 
 interface SkillsProps {
   item: Skill;

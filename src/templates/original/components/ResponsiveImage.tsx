@@ -1,5 +1,5 @@
 import React from "react";
-import { Picture } from "../types";
+import { Picture } from "../../../types";
 
 interface ResponsiveImageProps {
   sources: Picture[];

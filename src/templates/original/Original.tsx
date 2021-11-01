@@ -1,21 +1,21 @@
 import { useState } from "react";
-import "../../css/base.css";
-import "../../css/grid.css";
-import "../../css/layout.css";
-import "../../css/skins/blue.css";
-import "../../css/custom.css";
-import "../../css/print.css";
-import Work from "../../components/Work";
-import Profile from "../../components/Profile";
-import Education from "../../components/Education";
-import Skills from "../../components/Skills";
-import Project from "../../components/Project";
-import Mailto from "../../components/MailTo";
+import "./css/base.css";
+import "./css/grid.css";
+import "./css/layout.css";
+import "./css/skins/blue.css";
+import "./css/custom.css";
+import "./css/print.css";
+import Work from "./components/Work";
+import Profile from "./components/Profile";
+import Education from "./components/Education";
+import Skills from "./components/Skills";
+import Project from "./components/Project";
+import Mailto from "./components/MailTo";
 import { orderBy } from "lodash";
-import frFlag from "../../images/fr.png";
-import ukFlag from "../../images/uk.png";
-import WorkDetailsSwitch from "../../components/WorkDetailsSwitch";
-import ResponsiveImage from "../../components/ResponsiveImage";
+import frFlag from "./images/fr.png";
+import ukFlag from "./images/uk.png";
+import WorkDetailsSwitch from "./components/WorkDetailsSwitch";
+import ResponsiveImage from "./components/ResponsiveImage";
 import { Cv } from "../../types";
 
 type OriginalProps = {
