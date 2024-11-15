@@ -7,6 +7,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: 'https://www.jaussoin.com',
   integrations: [mdx(), sitemap(), tailwind()],
-  // base: '/',
   output: 'static',
 });
