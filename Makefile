@@ -7,6 +7,14 @@ publish:
 	docker push antoinejaussoin/cv:${VERSION}
 	docker push antoinejaussoin/cv:latest
 
+build-local:
+	docker build -f ./Dockerfile \
+	-t antoinejaussoin/cv:local \
+	.
+
+run-local: build-local
+	docker run -p 8080:80 antoinejaussoin/cv:local
+
 build-frontend:
 	docker build -f ./Dockerfile \
 	-t antoinejaussoin/cv:${VERSION} \

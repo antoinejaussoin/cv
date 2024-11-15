@@ -5,6 +5,8 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://astrofy-template.netlify.app',
-  integrations: [mdx(), sitemap(), tailwind()]
+  site: 'https://www.jaussoin.com',
+  integrations: [mdx(), sitemap(), tailwind()],
+  // base: '/',
+  output: 'static',
 });
