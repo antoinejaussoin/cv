@@ -1,0 +1,32 @@
+---
+position: 'Full-Stack Developer, Architect'
+organization: '[BNP Paribas - FundQuest UK](https://group.bnpparibas/en/press-release/bnp-paribas-multi-manager-specialist-fundquest-confirms-structure)'
+image: './fundquest.png'
+startDate: 2007-01-01
+endDate: 2009-11-01
+details:
+  - label: 'Employment type'
+    value: 'Full time'
+  - label: 'Work model'
+    value: 'On site'
+skills:
+  - 'react'
+  - 'storybook'
+---
+
+Design, implementation and maintenance of a Quantitative, Document Management and Trading Web Application.
+
+The system is a complete architectural redesign of an existing intranet, after assessment of its flaws.
+
+This Web Application serves 3 main purposes, and 3 categories of people:
+
+- **Quantitative analysis tool** (for Quants) (Performance reports, custom graphs, funds management, peer groups, statistics)
+- **Document management** (meeting and research notes, attachments, full text search on content, complex search facilities)
+- **Trading system** (Management of all FundQuest UK trading, reports, portfolio valuations, links with some electronic trading systems (EMX))
+  These are some of the areas of the system that I've been designing:
+- **Core architecture**: I brought NHibernate for the Data Access Layer, and pushed for the use of a source control tool (SVN), along with a Unit Testing tool (NUnit)
+- **Performance**: The most challenging aspect of the application: all the calculations are made on the fly, using a combination of caching, high-performance stored procedure, and pre-fetching of information
+- **Charting**: I've introduced Dundas Chart, and implemented most of the pages using this library
+- **Web Pages**: I've introduced the use of master pages, as the previous project was using frames
+- **Security**: I made most of the pages viewable in a "read-only" mode, with a combination of techniques I designed
+- **Documents**: All documents can be linked to any entity (funds, users, universes...), and all their content are indexed
