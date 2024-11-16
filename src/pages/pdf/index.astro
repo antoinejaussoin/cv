@@ -45,17 +45,11 @@ await initializePdfContext(Astro, {
         <SubsectionTitle>Technologies</SubsectionTitle>
         <HorizontalList class="gap-3">
           <Skill withLevel entry={getEntry('skills', 'astro')} />
-          <Skill withLevel entry={getEntry('skills', 'drizzle-orm')} />
           <Skill withLevel entry={getEntry('skills', 'eslint')} />
-          <Skill withLevel entry={getEntry('skills', 'next')} />
-          <Skill withLevel entry={getEntry('skills', 'playwright')} />
           <Skill withLevel entry={getEntry('skills', 'postgresql')} />
           <Skill withLevel entry={getEntry('skills', 'react-testing-library')} />
           <Skill withLevel entry={getEntry('skills', 'react')} />
-          <Skill withLevel entry={getEntry('skills', 'shadcn')} />
-          <Skill withLevel entry={getEntry('skills', 'tailwind')} />
           <Skill withLevel entry={getEntry('skills', 'tanstack-query')} />
-          <Skill withLevel entry={getEntry('skills', 'trpc')} />
           <Skill withLevel entry={getEntry('skills', 'typescript')} />
           <Skill withLevel entry={getEntry('skills', 'vitest')} />
         </HorizontalList>
@@ -63,17 +57,16 @@ await initializePdfContext(Astro, {
       <Subsection class="gap-2">
         <SubsectionTitle>Tools</SubsectionTitle>
         <HorizontalList class="gap-3">
-          <Skill entry={getEntry('skills', 'neon')} />
           <Skill entry={getEntry('skills', 'sentry')} />
           <Skill entry={getEntry('skills', 'stripe')} />
-          <Skill entry={getEntry('skills', 'vercel')} />
+          
         </HorizontalList>
       </Subsection>
       <Subsection class="gap-2">
         <SubsectionTitle>Languages</SubsectionTitle>
         <HorizontalList class="gap-3">
           <Skill entry={getEntry('skills', 'english')} />
-          <Skill entry={getEntry('skills', 'spanish')} />
+          
         </HorizontalList>
       </Subsection>
     </VerticalList>
@@ -109,7 +102,6 @@ await initializePdfContext(Astro, {
     <VerticalList class="gap-3">
       <Achievement entry={getEntry('achievements', 'google-developer-expert')} />
       <Achievement entry={getEntry('achievements', 'reactathon-hackathon')} />
-      <Achievement entry={getEntry('achievements', 'redux-toolkit-contributor')} />
     </VerticalList>
   </Section>
   <Section class="gap-4">

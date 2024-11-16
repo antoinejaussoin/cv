@@ -62,17 +62,11 @@ await initializeWebContext(Astro, {
         <SubsectionTitle>Technologies</SubsectionTitle>
         <GridList class="gap-8" minColWidth="200px">
           <Skill withLevel entry={getEntry('skills', 'astro')} />
-          <Skill withLevel entry={getEntry('skills', 'drizzle-orm')} />
           <Skill withLevel entry={getEntry('skills', 'eslint')} />
-          <Skill withLevel entry={getEntry('skills', 'next')} />
-          <Skill withLevel entry={getEntry('skills', 'playwright')} />
           <Skill withLevel entry={getEntry('skills', 'postgresql')} />
           <Skill withLevel entry={getEntry('skills', 'react-testing-library')} />
           <Skill withLevel entry={getEntry('skills', 'react')} />
-          <Skill withLevel entry={getEntry('skills', 'shadcn')} />
-          <Skill withLevel entry={getEntry('skills', 'tailwind')} />
           <Skill withLevel entry={getEntry('skills', 'tanstack-query')} />
-          <Skill withLevel entry={getEntry('skills', 'trpc')} />
           <Skill withLevel entry={getEntry('skills', 'typescript')} />
           <Skill withLevel entry={getEntry('skills', 'vitest')} />
         </GridList>
@@ -80,17 +74,14 @@ await initializeWebContext(Astro, {
       <Subsection class="gap-2">
         <SubsectionTitle>Tools</SubsectionTitle>
         <HorizontalList class="gap-3">
-          <Skill entry={getEntry('skills', 'neon')} />
           <Skill entry={getEntry('skills', 'sentry')} />
           <Skill entry={getEntry('skills', 'stripe')} />
-          <Skill entry={getEntry('skills', 'vercel')} />
         </HorizontalList>
       </Subsection>
       <Subsection class="gap-2">
         <SubsectionTitle>Languages</SubsectionTitle>
         <HorizontalList class="gap-3">
           <Skill entry={getEntry('skills', 'english')} />
-          <Skill entry={getEntry('skills', 'spanish')} />
         </HorizontalList>
       </Subsection>
     </VerticalList>
@@ -98,7 +89,13 @@ await initializeWebContext(Astro, {
   <Section class="gap-8" id="jobs">
     <SectionTitle>Work</SectionTitle>
     <VerticalList class="gap-10">
-      <Job entry={getEntry('jobs', 'meta')} />
+      <Job entry={getEntry('jobs', 'bam')} />
+      <Separator />
+      <Job entry={getEntry('jobs', 'wayve')} />
+      <Separator />
+      <Job entry={getEntry('jobs', 'two-sigma')} />
+      <Separator />
+      <Job entry={getEntry('jobs', 'rbs')} />
       <Separator />
       <Job entry={getEntry('jobs', 'shopify')} />
       <Separator />
@@ -129,8 +126,6 @@ await initializeWebContext(Astro, {
       <Achievement entry={getEntry('achievements', 'google-developer-expert')} />
       <Separator />
       <Achievement entry={getEntry('achievements', 'reactathon-hackathon')} />
-      <Separator />
-      <Achievement entry={getEntry('achievements', 'redux-toolkit-contributor')} />
     </VerticalList>
   </Section>
   <Section class="gap-8" id="education">
