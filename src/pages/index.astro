@@ -61,11 +61,15 @@ await initializeWebContext(Astro, {
       <Subsection class="gap-2">
         <SubsectionTitle>Technologies</SubsectionTitle>
         <GridList class="gap-8" minColWidth="200px">
+          <Skill withLevel entry={getEntry('skills', 'react')} />
+          <Skill withLevel entry={getEntry('skills', 'typescript')} />
+          <Skill withLevel entry={getEntry('skills', 'javascript')} />
+          <Skill withLevel entry={getEntry('skills', 'mui')} />
           <Skill withLevel entry={getEntry('skills', 'astro')} />
           <Skill withLevel entry={getEntry('skills', 'eslint')} />
           <Skill withLevel entry={getEntry('skills', 'postgresql')} />
           <Skill withLevel entry={getEntry('skills', 'react-testing-library')} />
-          <Skill withLevel entry={getEntry('skills', 'react')} />
+          
           <Skill withLevel entry={getEntry('skills', 'tanstack-query')} />
           <Skill withLevel entry={getEntry('skills', 'typescript')} />
           <Skill withLevel entry={getEntry('skills', 'vitest')} />
@@ -82,6 +86,7 @@ await initializeWebContext(Astro, {
         <SubsectionTitle>Languages</SubsectionTitle>
         <HorizontalList class="gap-3">
           <Skill entry={getEntry('skills', 'english')} />
+          <Skill entry={getEntry('skills', 'french')} />
         </HorizontalList>
       </Subsection>
     </VerticalList>
