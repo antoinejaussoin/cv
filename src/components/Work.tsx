@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import marked from "marked";
+import { marked } from "marked";
 import Pill from "./Pill";
 import "./Work.css";
 import { DateRange, Job } from "../types";
@@ -21,7 +21,7 @@ interface WorkProps {
 
 export default function WorkComponent({ item, displayDetails }: WorkProps) {
   const description = {
-    __html: marked(item.description),
+    __html: marked.parse(item.description) as string,
   };
 
   return (

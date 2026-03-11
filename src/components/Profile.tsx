@@ -1,5 +1,5 @@
 import React from "react";
-import marked from "marked";
+import { marked } from "marked";
 
 interface ProfileProps {
   profile: string;
@@ -7,7 +7,7 @@ interface ProfileProps {
 
 export default function Profile({ profile }: ProfileProps) {
   const description = {
-    __html: marked(profile),
+    __html: marked.parse(profile) as string,
   };
 
   return <div className="cv-item" dangerouslySetInnerHTML={description}></div>;

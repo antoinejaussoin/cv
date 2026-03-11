@@ -1,5 +1,5 @@
 import React from "react";
-import marked from "marked";
+import { marked } from "marked";
 import Pill from "./Pill";
 import { Skill } from "../types";
 
@@ -9,7 +9,7 @@ interface SkillsProps {
 
 export default function Skills({ item }: SkillsProps) {
   const description = {
-    __html: marked(item.description),
+    __html: marked.parse(item.description) as string,
   };
 
   return (

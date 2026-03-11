@@ -1,5 +1,5 @@
 import React from "react";
-import marked from "marked";
+import { marked } from "marked";
 import { Education } from "../types";
 
 interface EducationProps {
@@ -8,7 +8,7 @@ interface EducationProps {
 
 export default function EducationComponent({ item }: EducationProps) {
   const description = {
-    __html: marked(item.description),
+    __html: marked.parse(item.description) as string,
   };
 
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import marked from "marked";
+import { marked } from "marked";
 import "./Project.css";
 import ParallaxImage from "./ParallaxImage";
 import ResponsiveImage from "./ResponsiveImage";
@@ -11,7 +11,7 @@ interface ProjectProps {
 
 export default function ProjectComponent({ item }: ProjectProps) {
   const description = {
-    __html: marked(item.shortDescription),
+    __html: marked.parse(item.shortDescription) as string,
   };
 
   return (
