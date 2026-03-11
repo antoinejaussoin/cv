@@ -269,6 +269,28 @@ Part of the original team of 2 Front-End developers, I was able to play a decisi
       per second, and yet can boast a constant 60 fps.${lr}
       `,
     },
+    {
+      title: "Lead Engineer",
+      company: "Balyasny Asset Management",
+      location: "London",
+      type: "Permanent",
+      dates: {
+        from: "2020-01-01",
+      },
+      techs: [
+        "React",
+        "TypeScript",
+        "Styled Components",
+        "C#",
+        "TanStack Query",
+        "Docker / K8s",
+      ],
+      website: "https://www.bamfunds.com/",
+      description: `As Balyasny Asset Management's Lead Engineer, I'm working on various projects across the company:${lr}
+      The most challenging one is the in-car UI, delivering a high performance experience, which is critical to safety. The UI receives about 300 websocket frames
+      per second, and yet can boast a constant 60 fps.${lr}
+      `,
+    },
   ],
   education: [
     {
