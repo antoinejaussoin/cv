@@ -1,15 +1,14 @@
-import retrospectedImage1x from "../images/projects/retrospected-1x.png";
-import retrospectedImage2x from "../images/projects/retrospected-2x.png";
+import retrospectedImage from "../images/projects/retrospected-new.png";
 import vrPlayerImage1x from "../images/projects/vr-player-1x.jpg";
 import vrPlayerImage2x from "../images/projects/vr-player-2x.jpg";
-import portraitImage1x from "../images/portrait2020.jpg";
-import { Cv } from "../types";
+import portraitImage1x from "../images/portrait2026.jpeg";
+import type { Cv } from "../types";
 
 const lr = "  ";
 
 const myCv: Cv = {
   name: "Antoine Jaussoin",
-  bio: "38 years old, married, French",
+  bio: "43 years old, married, French & British citizen",
   title: "Senior Full Stack Engineer",
   subtitle: "React - TypeScript/JavaScript - Node - .NET",
   email: "antoine@jaussoin.com",
@@ -26,12 +25,10 @@ const myCv: Cv = {
     },
   ],
 
-  profile: `I'm a **Senior Full-Stack Engineer**, with a strong experience in the **financial industry**.${lr}
-  I am currently working at **Wayve**, an autonomous driving company, as the **UI Tech Lead**. My focus at Wayve is to deliver
-  the best UI experience for our researchers and, ultimately to our future customers.${lr}
-I previously worked at **Two Sigma**, a systematic trading hedge-fund based in New-York, and before that, 
-I had the opportunity to work on various **greenfield projects** in my career, from the **Cudos platform** at BNP (still live 10 years after!) to **creating my own software company**.${lr}
-I'm also the author of a few **open-source projects**, one of which is an Agile Retrospective board ([www.retrospected.com](https://www.retrospected.com)).`,
+  profile: `I'm a **Senior Full-Stack Engineer** with extensive experience in the **financial industry**.${lr}
+I'm currently a **Lead Engineer** at **Balyasny Asset Management**, a global multi-strategy hedge fund. I lead the Risk UI team, responsible for several UI platforms, including our flagship risk management platform, Risk Hub.${lr}
+Previously, I worked at **Wayve**, an autonomous driving company, as **UI Tech Lead**. I led the UI team responsible for the company’s interfaces, from the in-car tablet experience to drive analysis tools.${lr}
+I'm also the author of several **open-source projects**, including an Agile retrospective platform, [www.retrospected.com](https://www.retrospected.com).`,
 
   work: [
     {
@@ -254,6 +251,7 @@ Part of the original team of 2 Front-End developers, I was able to play a decisi
       type: "Permanent",
       dates: {
         from: "2020-01-01",
+        to: "2022-03-01",
       },
       techs: [
         "React",
@@ -264,10 +262,30 @@ Part of the original team of 2 Front-End developers, I was able to play a decisi
         "Python",
       ],
       website: "https://wayve.ai/",
-      description: `As Wayve's UI Tech lead, I'm working on various projects across the company:${lr}
-      The most challenging one is the in-car UI, delivering a high performance experience, which is critical to safety. The UI receives about 300 websocket frames
-      per second, and yet can boast a constant 60 fps.${lr}
-      `,
+      description: `As Wayve's **UI Tech lead**, I led various **UI projects** across the company:${lr}
+The most challenging one is the **in-car UI**, delivering a high performance experience, which is critical to safety. The UI receives about 300 websocket frames
+per second, and yet can boast a constant 60 fps.${lr}`,
+    },
+    {
+      title: "Lead Engineer",
+      company: "Balyasny Asset Management",
+      location: "London",
+      type: "Permanent",
+      dates: {
+        from: "2022-03-01",
+      },
+      techs: [
+        "React",
+        "TypeScript",
+        "Styled Components",
+        "C#",
+        "TanStack Query",
+        "Docker / K8s",
+      ],
+      website: "https://www.bamfunds.com/",
+      description: `As Balyasny Asset Management's **Lead Engineer**, I'm responsible for the **Risk UI team**, 
+which is itself in charge of a suite of applications used by the firm's risk managers, and which are critical to the firm's risk management process.${lr}
+One of these applications is **Risk Hub**, the **flagship application** for risk at BAM.`,
     },
   ],
   education: [
@@ -299,14 +317,14 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
     {
       name: "TypeScript",
       level: "Expert",
-      experience: 3,
+      experience: 9,
       related: ["ESLint", "Jest", "Create-React-App"],
       description: `All my projects have been in TypeScript for the last 3 years.`,
     },
     {
       name: "Javascript",
       level: "Expert",
-      experience: 7,
+      experience: 11,
       related: ["React", "Lodash", "date-fns", "Jest", "Prettier", "ESLint"],
       description: `Expert knowledge of JavaScript:${lr}
 - const / let
@@ -322,7 +340,7 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
     {
       name: "React",
       level: "Expert",
-      experience: 5,
+      experience: 11,
       related: [
         "Redux",
         "Reselect",
@@ -338,7 +356,7 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
     {
       name: "HTML & CSS",
       level: "Expert",
-      experience: 7,
+      experience: 15,
       related: ["CSS Modules", "SCSS/SASS", "Styled Components"],
       description: `Almost all my work experiences included HTML and CSS developement, but only in the last few years it became a full time focus.${lr}
 My current position involves multiples front-end single page app (React), using **HTML 5** and **CSS 3**.`,
@@ -346,16 +364,16 @@ My current position involves multiples front-end single page app (React), using 
     {
       name: "Node",
       level: "Advanced",
-      experience: 4,
+      experience: 10,
       related: ["Create-React-App", "Express"],
-      description: `4-year experience with Node, at RBS and on personal projects.
+      description: `10-year experience with Node, at RBS and on personal projects.
 
 Experience with Node from 0.12 to the latest 15 (on personal projects), NPM and Yarn.`,
     },
     {
       name: ".NET",
       level: "Expert",
-      experience: 8,
+      experience: 20,
       related: [
         "C#",
         "ASP.NET MVC",
@@ -376,12 +394,12 @@ Available on GitHub here: [github.com/antoinejaussoin/retro-board](https://githu
       website: "https://www.retrospected.com",
       pictures: [
         {
-          src: retrospectedImage1x,
+          src: retrospectedImage,
           width: 430,
           height: 225,
         },
         {
-          src: retrospectedImage2x,
+          src: retrospectedImage,
           width: 860,
           height: 450,
         },

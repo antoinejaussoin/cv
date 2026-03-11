@@ -1,0 +1,12 @@
+---
+interface Props {
+  profile: string;
+}
+
+import { marked } from "marked";
+
+const { profile } = Astro.props;
+const html = await marked.parse(profile);
+---
+
+<div class="cv-item" set:html={html} />

@@ -1,0 +1,218 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../css/base.css";
+import "../css/grid.css";
+import "../css/layout.css";
+import "../css/skins/blue.css";
+import "../css/custom.css";
+import "../css/print.css";
+import cv from "../data/en";
+import Work from "../components/Work.astro";
+import Profile from "../components/Profile.astro";
+import Education from "../components/Education.astro";
+import Skills from "../components/Skills.astro";
+import MailTo from "../components/MailTo.astro";
+import ResponsiveImage from "../components/ResponsiveImage.astro";
+import pkg from "lodash";
+const { orderBy } = pkg;
+import frFlag from "../images/fr.png";
+import ukFlag from "../images/uk.png";
+
+const sortedWork = orderBy(cv.work, (w) => w.dates.from, "desc");
+const sortedEducation = orderBy(cv.education, (e) => e.date, "desc");
+---
+
+<BaseLayout title="Antoine Jaussoin's CV">
+  <div id="wrap">
+    <div id="header">
+      <div class="row cv-section">
+        <div class="span9">
+          <div class="cv-section-title">
+            <div class="noprint">
+              <ResponsiveImage
+                sources={cv.portrait}
+                alt="CV Photo"
+                style="width: 140px"
+              />
+            </div>
+            <h1>
+              {cv.name}
+              <small>{cv.title}</small>
+              <small class="subtitle">{cv.subtitle}</small>
+            </h1>
+          </div>
+        </div>
+        <div class="span3">
+          <div class="cv-item">
+            <div class="social-media fixed">
+              <a
+                href="https://www.linkedin.com/in/jantoine"
+                class="linkedin-icon social-icon"
+              >
+                <i class="fa fa-linkedin"></i>
+              </a>
+              <a
+                href="https://github.com/antoinejaussoin"
+                class="github-icon social-icon"
+              >
+                <i class="fa fa-github"></i>
+              </a>
+              <a
+                href="https://twitter.com/antjaus"
+                class="twitter-icon social-icon"
+              >
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a
+                href="https://stackoverflow.com/users/641124/antoine-jaussoin"
+                class="stack-overflow-icon social-icon"
+              >
+                <i class="fa fa-stack-overflow"></i>
+              </a>
+            </div>
+
+            <p class="last">
+              <img src={frFlag.src} alt="French Flag" class="noprint" />
+              &nbsp;
+              <img src={ukFlag.src} alt="UK Flag" class="noprint" />
+              <br />
+              <br />
+              {cv.bio}
+              <br />
+              <span class="hidden-tablet">Email: </span>
+              <MailTo email={cv.email} obfuscate={true}>
+                {cv.email.replace("@", "(at)")}
+              </MailTo>
+              <br />
+              <span class="hidden-tablet">Phone: </span>
+              {cv.phone}
+              <br />
+              <span class="hidden-tablet">Web: </span>
+              <a href={cv.website}>{cv.website}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="row cv-section">
+        <div class="span3">
+          <div class="cv-section-title">
+            <h2>Professional Profile</h2>
+          </div>
+        </div>
+        <div class="span9">
+          <Profile profile={cv.profile} />
+        </div>
+      </div>
+
+      <div class="row cv-section xp">
+        <div class="span3">
+          <div class="cv-section-title">
+            <h2>Work Experience</h2>
+          </div>
+          <div class="noprint">
+            Show details: &nbsp;&nbsp;
+            <label class="toggle-switch">
+              <input type="checkbox" id="work-details-toggle" checked />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+        <div class="span9" id="work-list">
+          {sortedWork.map((item) => <Work item={item} />)}
+        </div>
+      </div>
+
+      <div class="row cv-section skills">
+        <div class="span3">
+          <div class="cv-section-title">
+            <h2>Technical Skills</h2>
+          </div>
+        </div>
+        <div class="span9">
+          {cv.skills.map((item) => <Skills item={item} />)}
+        </div>
+      </div>
+
+      <div class="row cv-section edu">
+        <div class="span3">
+          <div class="cv-section-title">
+            <h2>Education</h2>
+          </div>
+        </div>
+        <div class="span9">
+          {sortedEducation.map((item) => <Education item={item} />)}
+        </div>
+      </div>
+    </div>
+    <div id="footer" class="noprint">
+      <div class="row">
+        <div class="span12">
+          <h4 class="copyright">
+            &copy; 2019 Antoine Jaussoin.{" "}
+            <span class="hidden-phone">All rights reserved.</span>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 22px;
+    vertical-align: middle;
+  }
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 22px;
+  }
+  .toggle-slider::before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+  }
+  .toggle-switch input:checked + .toggle-slider {
+    background-color: #87d068;
+  }
+  .toggle-switch input:checked + .toggle-slider::before {
+    transform: translateX(22px);
+  }
+  :global(.work-descriptions-hidden .work-description) {
+    display: none;
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById(
+    "work-details-toggle",
+  ) as HTMLInputElement;
+  const workList = document.getElementById("work-list");
+  if (toggle && workList) {
+    toggle.addEventListener("change", () => {
+      workList.classList.toggle("work-descriptions-hidden", !toggle.checked);
+    });
+  }
+</script>

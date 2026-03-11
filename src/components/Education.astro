@@ -1,0 +1,19 @@
+---
+import type { Education } from "../types";
+import { marked } from "marked";
+
+interface Props {
+  item: Education;
+}
+
+const { item } = Astro.props;
+const descriptionHtml = await marked.parse(item.description);
+---
+
+<div class="cv-item">
+  <h3><strong>{item.school}</strong></h3>
+  <h4>{item.diploma}</h4>
+  <h4>{item.location}</h4>
+  <br />
+  <p set:html={descriptionHtml} />
+</div>

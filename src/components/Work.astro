@@ -1,0 +1,41 @@
+---
+import type { Job, DateRange } from "../types";
+import { marked } from "marked";
+import Pill from "./Pill.astro";
+import moment from "moment";
+
+interface Props {
+  item: Job;
+}
+
+const { item } = Astro.props;
+const descriptionHtml = await marked.parse(item.description);
+
+function buildPeriod(dates: DateRange) {
+  const from = moment(dates.from, "YYYY-MM-DD").format("MMMM YYYY");
+  if (!dates.to) {
+    return from + " - Present";
+  }
+  const to = moment(dates.to, "YYYY-MM-DD").format("MMMM YYYY");
+  return from + " - " + to;
+}
+---
+
+<div class="cv-item work">
+  <p class="period">{buildPeriod(item.dates)}</p>
+  <h3><strong>{item.title}</strong></h3>
+  <h4>{item.company}, {item.type}</h4>
+  <ul class="techs">
+    {
+      item.techs.map((t) => (
+        <li>
+          <Pill text={t} />
+        </li>
+      ))
+    }
+  </ul>
+  <a href={item.website}>{item.website}</a>
+  <div class="description work-description">
+    <p set:html={descriptionHtml} />
+  </div>
+</div>

@@ -13,6 +13,9 @@ build-frontend:
 	-t antoinejaussoin/cv:latest \
 	.
 
+run:
+	docker run -p 3000:80 antoinejaussoin/cv:latest
+
 buildx-frontend:
 	docker buildx build --pull --platform ${TARGET_ARCHS} \
 	-f ./Dockerfile \
@@ -24,3 +27,6 @@ install:
 	docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 	docker buildx create --name xbuilder --use
 	docker buildx inspect --bootstrap
+
+generate:
+	python3 generate_cv.py
