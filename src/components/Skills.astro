@@ -9,7 +9,10 @@ interface Props {
 
 const { item } = Astro.props;
 const descriptionHtml = await marked.parse(item.description);
-const yearsOfExperience = Math.max(new Date().getFullYear() - item.startYear, 0);
+const yearsOfExperience = Math.max(
+  new Date().getFullYear() - item.startYear,
+  0,
+);
 ---
 
 <article class="skill-card">
