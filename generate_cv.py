@@ -13,6 +13,11 @@ import subprocess
 import json
 import os
 
+OUTPUT_FILENAME = "Antoine_Jaussoin_CV.docx"
+PUBLIC_DOWNLOAD_DIR = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "public", "downloads"
+)
+
 # ── Colour palette (subtle blue-grey) ──────────────────────────────
 ACCENT = RGBColor(0x2B, 0x6C, 0xB3)       # muted steel-blue
 DARK   = RGBColor(0x1A, 0x1A, 0x2E)       # near-black for headings
@@ -432,6 +437,8 @@ tblPr.append(borders)
 
 
 # ── Save ───────────────────────────────────────────────────────────────
-output_path = "Antoine_Jaussoin_CV.docx"
+os.makedirs(PUBLIC_DOWNLOAD_DIR, exist_ok=True)
+output_path = os.path.join(PUBLIC_DOWNLOAD_DIR, OUTPUT_FILENAME)
 doc.save(output_path)
 print(f"CV generated: {output_path}")
+print(f"Download URL: /downloads/{OUTPUT_FILENAME}")

@@ -31,6 +31,7 @@ function formatUrl(url: string) {
 }
 
 const personalSite = formatUrl(cv.website);
+const wordCvPath = "/downloads/Antoine_Jaussoin_CV.docx";
 
 const socialLinks = [
   {
@@ -79,6 +80,14 @@ const socialLinks = [
           <div class="hero__actions noprint">
             <a class="button button--primary" href="#experience">
               Explore experience
+            </a>
+            <a
+              class="button button--secondary button--download"
+              href={wordCvPath}
+              download="Antoine_Jaussoin_CV.docx"
+              type="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            >
+              <span>Download Word CV</span>
             </a>
           </div>
 

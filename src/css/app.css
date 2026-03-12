@@ -342,6 +342,32 @@ select {
   color: #ffffff;
 }
 
+.button--download {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.18rem;
+  padding-inline: 1.15rem 1.35rem;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.16),
+    rgba(255, 255, 255, 0.08)
+  );
+}
+
+.button--download .button__meta {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(238, 244, 255, 0.72);
+}
+
+.button--download:hover {
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
 .hero__aside {
   display: grid;
   gap: 1.5rem;

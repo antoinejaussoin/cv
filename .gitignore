@@ -29,7 +29,6 @@ theme/
 react-webpack-node/
 compiled/
 compiled
-public
 old_code
 yarn-error.log
 .eslintcache
