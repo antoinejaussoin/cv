@@ -50,8 +50,16 @@ body::before {
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(circle at 15% 18%, rgba(121, 227, 200, 0.18), transparent 22%),
-    radial-gradient(circle at 82% 12%, rgba(255, 122, 69, 0.22), transparent 20%),
+    radial-gradient(
+      circle at 15% 18%,
+      rgba(121, 227, 200, 0.18),
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at 82% 12%,
+      rgba(255, 122, 69, 0.22),
+      transparent 20%
+    ),
     linear-gradient(180deg, #0a1021 0 32rem, var(--color-canvas) 32rem 100%);
 }
 
@@ -157,7 +165,11 @@ select {
   padding: clamp(1.75rem, 3vw, 2.75rem);
   border-radius: calc(var(--radius-xl) + 0.25rem);
   background:
-    radial-gradient(circle at top right, rgba(121, 227, 200, 0.18), transparent 28%),
+    radial-gradient(
+      circle at top right,
+      rgba(121, 227, 200, 0.18),
+      transparent 28%
+    ),
     linear-gradient(145deg, rgba(10, 16, 33, 0.98), rgba(19, 32, 63, 0.95));
   color: #eef4ff;
 }
@@ -180,7 +192,11 @@ select {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), transparent 38%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.14),
+    transparent 38%
+  );
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);

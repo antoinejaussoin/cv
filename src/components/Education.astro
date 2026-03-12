@@ -19,7 +19,9 @@ const yearFormatter = new Intl.DateTimeFormat("en-GB", {
       <h3>{item.school}</h3>
       <p class="education-card__degree">{item.diploma}</p>
     </div>
-    <p class="education-card__date">{yearFormatter.format(new Date(item.date))}</p>
+    <p class="education-card__date">
+      {yearFormatter.format(new Date(item.date))}
+    </p>
   </div>
 
   <p class="education-card__location">{item.location}</p>

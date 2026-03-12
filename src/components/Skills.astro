@@ -25,7 +25,10 @@ const descriptionHtml = await marked.parse(item.description);
 
   {
     item.related && item.related.length > 0 && (
-      <ul class="tag-list tag-list--compact" aria-label={`${item.name} related tools`}>
+      <ul
+        class="tag-list tag-list--compact"
+        aria-label={`${item.name} related tools`}
+      >
         {item.related.map((t) => (
           <li>
             <Pill text={t} />
