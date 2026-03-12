@@ -367,8 +367,7 @@ My current position involves multiples front-end single page app (React), using 
       experience: 10,
       related: ["Create-React-App", "Express"],
       description: `10-year experience with Node, at RBS and on personal projects.
-
-Experience with Node from 0.12 to the latest 15 (on personal projects), NPM and Yarn.`,
+Experience with Node from 0.12 to the latest 22 (on personal projects), NPM and Yarn.`,
     },
     {
       name: ".NET",
