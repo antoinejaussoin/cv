@@ -137,6 +137,16 @@ def format_date(d):
         return d
 
 
+def get_years_from_start_year(start_year):
+    """Convert a skill start year into the number of full calendar years."""
+    from datetime import datetime
+
+    try:
+        return max(datetime.now().year - int(start_year), 0)
+    except Exception:
+        return 0
+
+
 # ── CV Data (parsed from src/data/en.ts) ────────────────────────────
 def load_cv_data():
     """Parse src/data/en.ts using Node.js and return CV data as a dict."""
@@ -390,7 +400,7 @@ for skill in skills:
     run.font.color.rgb = BODY
 
     p = row_cells[2].paragraphs[0]
-    run = p.add_run(f"{skill['experience']} years")
+    run = p.add_run(f"{get_years_from_start_year(skill.get('startYear'))} years")
     run.font.name = FONT_BODY
     run.font.size = Pt(9)
     run.font.color.rgb = BODY

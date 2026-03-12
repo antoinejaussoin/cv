@@ -49,7 +49,7 @@ export interface Education {
 export interface Skill {
   name: string;
   level: string;
-  experience: number;
+  startYear: number;
   related: string[];
   description: string;
 }

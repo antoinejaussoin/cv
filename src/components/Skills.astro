@@ -9,6 +9,7 @@ interface Props {
 
 const { item } = Astro.props;
 const descriptionHtml = await marked.parse(item.description);
+const yearsOfExperience = Math.max(new Date().getFullYear() - item.startYear, 0);
 ---
 
 <article class="skill-card">
@@ -18,7 +19,7 @@ const descriptionHtml = await marked.parse(item.description);
       <p class="skill-card__meta">{item.level}</p>
     </div>
     <p class="skill-card__years">
-      <span>{item.experience}</span>
+      <span>{yearsOfExperience}</span>
       yrs
     </p>
   </div>

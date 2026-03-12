@@ -317,14 +317,14 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
     {
       name: "TypeScript",
       level: "Expert",
-      experience: 9,
+      startYear: 2017,
       related: ["ESLint", "Jest", "Create-React-App"],
-      description: `All my projects have been in TypeScript for the last 3 years.`,
+      description: `All my projects have been in TypeScript since 2017.`,
     },
     {
       name: "Javascript",
       level: "Expert",
-      experience: 11,
+      startYear: 2015,
       related: ["React", "Lodash", "date-fns", "Jest", "Prettier", "ESLint"],
       description: `Expert knowledge of JavaScript:${lr}
 - const / let
@@ -340,7 +340,7 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
     {
       name: "React",
       level: "Expert",
-      experience: 11,
+      startYear: 2015,
       related: [
         "Redux",
         "Reselect",
@@ -351,28 +351,28 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
         "Hooks",
         "Recoil.js",
       ],
-      description: `5-year full time experience of React.`,
+      description: `Full-time React experience since 2015.`,
     },
     {
       name: "HTML & CSS",
       level: "Expert",
-      experience: 15,
+      startYear: 2011,
       related: ["CSS Modules", "SCSS/SASS", "Styled Components"],
-      description: `Almost all my work experiences included HTML and CSS developement, but only in the last few years it became a full time focus.${lr}
+      description: `Almost all my work experiences included HTML and CSS developement, but in more recent roles it became a full-time focus.${lr}
 My current position involves multiples front-end single page app (React), using **HTML 5** and **CSS 3**.`,
     },
     {
       name: "Node",
       level: "Advanced",
-      experience: 10,
+      startYear: 2016,
       related: ["Create-React-App", "Express"],
-      description: `10-year experience with Node, at RBS and on personal projects.
+      description: `Node experience at RBS and on personal projects since 2016.
 Experience with Node from 0.12 to the latest 22 (on personal projects), NPM and Yarn.`,
     },
     {
       name: ".NET",
       level: "Expert",
-      experience: 20,
+      startYear: 2006,
       related: [
         "C#",
         "ASP.NET MVC",
