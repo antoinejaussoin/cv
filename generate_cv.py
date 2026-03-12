@@ -78,11 +78,9 @@ def strip_markdown(text):
     return text
 
 
-def add_rich_text(paragraph, text, base_size=Pt(9.5), base_color=BODY):
-    """Parse simple markdown (bold, links) into runs."""
-    text = text.replace("  \n", "\n").replace("\n\n", "\n")
-    # Split on **bold** and [text](url) patterns
-    parts = re.split(r'(\*\*.*?\*\*|\[.*?\]\(.*?\))', text)
+def _render_line_runs(paragraph, line, base_size, base_color):
+    """Render a single line of text with bold and link markdown into runs."""
+    parts = re.split(r'(\*\*.*?\*\*|\[.*?\]\(.*?\))', line)
     for part in parts:
         if part.startswith("**") and part.endswith("**"):
             run = paragraph.add_run(part[2:-2])
@@ -103,6 +101,30 @@ def add_rich_text(paragraph, text, base_size=Pt(9.5), base_color=BODY):
             run.font.size = base_size
             run.font.color.rgb = base_color
             run.font.name = FONT_BODY
+
+
+def add_rich_text(paragraph, text, base_size=Pt(9.5), base_color=BODY):
+    """Parse simple markdown (bold, links) into runs.
+
+    Treats '  \\n' (two-space + newline, i.e. ${lr} in the TS source) as an
+    intentional line break.  Plain newlines are collapsed into spaces.
+    """
+    BREAK = "\x00"
+    text = text.replace("  \n", BREAK)
+    # Collapse remaining newlines and excess whitespace
+    text = text.replace("\n", " ")
+    text = re.sub(r" {2,}", " ", text)
+    text = text.strip()
+
+    lines = text.split(BREAK)
+    for i, line in enumerate(lines):
+        line = line.strip()
+        if not line:
+            continue
+        if i > 0:
+            run = paragraph.add_run()
+            run.add_break()
+        _render_line_runs(paragraph, line, base_size, base_color)
 
 
 def format_date(d):

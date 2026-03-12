@@ -262,8 +262,8 @@ Part of the original team of 2 Front-End developers, I was able to play a decisi
         "Python",
       ],
       website: "https://wayve.ai/",
-      description: `As Wayve's UI Tech lead, I'm working on various projects across the company:${lr}
-The most challenging one is the in-car UI, delivering a high performance experience, which is critical to safety. The UI receives about 300 websocket frames
+      description: `As Wayve's **UI Tech lead**, I led various **UI projects** across the company:${lr}
+The most challenging one is the **in-car UI**, delivering a high performance experience, which is critical to safety. The UI receives about 300 websocket frames
 per second, and yet can boast a constant 60 fps.${lr}`,
     },
     {
@@ -283,9 +283,9 @@ per second, and yet can boast a constant 60 fps.${lr}`,
         "Docker / K8s",
       ],
       website: "https://www.bamfunds.com/",
-      description: `As Balyasny Asset Management's Lead Engineer, I'm responsible for the Risk UI team, 
+      description: `As Balyasny Asset Management's **Lead Engineer**, I'm responsible for the **Risk UI team**, 
 which is itself in charge of a suite of applications used by the firm's risk managers, and which are critical to the firm's risk management process.${lr}
-One of these applications is Risk Hub, the flagship application for risk at BAM.`,
+One of these applications is **Risk Hub**, the **flagship application** for risk at BAM.`,
     },
   ],
   education: [
