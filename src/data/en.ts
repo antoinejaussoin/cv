@@ -25,12 +25,11 @@ const myCv: Cv = {
     },
   ],
 
-  profile: `I'm a **Senior Full-Stack Engineer**, with a strong experience in the **financial industry**.${lr}
-  I'm currently working at **Balyasny Asset Management**, a global multi-strategy hedge fund, as a **Lead Engineer**. 
-  I lead the Risk UI team, responsible for multiple UI platforms, including our flag-ship platform Risk Hub.${lr}
-  Before that, I was working at **Wayve**, an autonomous driving company, as the **UI Tech Lead**. 
-  I led the UI team which was responsible for the company's UIs, from the in-car tablet to drives analyses.${lr}
-  I'm also the author of a few **open-source projects**, one of which is an Agile Retrospective board ([www.retrospected.com](https://www.retrospected.com)).`,
+  profile: `I'm a **Senior Full-Stack Engineer** with extensive experience in the **financial industry**.${lr}
+I'm currently a **Lead Engineer** at **Balyasny Asset Management**, a global multi-strategy hedge fund. I lead the Risk UI team, responsible for several UI platforms, including our flagship risk management platform, Risk Hub.${lr}
+Previously, I worked at **Wayve**, an autonomous driving company, as **UI Tech Lead**. I led the UI team responsible for the company’s interfaces, from the in-car tablet experience to drive analysis tools.${lr}
+I'm also the author of several **open-source projects**, including an Agile retrospective platform, [www.retrospected.com](https://www.retrospected.com).
+`,
 
   work: [
     {
