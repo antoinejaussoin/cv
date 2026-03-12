@@ -45,7 +45,6 @@
 
   .noprint,
   .hero__actions,
-  .hero__stats,
   .portrait-card,
   .page-footer {
     display: none !important;
@@ -135,6 +134,12 @@
     margin-top: 0.18cm;
     max-width: none;
     font-size: 9pt;
+  }
+
+  .hero__profile {
+    margin-top: 0.22cm;
+    padding-top: 0.16cm;
+    border-top: 1px solid var(--color-line);
   }
 
   .hero__stack {
