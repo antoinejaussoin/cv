@@ -81,7 +81,9 @@ Expert guidance for building polished, accessible, and responsive user interface
 - Respect `prefers-reduced-motion` — disable or minimize animations for users who request it:
   ```css
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       animation-duration: 0.01ms !important;
       transition-duration: 0.01ms !important;
     }

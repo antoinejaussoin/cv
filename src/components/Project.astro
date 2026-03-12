@@ -1,4 +1,30 @@
+---
+import type { Project } from "../types";
+import { marked } from "marked";
+import ResponsiveImage from "./ResponsiveImage.astro";
 
+interface Props {
+  item: Project;
+}
+
+const { item } = Astro.props;
+const descriptionHtml = await marked.parse(item.shortDescription);
+---
+
+<div class="project-item">
+  <a href={item.website} style="text-decoration: none; color: inherit; display: block; width: 430px; height: 400px;">
+    <div class="project-card">
+      <ResponsiveImage sources={item.pictures} alt={item.description} />
+      <div class="project-details">
+        <h4>{item.name}</h4>
+        <p class="link">{item.website}</p>
+        <p set:html={descriptionHtml} />
+      </div>
+    </div>
+  </a>
+</div>
+
+<style is:global>
 div.projects div.project-item {
     margin:20px;
     width: 430px;
@@ -40,3 +66,4 @@ div.projects div.project-item div.project-card div.project-details {
 div.projects div.project-item div.project-card div.project-details h4 {
     font-weight: bold;
 }
+</style>

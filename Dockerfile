@@ -14,9 +14,8 @@ RUN npm ci
 
 COPY --chown=node:node ./src ./src
 COPY --chown=node:node ./public ./public
-COPY --chown=node:node ./index.html ./index.html
+COPY --chown=node:node ./astro.config.mjs ./astro.config.mjs
 COPY --chown=node:node ./tsconfig.json ./tsconfig.json
-COPY --chown=node:node ./vite.config.ts ./vite.config.ts
 
 RUN npm run build
 

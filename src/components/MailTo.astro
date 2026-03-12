@@ -1,0 +1,21 @@
+---
+interface Props {
+  email: string;
+  obfuscate: boolean;
+}
+
+const { email, obfuscate } = Astro.props;
+
+function encodeMail(originalString: string, shouldObfuscate: boolean) {
+  if (!shouldObfuscate) return originalString;
+  let encoded = "";
+  for (let pos = 0; pos < originalString.length; pos++) {
+    encoded += "%" + Number(originalString.charCodeAt(pos)).toString(16);
+  }
+  return encoded;
+}
+
+const href = "mailto:" + encodeMail(email, obfuscate);
+---
+
+<a href={href}><slot /></a>

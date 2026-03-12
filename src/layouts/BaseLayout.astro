@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -8,7 +16,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Antoine Jaussoin's React CV" />
+    <meta name="description" content="Antoine Jaussoin's CV" />
     <link rel="manifest" href="/manifest.json" />
     <link
       rel="stylesheet"
@@ -18,11 +26,9 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
     />
-    <title>Antoine Jaussoin's CV</title>
+    <title>{title}</title>
   </head>
   <body>
-    <noscript> You need to enable JavaScript to run this app. </noscript>
-    <div id="root"></div>
-    <script type="module" src="/src/index.tsx"></script>
+    <slot />
   </body>
 </html>

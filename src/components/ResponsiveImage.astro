@@ -1,0 +1,20 @@
+---
+import type { Picture } from "../types";
+
+interface Props {
+  sources: Picture[];
+  alt: string;
+  style?: string;
+}
+
+const { sources, alt, style } = Astro.props;
+
+function resolveSrc(src: any): string {
+  return typeof src === "object" && src !== null && "src" in src ? src.src : src;
+}
+
+const mainSrc = resolveSrc(sources[0].src);
+const set = sources.map((s) => resolveSrc(s.src) + " " + s.width + "w").join(", ");
+---
+
+<img src={mainSrc} alt={alt} style={style} srcset={set} />

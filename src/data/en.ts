@@ -3,7 +3,7 @@ import retrospectedImage2x from "../images/projects/retrospected-2x.png";
 import vrPlayerImage1x from "../images/projects/vr-player-1x.jpg";
 import vrPlayerImage2x from "../images/projects/vr-player-2x.jpg";
 import portraitImage1x from "../images/portrait2020.jpg";
-import { Cv } from "../types";
+import type { Cv } from "../types";
 
 const lr = "  ";
 
