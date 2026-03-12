@@ -1,71 +1,192 @@
+@page {
+  margin: 1.2cm;
+}
+
 @media print {
+  :root {
+    --color-canvas: #ffffff;
+    --color-canvas-alt: #ffffff;
+    --color-surface: #ffffff;
+    --color-surface-strong: #ffffff;
+    --color-ink: #111827;
+    --color-ink-strong: #111827;
+    --color-muted: #4b5563;
+    --color-line: rgba(17, 24, 39, 0.18);
+  }
+
+  html,
   body {
-    background: none;
-    font-size: 1.1em;
+    background: #ffffff !important;
   }
 
-  #root > div:first-child > a {
-    display: none;
+  body {
+    font-size: 10.5pt;
+    line-height: 1.45;
   }
 
-  #wrap {
-    margin-top: 0;
-    max-width: 100%;
+  body::before,
+  body::after,
+  .page-glow {
+    display: none !important;
+    content: none !important;
   }
 
   .noprint {
-    display: none;
-    visibility: hidden;
-    height: 0;
+    display: none !important;
+  }
+
+  .resume-page {
+    width: 100%;
+    max-width: none;
     padding: 0;
-    margin: 0;
   }
 
-  .row {
-    width: inherit;
-    padding: 20px 0;
-    margin: 0 40px;
-    color: black;
+  .hero,
+  .content-layout,
+  .main-column,
+  .side-column,
+  .hero__aside,
+  .contact-card__grid,
+  .social-grid,
+  .experience-list,
+  .skill-grid,
+  .education-list {
+    display: block;
   }
 
-  .row {
-    display: flex;
-  }
-
-  .row .span3 {
-    flex: 3;
-  }
-
-  .row .span9 {
-    flex: 9;
-  }
-
-  .rov.cv-section {
+  .hero__content,
+  .portrait-card,
+  .contact-card,
+  .section-card,
+  .experience-card,
+  .skill-card,
+  .education-card,
+  .social-grid__link {
+    background: #ffffff !important;
+    color: #111827 !important;
+    border: 1px solid rgba(17, 24, 39, 0.14) !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  .xp {
-    page-break-after: always;
+  .hero__content,
+  .portrait-card,
+  .contact-card,
+  .section-card {
+    padding: 0.5cm !important;
+    border-radius: 0 !important;
   }
 
-  .row .cv-item {
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    page-break-inside: avoid;
+  .portrait-card,
+  .contact-card,
+  .section-card,
+  .experience-card,
+  .skill-card,
+  .education-card,
+  .social-grid__link,
+  .page-footer {
+    margin-top: 0.35cm;
   }
 
-  ul.techs li .pill {
-    color: black;
+  .hero__content::before,
+  .hero__content::after {
+    display: none !important;
   }
 
-  .description p,
-  .cv-item p {
-    line-height: 1.3em;
+  .hero h1,
+  .section-heading h2,
+  .experience-card h3,
+  .skill-card h3,
+  .education-card h3,
+  .hero__role,
+  .hero__subtitle,
+  .hero__bio,
+  .eyebrow,
+  .section-heading__eyebrow,
+  .meta-label,
+  .experience-card__meta,
+  .skill-card__meta,
+  .page-footer,
+  a,
+  p,
+  li,
+  dt,
+  dd,
+  span {
+    color: #111827 !important;
   }
 
-  .row.cv-section.projects {
-    height: 0;
-    margin: 0;
+  .hero h1 {
+    font-size: 26pt;
+  }
+
+  .hero__role {
+    font-size: 15pt;
+  }
+
+  .hero__subtitle,
+  .hero__bio {
+    max-width: none;
+  }
+
+  .hero__stack,
+  .hero__stats,
+  .contact-card__grid,
+  .social-grid,
+  .tag-list {
+    gap: 0.25cm !important;
+  }
+
+  .hero__stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero__stats div,
+  .period-badge,
+  .skill-card__years,
+  .education-card__date,
+  .pill {
+    background: #f3f4f6 !important;
+    border: 1px solid #d1d5db !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+  }
+
+  .skill-card__years {
+    min-width: 0;
+  }
+
+  .experience-card,
+  .skill-card,
+  .education-card {
+    padding: 0.4cm !important;
+    border-radius: 0 !important;
+  }
+
+  .experience-card__header,
+  .skill-card__header,
+  .education-card__header,
+  .page-footer {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .rich-text p,
+  .rich-text ul,
+  .rich-text ol {
+    margin-top: 0.18cm;
+  }
+
+  .experience-list.details-collapsed .work-description {
+    display: block !important;
+  }
+
+  .page-footer {
     padding: 0;
   }
 }

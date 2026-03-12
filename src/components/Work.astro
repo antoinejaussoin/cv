@@ -2,7 +2,6 @@
 import type { Job, DateRange } from "../types";
 import { marked } from "marked";
 import Pill from "./Pill.astro";
-import moment from "moment";
 
 interface Props {
   item: Job;
@@ -10,32 +9,55 @@ interface Props {
 
 const { item } = Astro.props;
 const descriptionHtml = await marked.parse(item.description);
+const monthYearFormatter = new Intl.DateTimeFormat("en-GB", {
+  month: "long",
+  year: "numeric",
+});
+
+function formatWebsite(url: string) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return url;
+  }
+}
 
 function buildPeriod(dates: DateRange) {
-  const from = moment(dates.from, "YYYY-MM-DD").format("MMMM YYYY");
+  const from = monthYearFormatter.format(new Date(dates.from));
   if (!dates.to) {
     return from + " - Present";
   }
-  const to = moment(dates.to, "YYYY-MM-DD").format("MMMM YYYY");
+  const to = monthYearFormatter.format(new Date(dates.to));
   return from + " - " + to;
 }
 ---
 
-<div class="cv-item work">
-  <p class="period">{buildPeriod(item.dates)}</p>
-  <h3><strong>{item.title}</strong></h3>
-  <h4>{item.company}, {item.type}</h4>
-  <ul class="techs">
-    {
-      item.techs.map((t) => (
-        <li>
-          <Pill text={t} />
-        </li>
-      ))
-    }
-  </ul>
-  <a href={item.website}>{item.website}</a>
-  <div class="description work-description">
-    <p set:html={descriptionHtml} />
+<article class="experience-card">
+  <div class="experience-card__header">
+    <div>
+      <p class="experience-card__meta">
+        {item.company} · {item.location} · {item.type}
+      </p>
+      <h3>{item.title}</h3>
+    </div>
+    <p class="period-badge">{buildPeriod(item.dates)}</p>
   </div>
-</div>
+
+  {
+    item.techs.length > 0 && (
+      <ul class="tag-list" aria-label={`${item.title} technologies`}>
+        {item.techs.map((t) => (
+          <li>
+            <Pill text={t} />
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
+  <a class="experience-card__link" href={item.website}>
+    {formatWebsite(item.website)}
+  </a>
+
+  <div class="rich-text work-description" set:html={descriptionHtml} />
+</article>

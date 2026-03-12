@@ -9,4 +9,4 @@ const { profile } = Astro.props;
 const html = await marked.parse(profile);
 ---
 
-<div class="cv-item" set:html={html} />
+<div class="profile-card rich-text" set:html={html} />

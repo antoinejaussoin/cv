@@ -4,10 +4,20 @@ import type { Picture } from "../types";
 interface Props {
   sources: Picture[];
   alt: string;
+  class?: string;
+  sizes?: string;
+  loading?: "lazy" | "eager";
   style?: string;
 }
 
-const { sources, alt, style } = Astro.props;
+const {
+  sources,
+  alt,
+  class: className,
+  sizes,
+  loading = "lazy",
+  style,
+} = Astro.props;
 
 function resolveSrc(src: any): string {
   return typeof src === "object" && src !== null && "src" in src
@@ -21,4 +31,13 @@ const set = sources
   .join(", ");
 ---
 
-<img src={mainSrc} alt={alt} style={style} srcset={set} />
+<img
+  src={mainSrc}
+  alt={alt}
+  class={className}
+  style={style}
+  srcset={set}
+  sizes={sizes}
+  loading={loading}
+  decoding="async"
+/>

@@ -1,10 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import "../css/base.css";
-import "../css/grid.css";
-import "../css/layout.css";
-import "../css/skins/blue.css";
-import "../css/custom.css";
+import "../css/app.css";
 import "../css/print.css";
 import cv from "../data/en";
 import Work from "../components/Work.astro";
@@ -13,206 +9,271 @@ import Education from "../components/Education.astro";
 import Skills from "../components/Skills.astro";
 import MailTo from "../components/MailTo.astro";
 import ResponsiveImage from "../components/ResponsiveImage.astro";
-import pkg from "lodash";
-const { orderBy } = pkg;
-import frFlag from "../images/fr.png";
-import ukFlag from "../images/uk.png";
 
-const sortedWork = orderBy(cv.work, (w) => w.dates.from, "desc");
-const sortedEducation = orderBy(cv.education, (e) => e.date, "desc");
+const sortedWork = [...cv.work].sort((left, right) =>
+  right.dates.from.localeCompare(left.dates.from),
+);
+const sortedEducation = [...cv.education].sort((left, right) =>
+  right.date.localeCompare(left.date),
+);
+const oldestRole = [...cv.work].sort((left, right) =>
+  left.dates.from.localeCompare(right.dates.from),
+)[0];
+const companyCount = new Set(cv.work.map((item) => item.company)).size;
+const coreStack = cv.subtitle
+  .split("-")
+  .map((item) => item.trim())
+  .filter(Boolean);
+const phoneHref = "tel:" + cv.phone.replace(/\s+/g, "");
+
+function getYearsOfExperience(startDate?: string) {
+  if (!startDate) {
+    return 0;
+  }
+
+  const start = new Date(startDate);
+  const now = new Date();
+  let years = now.getFullYear() - start.getFullYear();
+  const beforeAnniversary =
+    now.getMonth() < start.getMonth() ||
+    (now.getMonth() === start.getMonth() && now.getDate() < start.getDate());
+
+  if (beforeAnniversary) {
+    years -= 1;
+  }
+
+  return years;
+}
+
+function formatUrl(url: string) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return url;
+  }
+}
+
+const personalSite = formatUrl(cv.website);
+const yearsOfExperience = getYearsOfExperience(oldestRole?.dates.from);
+const stats = [
+  {
+    label: "Years building products",
+    value: `${yearsOfExperience}+`,
+  },
+  {
+    label: "Roles delivered",
+    value: `${cv.work.length}`,
+  },
+  {
+    label: "Teams and companies",
+    value: `${companyCount}`,
+  },
+];
+
+const socialLinks = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/jantoine",
+    detail: "in/jantoine",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/antoinejaussoin",
+    detail: "antoinejaussoin",
+  },
+  {
+    label: "X",
+    href: "https://twitter.com/antjaus",
+    detail: "@antjaus",
+  },
+  {
+    label: "Stack Overflow",
+    href: "https://stackoverflow.com/users/641124/antoine-jaussoin",
+    detail: "profile",
+  },
+];
 ---
 
-<BaseLayout title="Antoine Jaussoin's CV">
-  <div id="wrap">
-    <div id="header">
-      <div class="row cv-section">
-        <div class="span9">
-          <div class="cv-section-title">
-            <div class="noprint">
-              <ResponsiveImage
-                sources={cv.portrait}
-                alt="CV Photo"
-                style="width: 140px"
-              />
+<BaseLayout
+  title={`${cv.name} | ${cv.title}`}
+  description={`${cv.name} is a ${cv.title} specialising in ${cv.subtitle}.`}
+>
+  <div class="page-shell">
+    <div class="page-glow page-glow--left"></div>
+    <div class="page-glow page-glow--right"></div>
+
+    <main class="resume-page">
+      <header class="hero">
+        <section class="hero__content">
+          <p class="eyebrow">Software Engineer CV</p>
+          <h1>{cv.name}</h1>
+          <p class="hero__role">{cv.title}</p>
+          <p class="hero__subtitle">{cv.subtitle}</p>
+
+          <ul class="hero__stack" aria-label="Core stack">
+            {coreStack.map((item) => <li>{item}</li>)}
+          </ul>
+
+          <p class="hero__bio">{cv.bio}</p>
+
+          <div class="hero__actions noprint">
+            <a class="button button--primary" href="#experience">
+              Explore experience
+            </a>
+            <a class="button button--secondary" href={cv.website}>
+              Visit {personalSite}
+            </a>
+          </div>
+
+          <dl class="hero__stats">
+            {
+              stats.map((stat) => (
+                <div>
+                  <dt>{stat.label}</dt>
+                  <dd>{stat.value}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </section>
+
+        <aside class="hero__aside">
+          <div class="portrait-card">
+            <ResponsiveImage
+              sources={cv.portrait}
+              alt={`Portrait of ${cv.name}`}
+              class="portrait-card__image"
+              sizes="(min-width: 1200px) 18rem, (min-width: 900px) 28vw, 90vw"
+              loading="eager"
+            />
+          </div>
+
+          <section class="contact-card" id="contact">
+            <div class="section-heading section-heading--compact">
+              <p class="section-heading__eyebrow">Contact</p>
+              <h2>Connect directly.</h2>
             </div>
-            <h1>
-              {cv.name}
-              <small>{cv.title}</small>
-              <small class="subtitle">{cv.subtitle}</small>
-            </h1>
-          </div>
-        </div>
-        <div class="span3">
-          <div class="cv-item">
-            <div class="social-media fixed">
-              <a
-                href="https://www.linkedin.com/in/jantoine"
-                class="linkedin-icon social-icon"
-              >
-                <i class="fa fa-linkedin"></i>
-              </a>
-              <a
-                href="https://github.com/antoinejaussoin"
-                class="github-icon social-icon"
-              >
-                <i class="fa fa-github"></i>
-              </a>
-              <a
-                href="https://twitter.com/antjaus"
-                class="twitter-icon social-icon"
-              >
-                <i class="fa fa-twitter"></i>
-              </a>
-              <a
-                href="https://stackoverflow.com/users/641124/antoine-jaussoin"
-                class="stack-overflow-icon social-icon"
-              >
-                <i class="fa fa-stack-overflow"></i>
-              </a>
+
+            <div class="contact-card__grid">
+              <div class="contact-card__item">
+                <span class="meta-label">Email</span>
+                <MailTo email={cv.email} obfuscate={true}>
+                  {cv.email.replace("@", " (at) ")}
+                </MailTo>
+              </div>
+
+              <div class="contact-card__item">
+                <span class="meta-label">Phone</span>
+                <a href={phoneHref}>{cv.phone}</a>
+              </div>
+
+              <div class="contact-card__item">
+                <span class="meta-label">Website</span>
+                <a href={cv.website}>{personalSite}</a>
+              </div>
+
+              <div class="contact-card__item">
+                <span class="meta-label">Location</span>
+                <span>{cv.address2}</span>
+              </div>
             </div>
 
-            <p class="last">
-              <img src={frFlag.src} alt="French Flag" class="noprint" />
-              &nbsp;
-              <img src={ukFlag.src} alt="UK Flag" class="noprint" />
-              <br />
-              <br />
-              {cv.bio}
-              <br />
-              <span class="hidden-tablet">Email: </span>
-              <MailTo email={cv.email} obfuscate={true}>
-                {cv.email.replace("@", "(at)")}
-              </MailTo>
-              <br />
-              <span class="hidden-tablet">Phone: </span>
-              {cv.phone}
-              <br />
-              <span class="hidden-tablet">Web: </span>
-              <a href={cv.website}>{cv.website}</a>
-            </p>
-          </div>
+            <ul class="social-grid" aria-label="Social links">
+              {
+                socialLinks.map((link) => (
+                  <li>
+                    <a
+                      href={link.href}
+                      class="social-grid__link"
+                      aria-label={link.label}
+                    >
+                      <span>{link.label}</span>
+                      <span>{link.detail}</span>
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </section>
+        </aside>
+      </header>
+
+      <div class="content-layout">
+        <div class="main-column">
+          <section class="section-card" id="profile">
+            <div class="section-heading">
+              <p class="section-heading__eyebrow">Profile</p>
+              <h2>Professional Profile</h2>
+            </div>
+            <Profile profile={cv.profile} />
+          </section>
+
+          <section class="section-card" id="experience">
+            <div class="section-heading section-heading--split">
+              <div>
+                <p class="section-heading__eyebrow">Career</p>
+                <h2>Work Experience</h2>
+              </div>
+
+              <label class="detail-toggle noprint">
+                <span>Detailed mode</span>
+                <span class="detail-toggle__control">
+                  <input type="checkbox" id="work-details-toggle" checked />
+                  <span class="detail-toggle__track"></span>
+                </span>
+              </label>
+            </div>
+
+            <div class="experience-list" id="experience-list">
+              {sortedWork.map((item) => <Work item={item} />)}
+            </div>
+          </section>
         </div>
-      </div>
-    </div>
-    <div id="content">
-      <div class="row cv-section">
-        <div class="span3">
-          <div class="cv-section-title">
-            <h2>Professional Profile</h2>
-          </div>
-        </div>
-        <div class="span9">
-          <Profile profile={cv.profile} />
-        </div>
+
+        <aside class="side-column">
+          <section class="section-card" id="skills">
+            <div class="section-heading">
+              <p class="section-heading__eyebrow">Capabilities</p>
+              <h2>Technical Skills</h2>
+            </div>
+
+            <div class="skill-grid">
+              {cv.skills.map((item) => <Skills item={item} />)}
+            </div>
+          </section>
+
+          <section class="section-card" id="education">
+            <div class="section-heading">
+              <p class="section-heading__eyebrow">Background</p>
+              <h2>Education</h2>
+            </div>
+
+            <div class="education-list">
+              {sortedEducation.map((item) => <Education item={item} />)}
+            </div>
+          </section>
+        </aside>
       </div>
 
-      <div class="row cv-section xp">
-        <div class="span3">
-          <div class="cv-section-title">
-            <h2>Work Experience</h2>
-          </div>
-          <div class="noprint">
-            Show details: &nbsp;&nbsp;
-            <label class="toggle-switch">
-              <input type="checkbox" id="work-details-toggle" checked />
-              <span class="toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-        <div class="span9" id="work-list">
-          {sortedWork.map((item) => <Work item={item} />)}
-        </div>
-      </div>
-
-      <div class="row cv-section skills">
-        <div class="span3">
-          <div class="cv-section-title">
-            <h2>Technical Skills</h2>
-          </div>
-        </div>
-        <div class="span9">
-          {cv.skills.map((item) => <Skills item={item} />)}
-        </div>
-      </div>
-
-      <div class="row cv-section edu">
-        <div class="span3">
-          <div class="cv-section-title">
-            <h2>Education</h2>
-          </div>
-        </div>
-        <div class="span9">
-          {sortedEducation.map((item) => <Education item={item} />)}
-        </div>
-      </div>
-    </div>
-    <div id="footer" class="noprint">
-      <div class="row">
-        <div class="span12">
-          <h4 class="copyright">
-            &copy; 2019 Antoine Jaussoin.{" "}
-            <span class="hidden-phone">All rights reserved.</span>
-          </h4>
-        </div>
-      </div>
-    </div>
+      <footer class="page-footer">
+        <p>&copy; 2026 {cv.name}</p>
+        <a href={cv.website}>{personalSite}</a>
+      </footer>
+    </main>
   </div>
 </BaseLayout>
-
-<style>
-  .toggle-switch {
-    position: relative;
-    display: inline-block;
-    width: 44px;
-    height: 22px;
-    vertical-align: middle;
-  }
-  .toggle-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  .toggle-slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.3s;
-    border-radius: 22px;
-  }
-  .toggle-slider::before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: 0.3s;
-    border-radius: 50%;
-  }
-  .toggle-switch input:checked + .toggle-slider {
-    background-color: #87d068;
-  }
-  .toggle-switch input:checked + .toggle-slider::before {
-    transform: translateX(22px);
-  }
-  :global(.work-descriptions-hidden .work-description) {
-    display: none;
-  }
-</style>
 
 <script>
   const toggle = document.getElementById(
     "work-details-toggle",
-  ) as HTMLInputElement;
-  const workList = document.getElementById("work-list");
-  if (toggle && workList) {
-    toggle.addEventListener("change", () => {
-      workList.classList.toggle("work-descriptions-hidden", !toggle.checked);
-    });
+  ) as HTMLInputElement | null;
+  const experienceList = document.getElementById("experience-list");
+  if (toggle && experienceList) {
+    const syncDetails = () => {
+      experienceList.classList.toggle("details-collapsed", !toggle.checked);
+    };
+
+    syncDetails();
+    toggle.addEventListener("change", syncDetails);
   }
 </script>
