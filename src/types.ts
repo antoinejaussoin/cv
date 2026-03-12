@@ -17,7 +17,7 @@ export interface Cv {
 }
 
 export interface Picture {
-  src: string;
+  src: ImageMetadata;
   width: number;
   height: number;
 }
