@@ -26,9 +26,13 @@ function buildPeriod(dates: DateRange) {
   <h3><strong>{item.title}</strong></h3>
   <h4>{item.company}, {item.type}</h4>
   <ul class="techs">
-    {item.techs.map((t) => (
-      <li><Pill text={t} /></li>
-    ))}
+    {
+      item.techs.map((t) => (
+        <li>
+          <Pill text={t} />
+        </li>
+      ))
+    }
   </ul>
   <a href={item.website}>{item.website}</a>
   <div class="description work-description">

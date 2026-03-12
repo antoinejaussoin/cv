@@ -118,9 +118,7 @@ const sortedEducation = orderBy(cv.education, (e) => e.date, "desc");
       <div class="row cv-section projects noprint">
         <div class="span12">
           <div class="projects">
-            {cv.projects.map((item) => (
-              <Project item={item} />
-            ))}
+            {cv.projects.map((item) => <Project item={item} />)}
           </div>
         </div>
       </div>
@@ -139,9 +137,7 @@ const sortedEducation = orderBy(cv.education, (e) => e.date, "desc");
           </div>
         </div>
         <div class="span9" id="work-list">
-          {sortedWork.map((item) => (
-            <Work item={item} />
-          ))}
+          {sortedWork.map((item) => <Work item={item} />)}
         </div>
       </div>
 
@@ -152,9 +148,7 @@ const sortedEducation = orderBy(cv.education, (e) => e.date, "desc");
           </div>
         </div>
         <div class="span9">
-          {cv.skills.map((item) => (
-            <Skills item={item} />
-          ))}
+          {cv.skills.map((item) => <Skills item={item} />)}
         </div>
       </div>
 
@@ -165,9 +159,7 @@ const sortedEducation = orderBy(cv.education, (e) => e.date, "desc");
           </div>
         </div>
         <div class="span9">
-          {sortedEducation.map((item) => (
-            <Education item={item} />
-          ))}
+          {sortedEducation.map((item) => <Education item={item} />)}
         </div>
       </div>
     </div>
@@ -231,7 +223,9 @@ const sortedEducation = orderBy(cv.education, (e) => e.date, "desc");
 </style>
 
 <script>
-  const toggle = document.getElementById("work-details-toggle") as HTMLInputElement;
+  const toggle = document.getElementById(
+    "work-details-toggle",
+  ) as HTMLInputElement;
   const workList = document.getElementById("work-list");
   if (toggle && workList) {
     toggle.addEventListener("change", () => {

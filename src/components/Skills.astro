@@ -16,12 +16,16 @@ const descriptionHtml = await marked.parse(item.description);
     {item.level} - {item.experience} years
   </p>
   <h3><strong>{item.name}</strong></h3>
-  {item.related && item.related.length > 0 && (
-    <ul class="techs">
-      {item.related.map((t) => (
-        <li><Pill text={t} /></li>
-      ))}
-    </ul>
-  )}
+  {
+    item.related && item.related.length > 0 && (
+      <ul class="techs">
+        {item.related.map((t) => (
+          <li>
+            <Pill text={t} />
+          </li>
+        ))}
+      </ul>
+    )
+  }
   <p set:html={descriptionHtml} />
 </div>

@@ -12,7 +12,10 @@ const descriptionHtml = await marked.parse(item.shortDescription);
 ---
 
 <div class="project-item">
-  <a href={item.website} style="text-decoration: none; color: inherit; display: block; width: 430px; height: 400px;">
+  <a
+    href={item.website}
+    style="text-decoration: none; color: inherit; display: block; width: 430px; height: 400px;"
+  >
     <div class="project-card">
       <ResponsiveImage sources={item.pictures} alt={item.description} />
       <div class="project-details">
@@ -25,45 +28,45 @@ const descriptionHtml = await marked.parse(item.shortDescription);
 </div>
 
 <style is:global>
-div.projects div.project-item {
-    margin:20px;
+  div.projects div.project-item {
+    margin: 20px;
     width: 430px;
-    height:400px;
+    height: 400px;
     float: left;
     background: white;
     cursor: pointer;
-    box-shadow: 0 0 0 rgba(0,0,0,0.15);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
     transition: box-shadow 0.3s ease-in-out;
-}
+  }
 
-div.projects div.project-item:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
+  div.projects div.project-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
 
-div.projects div.project-item div.project-card img {
+  div.projects div.project-item div.project-card img {
     width: 430px;
     height: 250px;
-    background:none !important;
-}
+    background: none !important;
+  }
 
-div.projects div.project-item div.project-card {
+  div.projects div.project-item div.project-card {
     background: white;
-    height:400px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
+  }
 
-div.projects div.project-item div.project-card div.project-details {
+  div.projects div.project-item div.project-card div.project-details {
     padding: 10px;
     padding-top: 20px;
     margin-top: -10px;
     padding-bottom: 0;
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     flex: 1;
-}
+  }
 
-div.projects div.project-item div.project-card div.project-details h4 {
+  div.projects div.project-item div.project-card div.project-details h4 {
     font-weight: bold;
-}
+  }
 </style>
