@@ -13,6 +13,9 @@ build-frontend:
 	-t antoinejaussoin/cv:latest \
 	.
 
+run:
+	docker run -p 3000:80 antoinejaussoin/cv:latest
+
 buildx-frontend:
 	docker buildx build --pull --platform ${TARGET_ARCHS} \
 	-f ./Dockerfile \

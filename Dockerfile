@@ -1,4 +1,4 @@
-FROM node:22-alpine as Node
+FROM node:22-alpine AS node
 
 WORKDIR /home/node/app
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
@@ -21,7 +21,7 @@ RUN npm run build
 
 FROM nginx:alpine
 
-COPY --from=Node /home/node/app/dist /usr/share/nginx/html
+COPY --from=node /home/node/app/dist /usr/share/nginx/html
 COPY ./docker/nginx.conf /etc/nginx/conf.d/default.conf
 
 CMD ["nginx", "-g", "daemon off;"]
