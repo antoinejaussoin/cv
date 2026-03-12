@@ -369,6 +369,10 @@ select {
   padding: 1.4rem;
 }
 
+.contact-card .section-heading__eyebrow {
+  color: var(--color-muted);
+}
+
 .section-heading {
   display: flex;
   flex-direction: column;
