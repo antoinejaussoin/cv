@@ -318,14 +318,14 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
       name: "TypeScript",
       level: "Expert",
       startYear: 2017,
-      related: ["ESLint", "Jest", "Create-React-App"],
+      related: ["ESLint", "Vite", "Vitest"],
       description: `All my projects have been in TypeScript since 2017.`,
     },
     {
-      name: "Javascript",
+      name: "JavaScript",
       level: "Expert",
       startYear: 2015,
-      related: ["React", "Lodash", "date-fns", "Jest", "Prettier", "ESLint"],
+      related: ["React", "Lodash", "date-fns", "Vitest", "Prettier", "ESLint"],
       description: `Expert knowledge of JavaScript:${lr}
 - const / let
 - default parameters, spread operator
@@ -342,14 +342,12 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
       level: "Expert",
       startYear: 2015,
       related: [
-        "Redux",
-        "Reselect",
-        "Redux-Saga",
+        "TanStack Query",
         "Socket.IO",
-        "Webpack",
-        "Jest",
+        "Vite",
+        "Vitest",
         "Hooks",
-        "Recoil.js",
+        "Recoil",
       ],
       description: `Full-time React experience since 2015.`,
     },
@@ -357,12 +355,12 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
       name: "HTML & CSS",
       level: "Expert",
       startYear: 2011,
-      related: ["CSS Modules", "SCSS/SASS", "Styled Components"],
+      related: ["CSS Modules", "SCSS/SASS", "Styled Components", "Emotion"],
       description: `Almost all my work experiences included HTML and CSS developement, but in more recent roles it became a full-time focus.${lr}
 My current position involves multiples front-end single page app (React), using **HTML 5** and **CSS 3**.`,
     },
     {
-      name: "Node",
+      name: "Node / Bun",
       level: "Advanced",
       startYear: 2016,
       related: ["Create-React-App", "Express"],
@@ -374,6 +372,7 @@ Experience with Node from 0.12 to the latest 22 (on personal projects), NPM and 
       level: "Expert",
       startYear: 2006,
       related: [
+        "dotnet core 10.0",
         "C#",
         "ASP.NET MVC",
         "NHibernate",
