@@ -28,8 +28,7 @@ const myCv: Cv = {
   profile: `I'm a **Senior Full-Stack Engineer** with extensive experience in the **financial industry**.${lr}
 I'm currently a **Lead Engineer** at **Balyasny Asset Management**, a global multi-strategy hedge fund. I lead the Risk UI team, responsible for several UI platforms, including our flagship risk management platform, Risk Hub.${lr}
 Previously, I worked at **Wayve**, an autonomous driving company, as **UI Tech Lead**. I led the UI team responsible for the company’s interfaces, from the in-car tablet experience to drive analysis tools.${lr}
-I'm also the author of several **open-source projects**, including an Agile retrospective platform, [www.retrospected.com](https://www.retrospected.com).
-`,
+I'm also the author of several **open-source projects**, including an Agile retrospective platform, [www.retrospected.com](https://www.retrospected.com).`,
 
   work: [
     {
@@ -264,9 +263,8 @@ Part of the original team of 2 Front-End developers, I was able to play a decisi
       ],
       website: "https://wayve.ai/",
       description: `As Wayve's UI Tech lead, I'm working on various projects across the company:${lr}
-      The most challenging one is the in-car UI, delivering a high performance experience, which is critical to safety. The UI receives about 300 websocket frames
-      per second, and yet can boast a constant 60 fps.${lr}
-      `,
+The most challenging one is the in-car UI, delivering a high performance experience, which is critical to safety. The UI receives about 300 websocket frames
+per second, and yet can boast a constant 60 fps.${lr}`,
     },
     {
       title: "Lead Engineer",
@@ -286,11 +284,8 @@ Part of the original team of 2 Front-End developers, I was able to play a decisi
       ],
       website: "https://www.bamfunds.com/",
       description: `As Balyasny Asset Management's Lead Engineer, I'm responsible for the Risk UI team, 
-      which is itself in charge of a suite of applications used by the firm's risk managers, and which are critical to the firm's risk management process.${lr}
-      One of these applications is Risk Hub, the flagship application for risk at BAM.
-      
-      
-      `,
+which is itself in charge of a suite of applications used by the firm's risk managers, and which are critical to the firm's risk management process.${lr}
+One of these applications is Risk Hub, the flagship application for risk at BAM.`,
     },
   ],
   education: [

@@ -9,6 +9,9 @@ from docx.enum.section import WD_ORIENT
 from docx.oxml.ns import qn, nsdecls
 from docx.oxml import parse_xml
 import re
+import subprocess
+import json
+import os
 
 # ── Colour palette (subtle blue-grey) ──────────────────────────────
 ACCENT = RGBColor(0x2B, 0x6C, 0xB3)       # muted steel-blue
@@ -112,191 +115,42 @@ def format_date(d):
         return d
 
 
-# ── CV Data ─────────────────────────────────────────────────────────
-work = [
-    {
-        "title": "Lead Engineer",
-        "company": "Balyasny Asset Management",
-        "location": "London",
-        "type": "Permanent",
-        "from": "2020-01-01",
-        "to": None,
-        "techs": ["React", "TypeScript", "Styled Components", "C#", "TanStack Query", "Docker / K8s"],
-        "description": "As Balyasny Asset Management's Lead Engineer, working on various projects across the company.",
-    },
-    {
-        "title": "UI Tech Lead",
-        "company": "Wayve",
-        "location": "London",
-        "type": "Permanent",
-        "from": "2020-01-01",
-        "to": None,
-        "techs": ["React", "TypeScript", "Styled Components", "Node", "Docker / K8s", "Python"],
-        "description": "As Wayve's UI Tech lead, working on various projects across the company. The most challenging one is the in-car UI, delivering a high performance experience critical to safety. The UI receives about 300 websocket frames per second, and yet maintains a constant 60 fps.",
-    },
-    {
-        "title": "Senior Front-End React Engineer",
-        "company": "Two Sigma",
-        "location": "London",
-        "type": "Permanent",
-        "from": "2017-03-01",
-        "to": "2020-01-01",
-        "techs": ["React", "TypeScript", "Styled Components", "Node.js"],
-        "description": "Front-End engineer on Two Sigma's Venn platform. Venn makes it simpler to select managers, choose assets and manage risk, via Two Sigma's factors analysis. The front-end was originally written in JavaScript (ES6), React, Redux, Redux-Saga and SCSS (with CSS Modules), then rewritten to TypeScript, replacing Redux by React's context and local state, and SCSS/CSS Modules by Styled Components. Part of the original team of 2 Front-End developers, playing a decisive role on the original architecture and rewrite.",
-    },
-    {
-        "title": "Front Office / Front-end React Engineer",
-        "company": "Royal Bank of Scotland",
-        "location": "London",
-        "type": "Contractor / Permanent",
-        "from": "2012-07-01",
-        "to": "2017-03-01",
-        "techs": ["React", "Redux", "AngularJS", "Node.js"],
-        "description": "Front-End developer on RBS' flagship platform \"Agile Markets\". Implementation of several modules, from FX options tickets (Peg, TWAP, OCO, IDO…) to analysis tools. Modules developed using React, AngularJS, or plain JavaScript (with D3). Connected to back-end services using REST endpoints and websockets (Caplin), tested using Mocha or Karma against a Node server.",
-    },
-    {
-        "title": "ASP.NET MVC Front-End Developer",
-        "company": "Bank of America Merrill Lynch",
-        "location": "London",
-        "type": "Contractor",
-        "from": "2011-04-01",
-        "to": "2012-06-01",
-        "techs": ["C#", "NHibernate", "ASP.NET MVC", "ExtJS", "jQuery", "SQL Server"],
-        "description": "Maintenance of a risk application in C# and ASP.NET MVC using NHibernate. The application interacts with MSCI Risk Metrics for risk analysis. Over 5,000 unit tests written using NUnit, Moq, SpecFlow and Selenium.",
-    },
-    {
-        "title": "ASP.NET MVC Front-end Developer",
-        "company": "Royal Bank of Scotland",
-        "location": "London",
-        "type": "Contractor",
-        "from": "2011-01-01",
-        "to": "2011-03-01",
-        "techs": ["C#", "NHibernate", "MVC 3", "ExtJS", "AutoFac", "SQL Server"],
-        "description": "Design and implementation of a Human Resource system consolidating data from multiple existing systems within RBS. Front end based on ASP.NET MVC 3 (Razor) and ExtJS, back end in C# 4 with NHibernate.",
-    },
-    {
-        "title": "Silverlight / C# Developer",
-        "company": "Royal Bank of Scotland",
-        "location": "London",
-        "type": "Contractor",
-        "from": "2010-03-01",
-        "to": "2010-12-01",
-        "techs": ["Silverlight", "C#", "NHibernate", "WCF", "Autofac", "SQL Server"],
-        "description": "Design and implementation of a global technology platform for browsing content stored in legal and credit documentation. Silverlight-based client used around the globe to manage RBS contracts and netting calculations.",
-    },
-    {
-        "title": "Front Office Developer, Derivatives",
-        "company": "Credit Suisse",
-        "location": "London",
-        "type": "Full-Time, AVP",
-        "from": "2009-11-01",
-        "to": "2010-03-01",
-        "techs": ["ASP.NET", "C#", "SQL Server"],
-        "description": "Design, maintenance and improvements of a derivatives trading platform, used both internally and externally by Credit Suisse customers.",
-    },
-    {
-        "title": "Full-Stack Developer, Architect",
-        "company": "BNP Paribas - FundQuest UK",
-        "location": "London",
-        "type": "Full-Time",
-        "from": "2007-01-01",
-        "to": "2009-11-01",
-        "techs": ["ASP.NET", "C#", "NHibernate", "MySQL"],
-        "description": "Design, implementation and maintenance of a Quantitative, Document Management and Trading Web Application. Complete architectural redesign: quantitative analysis tools, document management with full-text search, and a trading system linked to electronic trading platforms.",
-    },
-    {
-        "title": ".NET Developer",
-        "company": "British Telecom PLC",
-        "location": "London",
-        "type": "Full-Time",
-        "from": "2006-09-01",
-        "to": "2007-01-01",
-        "techs": ["ASP.NET", "C#", "VB.NET", "DotNetNuke"],
-        "description": "Development of a portal (sdk.bt.com) in ASP.NET using DotNetNuke. Agile (Scrum) methodology with 3-month cycles and 2-week iterations, using continuous integration (CruiseControl.NET).",
-    },
-    {
-        "title": "Full-Stack Developer",
-        "company": "Everydev",
-        "location": "Évreux (France)",
-        "type": "Associate & Co-founder",
-        "from": "2004-12-01",
-        "to": "2008-07-01",
-        "techs": ["C#", "WinForm", "ASP.NET", "MySQL"],
-        "description": "Co-founded a computer services company. Developed an online and offline backup software (FaciloSave) in C# featuring encryption, compression, custom networking protocols, and localization. Also developed the company website in ASP.NET with NHibernate.",
-    },
-    {
-        "title": "Software Developer",
-        "company": "Intuition Informatique",
-        "location": "Évreux (France)",
-        "type": "Internship",
-        "from": "2003-11-01",
-        "to": "2004-12-01",
-        "techs": ["C#", "MySQL"],
-        "description": "Part-time role (14h/week) as a programmer, web designer, and system administrator. Built a management software for assistance contracts in C#, integrating with an ERP system.",
-    },
-]
+# ── CV Data (parsed from src/data/en.ts) ────────────────────────────
+def load_cv_data():
+    """Parse src/data/en.ts using Node.js and return CV data as a dict."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    ts_path = os.path.join(script_dir, "src", "data", "en.ts")
 
-education = [
-    {
-        "school": "Supinfo Paris - Oxford Brookes University",
-        "diploma": "Master (MSc) in Computer Science",
-        "location": "Paris (2003-2005), Oxford (2005-2006)",
-        "date": "2006-06-01",
-        "description": "Three-year engineering school resulting in a European Master in Computer Science. Final year at Oxford Brookes University.",
-    },
-    {
-        "school": "Lycée Richelieu - CPGE TSI",
-        "diploma": "Cours Préparatoires aux Grandes Ecoles",
-        "location": "Rueil-Malmaison (France)",
-        "date": "2003-06-01",
-        "description": "Math sup/Math Spé: intensive preparation in physics and mathematics for the Grandes Ecoles.",
-    },
-    {
-        "school": "Passy-Buzenval",
-        "diploma": "BAC STI (French A-Level) - With Honours",
-        "location": "Rueil-Malmaison (France)",
-        "date": "2001-07-01",
-        "description": "",
-    },
-]
+    node_script = r"""
+const fs = require('fs');
+let content = fs.readFileSync(process.argv[1], 'utf8');
+content = content.replace(/^import .*$/gm, '');
+content = content.replace(/:\s*Cv\b/g, '');
+content = content.replace(/export default myCv;?/, '');
+content = content.replace(/\bconst\b/g, 'var');
+var portraitImage1x = '';
+var retrospectedImage = '';
+var vrPlayerImage1x = '';
+var vrPlayerImage2x = '';
+eval(content);
+console.log(JSON.stringify(myCv));
+"""
+    result = subprocess.run(
+        ["node", "-e", node_script, ts_path],
+        capture_output=True, text=True, cwd=script_dir,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(f"Failed to parse en.ts: {result.stderr}")
+    return json.loads(result.stdout)
 
-skills = [
-    {"name": "TypeScript", "level": "Expert", "experience": 3,
-     "related": ["ESLint", "Jest", "Create-React-App"]},
-    {"name": "JavaScript", "level": "Expert", "experience": 7,
-     "related": ["React", "Lodash", "date-fns", "Jest", "Prettier"]},
-    {"name": "React", "level": "Expert", "experience": 5,
-     "related": ["Redux", "Redux-Saga", "Socket.IO", "Webpack", "Hooks", "Recoil.js"]},
-    {"name": "HTML & CSS", "level": "Expert", "experience": 7,
-     "related": ["CSS Modules", "SCSS/SASS", "Styled Components"]},
-    {"name": "Node", "level": "Advanced", "experience": 4,
-     "related": ["Create-React-App", "Express"]},
-    {"name": ".NET", "level": "Expert", "experience": 8,
-     "related": ["C#", "ASP.NET MVC", "NHibernate", "NUnit", "SQL Server"]},
-]
 
-projects = [
-    {
-        "name": "Retrospected",
-        "description": "Agile Retrospective Board using React, Redux and Socket.IO. Open-source project available at www.retrospected.com and github.com/antoinejaussoin/retro-board.",
-    },
-    {
-        "name": "React VR Player",
-        "description": "360° Virtual Reality video player component for the Oculus Rift, built with React.",
-    },
-]
+cv_data = load_cv_data()
 
-profile = (
-    "I'm a Senior Full-Stack Engineer, with strong experience in the financial industry. "
-    "I am currently working at Balyasny Asset Management as the Lead Engineer. "
-    "I previously worked at Wayve, an autonomous driving company, as the UI Tech Lead, "
-    "delivering high-performance in-car UIs. Before that I was at Two Sigma, a systematic "
-    "trading hedge-fund based in New York. "
-    "I've had the opportunity to work on various greenfield projects in my career, from the "
-    "Cudos platform at BNP (still live 10 years after!) to creating my own software company. "
-    "I'm also the author of a few open-source projects, including an Agile Retrospective board "
-    "(www.retrospected.com)."
-)
+# Work: TS stores oldest-first; reverse for the CV (newest first)
+work = list(reversed(cv_data["work"]))
+education = list(reversed(cv_data["education"]))
+skills = cv_data["skills"]
+profile = cv_data["profile"]
 
 
 # ── Build Document ──────────────────────────────────────────────────
@@ -322,7 +176,7 @@ style.paragraph_format.line_spacing = Pt(13)
 p_name = doc.add_paragraph()
 p_name.alignment = WD_ALIGN_PARAGRAPH.CENTER
 p_name.paragraph_format.space_after = Pt(0)
-run = p_name.add_run("ANTOINE JAUSSOIN")
+run = p_name.add_run(cv_data["name"].upper())
 run.font.name = FONT_HEAD
 run.font.size = Pt(24)
 run.font.color.rgb = DARK
@@ -332,7 +186,7 @@ p_title = doc.add_paragraph()
 p_title.alignment = WD_ALIGN_PARAGRAPH.CENTER
 p_title.paragraph_format.space_before = Pt(2)
 p_title.paragraph_format.space_after = Pt(0)
-run = p_title.add_run("Senior Full Stack Engineer")
+run = p_title.add_run(cv_data["title"])
 run.font.name = FONT_HEAD
 run.font.size = Pt(13)
 run.font.color.rgb = ACCENT
@@ -342,7 +196,7 @@ p_sub = doc.add_paragraph()
 p_sub.alignment = WD_ALIGN_PARAGRAPH.CENTER
 p_sub.paragraph_format.space_before = Pt(2)
 p_sub.paragraph_format.space_after = Pt(2)
-run = p_sub.add_run("React  ·  TypeScript/JavaScript  ·  Node  ·  .NET")
+run = p_sub.add_run(cv_data["subtitle"])
 run.font.name = FONT_HEAD
 run.font.size = Pt(9.5)
 run.font.color.rgb = LIGHT
@@ -353,10 +207,10 @@ p_contact.alignment = WD_ALIGN_PARAGRAPH.CENTER
 p_contact.paragraph_format.space_before = Pt(4)
 p_contact.paragraph_format.space_after = Pt(4)
 contact_items = [
-    "antoine@jaussoin.com",
-    "+44 77 22 55 77 39",
-    "www.jaussoin.com",
-    "London SW11 5QA",
+    cv_data["email"],
+    cv_data["phone"],
+    cv_data["website"].replace("http://", "").replace("https://", ""),
+    cv_data["address2"],
 ]
 for i, item in enumerate(contact_items):
     run = p_contact.add_run(item)
@@ -381,8 +235,9 @@ add_rich_text(p, profile, Pt(9.5), BODY)
 add_section_heading(doc, "Experience")
 
 for job in work:
-    date_from = format_date(job["from"])
-    date_to = format_date(job["to"]) if job["to"] else "Present"
+    dates = job.get("dates", {})
+    date_from = format_date(dates.get("from", ""))
+    date_to = format_date(dates["to"]) if dates.get("to") else "Present"
     date_str = f"{date_from} – {date_to}"
 
     # Job title + company line
@@ -542,25 +397,6 @@ borders = parse_xml(
     f'</w:tblBorders>'
 )
 tblPr.append(borders)
-
-
-# ── Projects ───────────────────────────────────────────────────────────
-add_section_heading(doc, "Personal Projects")
-
-for proj in projects:
-    p = doc.add_paragraph()
-    p.paragraph_format.space_before = Pt(6)
-    p.paragraph_format.space_after = Pt(2)
-    run = p.add_run(proj["name"])
-    run.font.name = FONT_HEAD
-    run.font.size = Pt(10)
-    run.font.color.rgb = DARK
-    run.font.bold = True
-
-    p = doc.add_paragraph()
-    p.paragraph_format.space_before = Pt(0)
-    p.paragraph_format.space_after = Pt(4)
-    add_rich_text(p, proj["description"], Pt(9), BODY)
 
 
 # ── Save ───────────────────────────────────────────────────────────────
