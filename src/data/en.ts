@@ -321,7 +321,9 @@ I spent the final year at Oxford Brookes University in the MSc Computer Science 
         "Hooks",
         "Recoil",
       ],
-      description: `Full-time React experience since 2015.`,
+      description: `I started working with React around version 0.12 and have kept using it through several eras of the ecosystem.${lr}
+Over time, I worked with Flux, then Redux when it emerged, spent some time with MobX and Recoil, and currently enjoy working with **TanStack Query** a lot.${lr}
+For UI component libraries, I used **Material UI** extensively across multiple projects.`,
     },
     {
       name: "TypeScript",
