@@ -31,6 +31,7 @@ export interface Job {
   techs: string[];
   website: string;
   description: string;
+  shortDescription: string;
 }
 
 export interface DateRange {
@@ -44,6 +45,7 @@ export interface Education {
   location: string;
   date: string;
   description: string;
+  shortDescription: string;
 }
 
 export interface Skill {
@@ -52,6 +54,7 @@ export interface Skill {
   startYear: number;
   related: string[];
   description: string;
+  shortDescription: string;
 }
 
 export interface Project {

@@ -45,6 +45,8 @@ I'm also the author of several **open-source projects**, including [Retrospected
       description: `Part-time role at the company, 14 hours per week alongside my studies, working as a software developer, web designer, and system administrator.${lr}
 My main responsibility was to build contract management software in C# for the company's assistance business.${lr}
 The application integrates with the company's ERP system and is used daily by five technicians to manage thousands of contracts.${lr}`,
+      shortDescription:
+        "Built a C# contract management application integrated with the company's ERP and used daily by operations staff.",
     },
     {
       title: "Full-Stack Developer",
@@ -67,6 +69,8 @@ Held a 49% ownership stake and led the technical work:${lr}
 - Implemented a database access layer with NHibernate between the business layer and the database
 
 Managed a trainee during the summer of 2005.`,
+      shortDescription:
+        "Co-founded a software services company and built backup products, web systems, and client-server infrastructure in .NET.",
     },
     {
       title: ".NET Developer",
@@ -83,6 +87,8 @@ Managed a trainee during the summer of 2005.`,
 DotNetNuke was written in VB.NET, but all additional modules were developed in C#.${lr}
 We followed an Agile (Scrum) process with three-month cycles and two-week iterations.${lr}
 We also used continuous integration with CruiseControl.NET.`,
+      shortDescription:
+        "Delivered the BT developer portal in ASP.NET and DotNetNuke within an Agile, CI-driven engineering team.",
     },
     {
       title: "Full-Stack Developer, Architect",
@@ -108,6 +114,8 @@ Some of the areas I designed include:${lr}
 - **Web pages**: introduced master pages to replace the previous frame-based approach
 - **Security**: designed a combination of techniques to make most pages available in a "read-only" mode
 - **Documents**: enabled documents to be linked to any entity (funds, users, universes, etc.) and indexed their contents`,
+      shortDescription:
+        "Re-architected and built a quantitative analysis, document management, and trading platform for FundQuest UK.",
     },
     {
       title: "Front Office Developer, Derivatives",
@@ -122,6 +130,8 @@ Some of the areas I designed include:${lr}
       website: "http://www.credit-suisse.com",
       description: `Designed, maintained, and improved a derivatives trading platform used internally and externally by Credit Suisse clients.${lr}
 The front end was built in ASP.NET, with a back end in C#.`,
+      shortDescription:
+        "Improved an internal and client-facing derivatives trading platform built with ASP.NET and C#.",
     },
     {
       title: "Silverlight / C# Developer",
@@ -162,6 +172,8 @@ The development environment relied on a stack of well-known open-source tools:${
 
 The project followed an **Agile** methodology throughout its lifetime, with a 10-minute stand-up every morning, regular retrospectives, enforced **Test-Driven Development** (TDD), and code reviews before each commit.${lr}
 I also scored in the 100th percentile worldwide on the Brainbench test while applying for this contract.`,
+      shortDescription:
+        "Built a global Silverlight and C# documentation platform used for contract management and netting calculations across RBS.",
     },
     {
       title: "ASP.NET MVC Front-End Developer",
@@ -179,6 +191,8 @@ The front end was built with **ASP.NET MVC 3** using the **Razor** view engine a
 The back end used C# 4 with **NHibernate** as the ORM, using Fluent NHibernate for mapping.${lr}
 The server side was built on my open-source project [FTA](http://fta.codeplex.com), which provided the foundation for the data access layer.${lr}
 The dependency injection framework used on the project was **Autofac**.`,
+  shortDescription:
+    "Built a new ASP.NET MVC and ExtJS HR platform to consolidate several RBS systems into one workflow.",
     },
     {
       title: "ASP.NET MVC Front-End Developer",
@@ -203,6 +217,8 @@ The dependency injection framework used on the project was **Autofac**.`,
 The application integrated with **MSCI RiskMetrics**, a risk analysis web service, and was responsible for loading and reconciling position files from custodians, fund managers, and other sources.${lr}
 More than 5,000 unit tests were written for the application using frameworks such as **NUnit**, **Moq**, **SpecFlow**, and **Selenium**.${lr}
 The web application was originally written in classic ASP.NET and was later partially migrated to MVC 3 with **Razor** and **ExtJS** (Ext.NET).${lr}`,
+  shortDescription:
+    "Maintained a C# and ASP.NET MVC risk platform integrated with MSCI RiskMetrics and backed by a large automated test suite.",
     },
     {
       title: "Front Office / Front-End React Engineer",
@@ -221,6 +237,8 @@ These modules were built with **React**, **AngularJS**, or plain JavaScript with
 They connected to back-end services through REST endpoints and WebSockets (**Caplin**) and were tested with Mocha or Karma against a Node.js server.${lr}
 The projects were built with **Grunt**, including custom tasks, and were highly modularised, using **Stash** and **Git** for source control.${lr}
 **Webpack** was due to be introduced next, and I was set to lead the trial of the technology.`,
+      shortDescription:
+        "Built trading tickets and analysis tools on Agile Markets using React, AngularJS, JavaScript, and Node.js services.",
     },
     {
       title: "Senior Front-End React Engineer",
@@ -239,6 +257,8 @@ On the technical side, the front end was originally written in JavaScript (ES6),
 It was later rewritten in TypeScript, replacing Redux with React context and more local state. We also replaced SCSS and CSS Modules with Styled Components.${lr}
 As part of the original team of two front-end developers, I played a decisive role both in the initial architecture and later in the rewrite of the application.${lr}
 `,
+      shortDescription:
+        "Helped architect and later rewrite the Venn front end from JavaScript and Redux to TypeScript and modern React patterns.",
     },
     {
       title: "UI Tech Lead",
@@ -260,6 +280,8 @@ As part of the original team of two front-end developers, I played a decisive ro
       website: "https://wayve.ai/",
       description: `As Wayve's **UI Tech Lead**, I led several **UI projects** across the company.${lr}
 The most challenging was the **in-car UI**, which had to deliver a high-performance experience under safety-critical constraints. The UI received about 300 WebSocket frames per second while sustaining a steady 60 fps.${lr}`,
+      shortDescription:
+        "Led Wayve's UI team across vehicle and internal products, including a high-frequency in-car interface running at 60 fps.",
     },
     {
       title: "Lead Engineer",
@@ -281,6 +303,8 @@ The most challenging was the **in-car UI**, which had to deliver a high-performa
       description: `As Balyasny Asset Management's **Lead Engineer**, I am responsible for the **Risk UI team**,
 which owns a suite of applications used by the firm's risk managers and which are critical to the firm's risk management process.${lr}
 One of these applications is **Risk Hub**, BAM's **flagship risk platform**.`,
+      shortDescription:
+        "Lead the Risk UI team responsible for Risk Hub and other applications used by BAM risk managers.",
     },
   ],
   education: [
@@ -290,6 +314,8 @@ One of these applications is **Risk Hub**, BAM's **flagship risk platform**.`,
       location: "Rueil-Malmaison (France)",
       date: "2001-07-01",
       description: "Completed a BAC STI at Passy-Buzenval in Rueil-Malmaison.",
+      shortDescription:
+        "BAC STI completed with honours at Passy-Buzenval in Rueil-Malmaison.",
     },
     {
       school: "Lycée Richelieu - CPGE TSI",
@@ -298,6 +324,8 @@ One of these applications is **Risk Hub**, BAM's **flagship risk platform**.`,
       date: "2003-06-01",
       description:
         "Math Sup / Math Spe prepares French students for the Grandes Ecoles, primarily in physics and mathematics.",
+      shortDescription:
+        "Two-year CPGE TSI preparatory programme focused on mathematics and physics.",
     },
     {
       school: "Supinfo Paris - Oxford Brookes University",
@@ -306,6 +334,8 @@ One of these applications is **Risk Hub**, BAM's **flagship risk platform**.`,
       date: "2006-06-01",
       description: `Supinfo is a three-year engineering school leading to a European Master's degree in Computer Science.${lr}
 I spent the final year at Oxford Brookes University in the MSc Computer Science programme.`,
+      shortDescription:
+        "European Master's degree in Computer Science through Supinfo and Oxford Brookes University.",
     },
   ],
   skills: [
@@ -324,6 +354,8 @@ I spent the final year at Oxford Brookes University in the MSc Computer Science 
       description: `I started working with React around version 0.12 and have kept using it through several eras of the ecosystem.${lr}
 Over time, I worked with Flux, then Redux when it emerged, spent some time with MobX and Recoil, and currently enjoy working with **TanStack Query** a lot.${lr}
 For UI component libraries, I used **Material UI** extensively across multiple projects.`,
+      shortDescription:
+        "Deep React experience from early releases to modern state, data, and component patterns.",
     },
     {
       name: "TypeScript",
@@ -335,18 +367,22 @@ Comfortable with the parts that make TypeScript valuable in large codebases:${lr
 - generics, utility types, and strongly typed API design
 - discriminated unions, narrowing, strict null checks, and custom type guards
 - mapped types, conditional types, and inference-heavy helper types`,
+      shortDescription:
+        "Expert TypeScript for large codebases, typed APIs, and advanced type-system design.",
     },
     {
       name: "JavaScript",
       level: "Expert",
       startYear: 2015,
       related: ["React", "Lodash", "date-fns", "Vitest", "Prettier", "ESLint"],
-        description: `Expert knowledge of modern JavaScript:${lr}
+      description: `Expert knowledge of modern JavaScript:${lr}
 - ES modules, dynamic imports, import attributes, and top-level await
 - destructuring, rest/spread, and template literals
 - optional chaining, nullish coalescing, and logical assignment
 - promises, async/await, and concurrency patterns
 - immutable array helpers (toSorted, toReversed, toSpliced, with)`,
+      shortDescription:
+        "Expert in modern JavaScript language features, async workflows, modules, and production tooling.",
     },
     {
       name: "HTML & CSS",
@@ -357,6 +393,8 @@ Comfortable with the parts that make TypeScript valuable in large codebases:${lr
 - Grid, Flexbox, and modern intrinsic sizing
 - container queries, container units, and responsive component design
 - CSS Modules, Styled Components, and Emotion for large-scale component styling`,
+      shortDescription:
+        "Expert in semantic HTML and modern CSS for responsive, component-driven user interfaces.",
     },
     {
       name: "Node.js / Bun",
@@ -365,6 +403,8 @@ Comfortable with the parts that make TypeScript valuable in large codebases:${lr
       related: ["Create-React-App", "Express"],
       description: `Node.js experience at RBS and on personal projects since 2015.${lr}
 Experience ranges from Node 0.12 to Node 22, along with npm and Yarn.`,
+      shortDescription:
+        "Strong server-side JavaScript experience across Node eras, tooling, and front-end build workflows.",
     },
     {
       name: ".NET",
@@ -380,6 +420,8 @@ Experience ranges from Node 0.12 to Node 22, along with npm and Yarn.`,
         "SQL Server",
       ],
       description: `.NET was the technology stack I started my career with.`,
+      shortDescription:
+        "Deep .NET experience across C#, ASP.NET, ORMs, testing, and SQL Server in financial systems.",
     },
   ],
   projects: [

@@ -1,7 +1,7 @@
 VERSION := $(shell cat VERSION)
 TARGET_ARCHS=linux/arm64,linux/amd64
 
-build: build-frontend
+build: generate build-frontend
 
 publish: generate buildx-frontend
 	docker push antoinejaussoin/cv:${VERSION}
@@ -33,4 +33,4 @@ install:
 	docker buildx inspect --bootstrap
 
 generate:
-	python3 generate_cv.py
+	npm run generate

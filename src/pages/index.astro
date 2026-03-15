@@ -31,7 +31,8 @@ function formatUrl(url: string) {
 }
 
 const personalSite = formatUrl(cv.website);
-const wordCvPath = "/downloads/Antoine_Jaussoin_CV.docx";
+const wordCvPath = "/downloads/Antoine_Jaussoin_CV.rtf";
+const pdfCvPath = "/downloads/Antoine_Jaussoin_CV.pdf";
 
 const socialLinks = [
   {
@@ -87,11 +88,107 @@ const socialLinks = [
             </a>
             <a
               class="button button--secondary button--download"
-              href={wordCvPath}
-              download="Antoine_Jaussoin_CV.docx"
-              type="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+              href={pdfCvPath}
+              download="Antoine_Jaussoin_CV.pdf"
+              type="application/pdf"
             >
-              <span>Download Word CV</span>
+              <span
+                class="button__icon-wrap button__icon-wrap--pdf"
+                aria-hidden="true"
+              >
+                <svg class="button__icon" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M14.5 2.75H8A2.75 2.75 0 0 0 5.25 5.5v13A2.75 2.75 0 0 0 8 21.25h8A2.75 2.75 0 0 0 18.75 18.5V8.75L14.5 2.75Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"></path>
+                  <path
+                    d="M14.5 2.75V7A1.75 1.75 0 0 0 16.25 8.75h2.5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                  <path
+                    d="M9 10.25h6M9 12.25h6"
+                    stroke="currentColor"
+                    stroke-width="1.35"
+                    stroke-linecap="round"
+                    opacity="0.75"></path>
+                  <rect
+                    x="4"
+                    y="14.25"
+                    width="16"
+                    height="4.75"
+                    rx="2"
+                    fill="currentColor"></rect>
+                  <text
+                    x="12"
+                    y="17.5"
+                    text-anchor="middle"
+                    font-size="4.7"
+                    font-family="IBM Plex Sans, sans-serif"
+                    font-weight="700"
+                    fill="#ffffff">PDF</text
+                  >
+                </svg>
+              </span>
+              <span class="button__content">
+                <span>Download (PDF)</span>
+                <span class="button__meta">Print-ready</span>
+              </span>
+            </a>
+            <a
+              class="button button--secondary button--download"
+              href={wordCvPath}
+              download="Antoine_Jaussoin_CV.rtf"
+              type="application/rtf"
+            >
+              <span
+                class="button__icon-wrap button__icon-wrap--word"
+                aria-hidden="true"
+              >
+                <svg class="button__icon" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M14.5 2.75H8A2.75 2.75 0 0 0 5.25 5.5v13A2.75 2.75 0 0 0 8 21.25h8A2.75 2.75 0 0 0 18.75 18.5V8.75L14.5 2.75Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"
+                    opacity="0.92"></path>
+                  <path
+                    d="M14.5 2.75V7A1.75 1.75 0 0 0 16.25 8.75h2.5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    opacity="0.92"></path>
+                  <path
+                    d="M13.75 11.25h3M13.75 14.25h3M13.75 17.25h2.25"
+                    stroke="currentColor"
+                    stroke-width="1.35"
+                    stroke-linecap="round"
+                    opacity="0.78"></path>
+                  <rect
+                    x="3"
+                    y="8.25"
+                    width="8"
+                    height="9.5"
+                    rx="2"
+                    fill="currentColor"></rect>
+                  <text
+                    x="7"
+                    y="14.5"
+                    text-anchor="middle"
+                    font-size="6.4"
+                    font-family="Space Grotesk, sans-serif"
+                    font-weight="700"
+                    fill="#ffffff">W</text
+                  >
+                </svg>
+              </span>
+              <span class="button__content">
+                <span>Download (RTF)</span>
+                <span class="button__meta">Recruiter-friendly</span>
+              </span>
             </a>
           </div>
 
@@ -183,7 +280,7 @@ const socialLinks = [
               </label>
             </div>
 
-            <div class="experience-list" id="experience-list">
+            <div class="experience-list" data-details-container>
               {sortedWork.map((item) => <Work item={item} />)}
             </div>
           </section>
@@ -196,7 +293,7 @@ const socialLinks = [
               <h2>Technical Skills</h2>
             </div>
 
-            <div class="skill-grid">
+            <div class="skill-grid" data-details-container>
               {cv.skills.map((item) => <Skills item={item} />)}
             </div>
           </section>
@@ -207,7 +304,7 @@ const socialLinks = [
               <h2>Education</h2>
             </div>
 
-            <div class="education-list">
+            <div class="education-list" data-details-container>
               {sortedEducation.map((item) => <Education item={item} />)}
             </div>
           </section>
@@ -226,10 +323,14 @@ const socialLinks = [
   const toggle = document.getElementById(
     "work-details-toggle",
   ) as HTMLInputElement | null;
-  const experienceList = document.getElementById("experience-list");
-  if (toggle && experienceList) {
+  const detailContainers = document.querySelectorAll(
+    "[data-details-container]",
+  );
+  if (toggle && detailContainers.length > 0) {
     const syncDetails = () => {
-      experienceList.classList.toggle("details-collapsed", !toggle.checked);
+      detailContainers.forEach((container) => {
+        container.classList.toggle("details-collapsed", !toggle.checked);
+      });
     };
 
     syncDetails();

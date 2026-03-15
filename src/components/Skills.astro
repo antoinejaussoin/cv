@@ -9,6 +9,7 @@ interface Props {
 
 const { item } = Astro.props;
 const descriptionHtml = await marked.parse(item.description);
+const shortDescriptionHtml = await marked.parse(item.shortDescription);
 const yearsOfExperience = Math.max(
   new Date().getFullYear() - item.startYear,
   0,
@@ -42,5 +43,9 @@ const yearsOfExperience = Math.max(
     )
   }
 
+  <div
+    class="rich-text skill-card__description skill-card__description--short"
+    set:html={shortDescriptionHtml}
+  />
   <div class="rich-text skill-card__description" set:html={descriptionHtml} />
 </article>
