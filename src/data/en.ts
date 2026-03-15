@@ -360,9 +360,9 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
     {
       name: "Node / Bun",
       level: "Advanced",
-      startYear: 2016,
+      startYear: 2015,
       related: ["Create-React-App", "Express"],
-      description: `Node experience at RBS and on personal projects since 2016.
+      description: `Node experience at RBS and on personal projects since 2015.
 Experience with Node from 0.12 to the latest 22 (on personal projects), NPM and Yarn.`,
     },
     {
