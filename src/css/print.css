@@ -360,6 +360,17 @@
     display: block !important;
   }
 
+  .skill-grid.details-collapsed .skill-card__description,
+  .education-list.details-collapsed .education-card__description {
+    display: block !important;
+  }
+
+  .work-description--short,
+  .skill-card__description--short,
+  .education-card__description--short {
+    display: none !important;
+  }
+
   h2,
   h3,
   .experience-card__header,

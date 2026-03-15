@@ -314,6 +314,8 @@ One of these applications is **Risk Hub**, BAM's **flagship risk platform**.`,
       location: "Rueil-Malmaison (France)",
       date: "2001-07-01",
       description: "Completed a BAC STI at Passy-Buzenval in Rueil-Malmaison.",
+      shortDescription:
+        "BAC STI completed with honours at Passy-Buzenval in Rueil-Malmaison.",
     },
     {
       school: "Lycée Richelieu - CPGE TSI",
@@ -322,6 +324,8 @@ One of these applications is **Risk Hub**, BAM's **flagship risk platform**.`,
       date: "2003-06-01",
       description:
         "Math Sup / Math Spe prepares French students for the Grandes Ecoles, primarily in physics and mathematics.",
+      shortDescription:
+        "Two-year CPGE TSI preparatory programme focused on mathematics and physics.",
     },
     {
       school: "Supinfo Paris - Oxford Brookes University",
@@ -330,6 +334,8 @@ One of these applications is **Risk Hub**, BAM's **flagship risk platform**.`,
       date: "2006-06-01",
       description: `Supinfo is a three-year engineering school leading to a European Master's degree in Computer Science.${lr}
 I spent the final year at Oxford Brookes University in the MSc Computer Science programme.`,
+      shortDescription:
+        "European Master's degree in Computer Science through Supinfo and Oxford Brookes University.",
     },
   ],
   skills: [

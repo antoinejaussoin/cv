@@ -8,6 +8,7 @@ interface Props {
 
 const { item } = Astro.props;
 const descriptionHtml = await marked.parse(item.description);
+const shortDescriptionHtml = await marked.parse(item.shortDescription);
 const yearFormatter = new Intl.DateTimeFormat("en-GB", {
   year: "numeric",
 });
@@ -25,5 +26,9 @@ const yearFormatter = new Intl.DateTimeFormat("en-GB", {
   </div>
 
   <p class="education-card__location">{item.location}</p>
-  <div class="rich-text" set:html={descriptionHtml} />
+  <div
+    class="rich-text education-card__description education-card__description--short"
+    set:html={shortDescriptionHtml}
+  />
+  <div class="rich-text education-card__description" set:html={descriptionHtml} />
 </article>

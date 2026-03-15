@@ -45,6 +45,7 @@ export interface Education {
   location: string;
   date: string;
   description: string;
+  shortDescription: string;
 }
 
 export interface Skill {

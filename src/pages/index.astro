@@ -280,7 +280,7 @@ const socialLinks = [
               </label>
             </div>
 
-            <div class="experience-list" id="experience-list">
+            <div class="experience-list" data-details-container>
               {sortedWork.map((item) => <Work item={item} />)}
             </div>
           </section>
@@ -293,7 +293,7 @@ const socialLinks = [
               <h2>Technical Skills</h2>
             </div>
 
-            <div class="skill-grid">
+            <div class="skill-grid" data-details-container>
               {cv.skills.map((item) => <Skills item={item} />)}
             </div>
           </section>
@@ -304,7 +304,7 @@ const socialLinks = [
               <h2>Education</h2>
             </div>
 
-            <div class="education-list">
+            <div class="education-list" data-details-container>
               {sortedEducation.map((item) => <Education item={item} />)}
             </div>
           </section>
@@ -323,10 +323,12 @@ const socialLinks = [
   const toggle = document.getElementById(
     "work-details-toggle",
   ) as HTMLInputElement | null;
-  const experienceList = document.getElementById("experience-list");
-  if (toggle && experienceList) {
+  const detailContainers = document.querySelectorAll("[data-details-container]");
+  if (toggle && detailContainers.length > 0) {
     const syncDetails = () => {
-      experienceList.classList.toggle("details-collapsed", !toggle.checked);
+      detailContainers.forEach((container) => {
+        container.classList.toggle("details-collapsed", !toggle.checked);
+      });
     };
 
     syncDetails();

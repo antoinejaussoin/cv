@@ -611,8 +611,37 @@ select {
   gap: 1rem;
 }
 
+.work-description--short {
+  display: none;
+}
+
+.skill-card__description--short,
+.education-card__description--short {
+  display: none;
+}
+
 .experience-list.details-collapsed .work-description {
   display: none;
+}
+
+.experience-list.details-collapsed .work-description--short {
+  display: block;
+}
+
+.skill-grid.details-collapsed .skill-card__description {
+  display: none;
+}
+
+.skill-grid.details-collapsed .skill-card__description--short {
+  display: block;
+}
+
+.education-list.details-collapsed .education-card__description {
+  display: none;
+}
+
+.education-list.details-collapsed .education-card__description--short {
+  display: block;
 }
 
 .experience-card,
@@ -761,7 +790,7 @@ select {
 }
 
 .skill-card__description,
-.education-card .rich-text,
+.education-card__description,
 .work-description {
   margin-top: 1rem;
 }

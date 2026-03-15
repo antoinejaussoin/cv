@@ -9,6 +9,7 @@ interface Props {
 
 const { item } = Astro.props;
 const descriptionHtml = await marked.parse(item.description);
+const shortDescriptionHtml = await marked.parse(item.shortDescription);
 const monthYearFormatter = new Intl.DateTimeFormat("en-GB", {
   month: "long",
   year: "numeric",
@@ -59,5 +60,6 @@ function buildPeriod(dates: DateRange) {
     {formatWebsite(item.website)}
   </a>
 
+  <div class="rich-text work-description work-description--short" set:html={shortDescriptionHtml} />
   <div class="rich-text work-description" set:html={descriptionHtml} />
 </article>
