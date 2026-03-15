@@ -11,7 +11,7 @@ const myCv: Cv = {
   bio: "43 years old, married, dual French-British citizen",
   title: "Senior Full-Stack Engineer",
   subtitle: "React - TypeScript / JavaScript - Node.js - .NET",
-  email: "antoine@jaussoin.com",
+  email: "work@jaussoin.com",
   phone: "+44 77 22 55 77 39",
   website: "http://www.jaussoin.com",
   address1: "17 Jedburgh Street",
