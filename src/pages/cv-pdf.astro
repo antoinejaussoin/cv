@@ -104,7 +104,11 @@ function buildSkillMeta(skill: Skill) {
                 <div>
                   <dt>{entry.label}</dt>
                   <dd>
-                    {entry.href ? <a href={entry.href}>{entry.value}</a> : entry.value}
+                    {entry.href ? (
+                      <a href={entry.href}>{entry.value}</a>
+                    ) : (
+                      entry.value
+                    )}
                   </dd>
                 </div>
               ))

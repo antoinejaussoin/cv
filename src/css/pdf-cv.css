@@ -1,6 +1,7 @@
 :root {
   --pdf-font-body: "IBM Plex Sans", "Avenir Next", "Segoe UI", sans-serif;
-  --pdf-font-display: "Space Grotesk", "Avenir Next", "Trebuchet MS", sans-serif;
+  --pdf-font-display:
+    "Space Grotesk", "Avenir Next", "Trebuchet MS", sans-serif;
   --pdf-canvas: #efe8dd;
   --pdf-paper: #fffdf8;
   --pdf-paper-strong: #ffffff;
@@ -32,8 +33,16 @@ body {
   font-family: var(--pdf-font-body);
   color: var(--pdf-ink);
   background:
-    radial-gradient(circle at top left, rgba(121, 203, 182, 0.18), transparent 24%),
-    radial-gradient(circle at top right, rgba(222, 108, 47, 0.18), transparent 26%),
+    radial-gradient(
+      circle at top left,
+      rgba(121, 203, 182, 0.18),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(222, 108, 47, 0.18),
+      transparent 26%
+    ),
     var(--pdf-canvas);
 }
 
@@ -180,7 +189,11 @@ img {
   padding: 2.2mm;
   border-radius: 7mm;
   background:
-    linear-gradient(160deg, rgba(222, 108, 47, 0.18), rgba(121, 203, 182, 0.26)),
+    linear-gradient(
+      160deg,
+      rgba(222, 108, 47, 0.18),
+      rgba(121, 203, 182, 0.26)
+    ),
     var(--pdf-panel);
 }
 
