@@ -3,7 +3,7 @@ TARGET_ARCHS=linux/arm64,linux/amd64
 
 build: build-frontend
 
-publish:
+publish: generate buildx-frontend
 	docker push antoinejaussoin/cv:${VERSION}
 	docker push antoinejaussoin/cv:latest
 
