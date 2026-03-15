@@ -19,8 +19,9 @@
     "dev": "astro dev --port 3000",
     "start": "astro dev --port 3000",
     "build:site": "astro build",
+    "generate": "npm run build:site && npm run generate:pdf",
     "generate:pdf": "node ./scripts/generate-pdf.mjs",
-    "build": "npm run build:site && npm run generate:pdf",
+    "build": "npm run build:site",
     "preview": "astro preview"
   }
 }

@@ -1,7 +1,7 @@
 import { execFileSync } from "node:child_process";
 import { createServer } from "node:http";
 import { createReadStream, existsSync } from "node:fs";
-import { access, mkdir, readFile, stat } from "node:fs/promises";
+import { access, mkdir, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
@@ -11,9 +11,11 @@ import puppeteer from "puppeteer-core";
 const currentFilePath = fileURLToPath(import.meta.url);
 const projectRoot = path.resolve(path.dirname(currentFilePath), "..");
 const distDirectory = path.join(projectRoot, "dist");
+const publicDirectory = path.join(projectRoot, "public");
 const pdfRoutePath = "/cv-pdf/";
 const outputRelativePath = path.join("downloads", "Antoine_Jaussoin_CV.pdf");
-const outputPath = path.join(distDirectory, outputRelativePath);
+const publicOutputPath = path.join(publicDirectory, outputRelativePath);
+const distOutputPath = path.join(distDirectory, outputRelativePath);
 const mimeTypes = {
   ".css": "text/css; charset=utf-8",
   ".gif": "image/gif",
@@ -146,8 +148,7 @@ async function assertBuildOutputExists() {
   await access(path.join(distDirectory, "cv-pdf", "index.html"));
 }
 
-async function validatePdfPageCount(filePath) {
-  const pdfBytes = await readFile(filePath);
+async function validatePdfPageCount(pdfBytes) {
   const pdfDocument = await PDFDocument.load(pdfBytes);
   const pageCount = pdfDocument.getPageCount();
 
@@ -156,6 +157,18 @@ async function validatePdfPageCount(filePath) {
   }
 
   return pageCount;
+}
+
+async function writePdfOutputs(pdfBytes) {
+  await Promise.all([
+    mkdir(path.dirname(publicOutputPath), { recursive: true }),
+    mkdir(path.dirname(distOutputPath), { recursive: true }),
+  ]);
+
+  await Promise.all([
+    writeFile(publicOutputPath, pdfBytes),
+    writeFile(distOutputPath, pdfBytes),
+  ]);
 }
 
 async function exportPdf() {
@@ -189,17 +202,18 @@ async function exportPdf() {
       }
     });
 
-    console.log("Generating PDF...", outputPath);
+    console.log("Generating PDF...", publicOutputPath);
 
-    await mkdir(path.dirname(outputPath), { recursive: true });
-    await page.pdf({
-      path: outputPath,
+    const pdfBytes = await page.pdf({
       preferCSSPageSize: true,
       printBackground: true,
     });
 
-    const pageCount = await validatePdfPageCount(outputPath);
-    console.log(`PDF generated: ${outputPath}`);
+    await writePdfOutputs(pdfBytes);
+
+    const pageCount = await validatePdfPageCount(pdfBytes);
+    console.log(`PDF generated: ${publicOutputPath}`);
+    console.log(`PDF copied to: ${distOutputPath}`);
     console.log(`PDF pages: ${pageCount}`);
   } finally {
     if (browser) {
