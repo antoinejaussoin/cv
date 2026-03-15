@@ -340,16 +340,12 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
       level: "Expert",
       startYear: 2015,
       related: ["React", "Lodash", "date-fns", "Vitest", "Prettier", "ESLint"],
-      description: `Expert knowledge of JavaScript:${lr}
-- const / let
-- default parameters, spread operator
-- destructuring
-- modules (import / export)
-- class
-- generators
-- promises
-- async/await
-- decorators`,
+        description: `Expert knowledge of modern JavaScript:${lr}
+- ES modules, dynamic import, import attributes and top-level await
+- destructuring, rest/spread and template literals
+- optional chaining, nullish coalescing and logical assignment
+- promises, async/await and concurrency patterns
+- immutable array helpers (toSorted, toReversed, toSpliced, with)`,
     },
     {
       name: "HTML & CSS",
