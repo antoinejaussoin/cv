@@ -311,7 +311,7 @@ img {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: 3.8mm;
+  margin-top: auto;
   padding-top: 3.4mm;
   border-top: 1px solid var(--pdf-line);
   font-size: 6.8pt;
@@ -430,7 +430,7 @@ img {
   }
 
   .pdf-footer {
-    margin-top: 3.2mm;
+    margin-top: auto;
     padding-top: 2.6mm;
   }
 
