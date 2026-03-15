@@ -32,6 +32,7 @@ function formatUrl(url: string) {
 
 const personalSite = formatUrl(cv.website);
 const wordCvPath = "/downloads/Antoine_Jaussoin_CV.docx";
+const pdfCvPath = "/downloads/Antoine_Jaussoin_CV.pdf";
 
 const socialLinks = [
   {
@@ -87,11 +88,21 @@ const socialLinks = [
             </a>
             <a
               class="button button--secondary button--download"
+              href={pdfCvPath}
+              download="Antoine_Jaussoin_CV.pdf"
+              type="application/pdf"
+            >
+              <span>Download PDF CV</span>
+              <span class="button__meta">2-page A4 version</span>
+            </a>
+            <a
+              class="button button--secondary button--download"
               href={wordCvPath}
               download="Antoine_Jaussoin_CV.docx"
               type="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
             >
               <span>Download Word CV</span>
+              <span class="button__meta">Editable format</span>
             </a>
           </div>
 

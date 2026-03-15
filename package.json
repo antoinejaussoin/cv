@@ -11,12 +11,16 @@
   "devDependencies": {
     "@types/node": "^22.0.0",
     "astro": "^5.5.0",
+    "pdf-lib": "^1.17.1",
+    "puppeteer-core": "^24.39.1",
     "typescript": "^5.7.0"
   },
   "scripts": {
     "dev": "astro dev --port 3000",
     "start": "astro dev --port 3000",
-    "build": "astro build",
+    "build:site": "astro build",
+    "generate:pdf": "node ./scripts/generate-pdf.mjs",
+    "build": "npm run build:site && npm run generate:pdf",
     "preview": "astro preview"
   }
 }

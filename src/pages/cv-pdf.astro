@@ -1,0 +1,301 @@
+---
+import PdfLayout from "../layouts/PdfLayout.astro";
+import ResponsiveImage from "../components/ResponsiveImage.astro";
+import "../css/pdf-cv.css";
+import cv from "../data/en";
+import type { DateRange, Skill } from "../types";
+
+const sortedWork = [...cv.work].sort((left, right) =>
+  right.dates.from.localeCompare(left.dates.from),
+);
+const recentWork = sortedWork.slice(0, 5);
+const earlierWork = sortedWork.slice(5);
+const sortedEducation = [...cv.education].sort((left, right) =>
+  right.date.localeCompare(left.date),
+);
+const coreStack = cv.subtitle
+  .split("-")
+  .map((item) => item.trim())
+  .filter(Boolean);
+const pdfSummary =
+  "Engineering leader with deep front-end and full-stack experience across hedge funds, banks, autonomous driving, and product delivery.";
+const monthYearFormatter = new Intl.DateTimeFormat("en-GB", {
+  month: "short",
+  year: "numeric",
+});
+
+const quickLinks = [
+  {
+    label: "Email",
+    value: cv.email,
+    href: `mailto:${cv.email}`,
+  },
+  {
+    label: "Phone",
+    value: cv.phone,
+    href: "tel:" + cv.phone.replace(/\s+/g, ""),
+  },
+  {
+    label: "Website",
+    value: cv.website.replace(/^https?:\/\//, "").replace(/^www\./, ""),
+    href: cv.website,
+  },
+  {
+    label: "Location",
+    value: cv.address2,
+  },
+];
+
+const socialLinks = [
+  {
+    label: "LinkedIn",
+    value: "linkedin.com/in/jantoine",
+    href: "https://www.linkedin.com/in/jantoine",
+  },
+  {
+    label: "GitHub",
+    value: "github.com/antoinejaussoin",
+    href: "https://github.com/antoinejaussoin",
+  },
+  {
+    label: "Stack Overflow",
+    value: "stackoverflow.com/users/641124/antoine-jaussoin",
+    href: "https://stackoverflow.com/users/641124/antoine-jaussoin",
+  },
+];
+
+function buildPeriod(dates: DateRange) {
+  const from = monthYearFormatter.format(new Date(dates.from));
+  if (!dates.to) {
+    return from + " - Present";
+  }
+  return from + " - " + monthYearFormatter.format(new Date(dates.to));
+}
+
+function getYears(startYear: number) {
+  return Math.max(new Date().getFullYear() - startYear, 0);
+}
+
+function buildSkillMeta(skill: Skill) {
+  return `${skill.level} · ${getYears(skill.startYear)} yrs`;
+}
+---
+
+<PdfLayout
+  title={`${cv.name} | PDF CV`}
+  description={`Printable PDF CV for ${cv.name}`}
+>
+  <main class="pdf-document">
+    <section class="pdf-page" aria-label="PDF CV page 1">
+      <header class="pdf-hero">
+        <div class="pdf-hero__content">
+          <p class="pdf-kicker">Curriculum Vitae</p>
+          <h1>{cv.name}</h1>
+          <p class="pdf-hero__role">{cv.title}</p>
+          <p class="pdf-hero__summary">{pdfSummary}</p>
+
+          <ul class="pdf-stack" aria-label="Core stack">
+            {coreStack.map((item) => <li>{item}</li>)}
+          </ul>
+
+          <dl class="pdf-contact-list">
+            {
+              quickLinks.map((entry) => (
+                <div>
+                  <dt>{entry.label}</dt>
+                  <dd>
+                    {entry.href ? <a href={entry.href}>{entry.value}</a> : entry.value}
+                  </dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+
+        <aside class="pdf-hero__aside">
+          <div class="pdf-portrait-frame">
+            <ResponsiveImage
+              sources={cv.portrait}
+              alt={`Portrait of ${cv.name}`}
+              class="pdf-portrait"
+              sizes="12rem"
+              loading="eager"
+            />
+          </div>
+
+          <ul class="pdf-link-list" aria-label="Professional links">
+            {
+              socialLinks.map((link) => (
+                <li>
+                  <a href={link.href}>
+                    <span>{link.label}</span>
+                    <strong>{link.value}</strong>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </aside>
+      </header>
+
+      <div class="pdf-grid pdf-grid--primary">
+        <div class="pdf-column pdf-column--main">
+          <section class="pdf-section">
+            <div class="pdf-section__header">
+              <p class="pdf-section__eyebrow">Experience</p>
+              <h2>Recent Roles</h2>
+            </div>
+
+            <div class="pdf-experience-list">
+              {
+                recentWork.map((item) => (
+                  <article class="pdf-experience-card">
+                    <header class="pdf-experience-card__header">
+                      <div>
+                        <h3>{item.title}</h3>
+                        <p class="pdf-experience-card__meta">
+                          {item.company} · {item.location} · {item.type}
+                        </p>
+                      </div>
+                      <p class="pdf-experience-card__period">
+                        {buildPeriod(item.dates)}
+                      </p>
+                    </header>
+
+                    <p class="pdf-experience-card__techs">
+                      {item.techs.join(" · ")}
+                    </p>
+                    <p class="pdf-experience-card__summary">
+                      {item.shortDescription}
+                    </p>
+                  </article>
+                ))
+              }
+            </div>
+          </section>
+        </div>
+
+        <aside class="pdf-column pdf-column--side">
+          <section class="pdf-section">
+            <div class="pdf-section__header">
+              <p class="pdf-section__eyebrow">Capabilities</p>
+              <h2>Technical Skills</h2>
+            </div>
+
+            <div class="pdf-skill-list">
+              {
+                cv.skills.map((item) => (
+                  <article class="pdf-skill-card">
+                    <header class="pdf-skill-card__header">
+                      <h3>{item.name}</h3>
+                      <p>{buildSkillMeta(item)}</p>
+                    </header>
+
+                    <p class="pdf-skill-card__related">
+                      {item.related.join(" · ")}
+                    </p>
+                  </article>
+                ))
+              }
+            </div>
+          </section>
+        </aside>
+      </div>
+
+      <footer class="pdf-footer">
+        <span>{cv.name}</span>
+        <span>Page 1 of 2</span>
+      </footer>
+    </section>
+
+    <section class="pdf-page" aria-label="PDF CV page 2">
+      <div class="pdf-grid pdf-grid--secondary">
+        <div class="pdf-column pdf-column--main">
+          <section class="pdf-section">
+            <div class="pdf-section__header">
+              <p class="pdf-section__eyebrow">Career History</p>
+              <h2>Earlier Roles</h2>
+            </div>
+
+            <div class="pdf-experience-list">
+              {
+                earlierWork.map((item) => (
+                  <article class="pdf-experience-card">
+                    <header class="pdf-experience-card__header">
+                      <div>
+                        <h3>{item.title}</h3>
+                        <p class="pdf-experience-card__meta">
+                          {item.company} · {item.location} · {item.type}
+                        </p>
+                      </div>
+                      <p class="pdf-experience-card__period">
+                        {buildPeriod(item.dates)}
+                      </p>
+                    </header>
+
+                    <p class="pdf-experience-card__techs">
+                      {item.techs.join(" · ")}
+                    </p>
+                    <p class="pdf-experience-card__summary">
+                      {item.shortDescription}
+                    </p>
+                  </article>
+                ))
+              }
+            </div>
+          </section>
+        </div>
+
+        <aside class="pdf-column pdf-column--side">
+          <section class="pdf-section">
+            <div class="pdf-section__header">
+              <p class="pdf-section__eyebrow">Education</p>
+              <h2>Academic Background</h2>
+            </div>
+
+            <div class="pdf-education-list">
+              {
+                sortedEducation.map((item) => (
+                  <article class="pdf-education-card">
+                    <p class="pdf-education-card__date">
+                      {monthYearFormatter.format(new Date(item.date))}
+                    </p>
+                    <h3>{item.diploma}</h3>
+                    <p class="pdf-education-card__meta">
+                      {item.school} · {item.location}
+                    </p>
+                  </article>
+                ))
+              }
+            </div>
+          </section>
+
+          <section class="pdf-section">
+            <div class="pdf-section__header">
+              <p class="pdf-section__eyebrow">Online</p>
+              <h2>Professional Links</h2>
+            </div>
+
+            <ul class="pdf-link-list pdf-link-list--compact">
+              {
+                socialLinks.map((link) => (
+                  <li>
+                    <a href={link.href}>
+                      <span>{link.label}</span>
+                      <strong>{link.value}</strong>
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </section>
+        </aside>
+      </div>
+
+      <footer class="pdf-footer">
+        <span>{cv.name}</span>
+        <span>Page 2 of 2</span>
+      </footer>
+    </section>
+  </main>
+</PdfLayout>

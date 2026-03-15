@@ -31,6 +31,7 @@ export interface Job {
   techs: string[];
   website: string;
   description: string;
+  shortDescription: string;
 }
 
 export interface DateRange {
@@ -52,6 +53,7 @@ export interface Skill {
   startYear: number;
   related: string[];
   description: string;
+  shortDescription: string;
 }
 
 export interface Project {

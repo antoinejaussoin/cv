@@ -1,6 +1,12 @@
-FROM node:22-alpine AS node
+FROM node:22-bookworm-slim AS node
 
 WORKDIR /home/node/app
+RUN apt-get update \
+	&& apt-get install -y --no-install-recommends chromium ca-certificates fonts-liberation \
+	&& rm -rf /var/lib/apt/lists/*
+
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 
 COPY ./package.json ./
@@ -13,6 +19,7 @@ USER node
 RUN npm ci
 
 COPY --chown=node:node ./src ./src
+COPY --chown=node:node ./scripts ./scripts
 COPY --chown=node:node ./public ./public
 COPY --chown=node:node ./astro.config.mjs ./astro.config.mjs
 COPY --chown=node:node ./tsconfig.json ./tsconfig.json
