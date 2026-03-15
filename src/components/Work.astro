@@ -60,6 +60,9 @@ function buildPeriod(dates: DateRange) {
     {formatWebsite(item.website)}
   </a>
 
-  <div class="rich-text work-description work-description--short" set:html={shortDescriptionHtml} />
+  <div
+    class="rich-text work-description work-description--short"
+    set:html={shortDescriptionHtml}
+  />
   <div class="rich-text work-description" set:html={descriptionHtml} />
 </article>

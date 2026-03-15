@@ -323,7 +323,9 @@ const socialLinks = [
   const toggle = document.getElementById(
     "work-details-toggle",
   ) as HTMLInputElement | null;
-  const detailContainers = document.querySelectorAll("[data-details-container]");
+  const detailContainers = document.querySelectorAll(
+    "[data-details-container]",
+  );
   if (toggle && detailContainers.length > 0) {
     const syncDetails = () => {
       detailContainers.forEach((container) => {
