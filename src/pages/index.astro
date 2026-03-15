@@ -68,8 +68,12 @@ const socialLinks = [
     <main class="resume-page">
       <header class="hero">
         <section class="hero__content">
-          <h1>{cv.name}</h1>
-          <p class="hero__role">{cv.title}</p>
+          <div class="hero__identity">
+            <div class="hero__identity-copy">
+              <h1>{cv.name}</h1>
+              <p class="hero__role">{cv.title}</p>
+            </div>
+          </div>
 
           <ul class="hero__stack" aria-label="Core stack">
             {coreStack.map((item) => <li>{item}</li>)}
