@@ -13,6 +13,11 @@ import subprocess
 import json
 import os
 
+OUTPUT_FILENAME = "Antoine_Jaussoin_CV.docx"
+PUBLIC_DOWNLOAD_DIR = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "public", "downloads"
+)
+
 # ── Colour palette (subtle blue-grey) ──────────────────────────────
 ACCENT = RGBColor(0x2B, 0x6C, 0xB3)       # muted steel-blue
 DARK   = RGBColor(0x1A, 0x1A, 0x2E)       # near-black for headings
@@ -135,6 +140,16 @@ def format_date(d):
         return dt.strftime("%b %Y")
     except Exception:
         return d
+
+
+def get_years_from_start_year(start_year):
+    """Convert a skill start year into the number of full calendar years."""
+    from datetime import datetime
+
+    try:
+        return max(datetime.now().year - int(start_year), 0)
+    except Exception:
+        return 0
 
 
 # ── CV Data (parsed from src/data/en.ts) ────────────────────────────
@@ -390,7 +405,7 @@ for skill in skills:
     run.font.color.rgb = BODY
 
     p = row_cells[2].paragraphs[0]
-    run = p.add_run(f"{skill['experience']} years")
+    run = p.add_run(f"{get_years_from_start_year(skill.get('startYear'))} years")
     run.font.name = FONT_BODY
     run.font.size = Pt(9)
     run.font.color.rgb = BODY
@@ -422,6 +437,8 @@ tblPr.append(borders)
 
 
 # ── Save ───────────────────────────────────────────────────────────────
-output_path = "Antoine_Jaussoin_CV.docx"
+os.makedirs(PUBLIC_DOWNLOAD_DIR, exist_ok=True)
+output_path = os.path.join(PUBLIC_DOWNLOAD_DIR, OUTPUT_FILENAME)
 doc.save(output_path)
 print(f"CV generated: {output_path}")
+print(f"Download URL: /downloads/{OUTPUT_FILENAME}")

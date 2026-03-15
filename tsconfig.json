@@ -1,6 +1,11 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
+    "jsxImportSource": "astro",
+    "paths": {
+      "astro/jsx-runtime": ["./node_modules/astro/jsx-runtime.d.ts"],
+      "astro/jsx-dev-runtime": ["./node_modules/astro/jsx-runtime.d.ts"]
+    },
     "types": ["astro/client"]
   }
 }

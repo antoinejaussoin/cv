@@ -3,9 +3,10 @@ TARGET_ARCHS=linux/arm64,linux/amd64
 
 build: build-frontend
 
-publish:
+publish: generate buildx-frontend
 	docker push antoinejaussoin/cv:${VERSION}
 	docker push antoinejaussoin/cv:latest
+	$(MAKE) update
 
 build-frontend:
 	docker build -f ./Dockerfile \
@@ -15,6 +16,9 @@ build-frontend:
 
 run:
 	docker run -p 3000:80 antoinejaussoin/cv:latest
+
+update:
+	ssh drawbridge 'cd /home/antoine/docker/cv && make update'
 
 buildx-frontend:
 	docker buildx build --pull --platform ${TARGET_ARCHS} \

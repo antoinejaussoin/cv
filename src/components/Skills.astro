@@ -9,16 +9,30 @@ interface Props {
 
 const { item } = Astro.props;
 const descriptionHtml = await marked.parse(item.description);
+const yearsOfExperience = Math.max(
+  new Date().getFullYear() - item.startYear,
+  0,
+);
 ---
 
-<div class="cv-item">
-  <p class="period">
-    {item.level} - {item.experience} years
-  </p>
-  <h3><strong>{item.name}</strong></h3>
+<article class="skill-card">
+  <div class="skill-card__header">
+    <div>
+      <h3>{item.name}</h3>
+      <p class="skill-card__meta">{item.level}</p>
+    </div>
+    <p class="skill-card__years">
+      <span>{yearsOfExperience}</span>
+      yrs
+    </p>
+  </div>
+
   {
     item.related && item.related.length > 0 && (
-      <ul class="techs">
+      <ul
+        class="tag-list tag-list--compact"
+        aria-label={`${item.name} related tools`}
+      >
         {item.related.map((t) => (
           <li>
             <Pill text={t} />
@@ -27,5 +41,6 @@ const descriptionHtml = await marked.parse(item.description);
       </ul>
     )
   }
-  <p set:html={descriptionHtml} />
-</div>
+
+  <div class="rich-text skill-card__description" set:html={descriptionHtml} />
+</article>
