@@ -315,6 +315,20 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
   ],
   skills: [
     {
+      name: "React",
+      level: "Expert",
+      startYear: 2015,
+      related: [
+        "TanStack Query",
+        "Socket.IO",
+        "Vite",
+        "Vitest",
+        "Hooks",
+        "Recoil",
+      ],
+      description: `Full-time React experience since 2015.`,
+    },
+    {
       name: "TypeScript",
       level: "Expert",
       startYear: 2017,
@@ -336,20 +350,6 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
 - promises
 - async/await
 - decorators`,
-    },
-    {
-      name: "React",
-      level: "Expert",
-      startYear: 2015,
-      related: [
-        "TanStack Query",
-        "Socket.IO",
-        "Vite",
-        "Vitest",
-        "Hooks",
-        "Recoil",
-      ],
-      description: `Full-time React experience since 2015.`,
     },
     {
       name: "HTML & CSS",
