@@ -44,9 +44,6 @@ const quickLinks = [
     label: "Location",
     value: cv.address2,
   },
-];
-
-const socialLinks = [
   {
     label: "LinkedIn",
     value: "linkedin.com/in/jantoine",
@@ -57,12 +54,8 @@ const socialLinks = [
     value: "github.com/antoinejaussoin",
     href: "https://github.com/antoinejaussoin",
   },
-  {
-    label: "Stack Overflow",
-    value: "stackoverflow.com/users/641124/antoine-jaussoin",
-    href: "https://stackoverflow.com/users/641124/antoine-jaussoin",
-  },
 ];
+
 
 function buildPeriod(dates: DateRange) {
   const from = monthYearFormatter.format(new Date(dates.from));
@@ -126,19 +119,6 @@ function buildSkillMeta(skill: Skill) {
               loading="eager"
             />
           </div>
-
-          <ul class="pdf-link-list" aria-label="Professional links">
-            {
-              socialLinks.map((link) => (
-                <li>
-                  <a href={link.href}>
-                    <span>{link.label}</span>
-                    <strong>{link.value}</strong>
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
         </aside>
       </header>
 
@@ -272,26 +252,6 @@ function buildSkillMeta(skill: Skill) {
                 ))
               }
             </div>
-          </section>
-
-          <section class="pdf-section">
-            <div class="pdf-section__header">
-              <p class="pdf-section__eyebrow">Online</p>
-              <h2>Professional Links</h2>
-            </div>
-
-            <ul class="pdf-link-list pdf-link-list--compact">
-              {
-                socialLinks.map((link) => (
-                  <li>
-                    <a href={link.href}>
-                      <span>{link.label}</span>
-                      <strong>{link.value}</strong>
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
           </section>
         </aside>
       </div>

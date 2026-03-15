@@ -204,40 +204,6 @@ img {
   border-radius: 5.5mm;
 }
 
-.pdf-link-list {
-  list-style: none;
-  display: grid;
-  gap: 2mm;
-  margin: 0;
-  padding: 0;
-}
-
-.pdf-link-list li {
-  border: 1px solid var(--pdf-line);
-  background: var(--pdf-paper-strong);
-}
-
-.pdf-link-list a {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6mm;
-  padding: 2.2mm 2.6mm;
-}
-
-.pdf-link-list span {
-  font-size: 6.8pt;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--pdf-muted);
-}
-
-.pdf-link-list strong {
-  font-size: 7.7pt;
-  line-height: 1.35;
-  color: var(--pdf-ink-strong);
-}
-
 .pdf-grid {
   display: grid;
   gap: 6mm;
@@ -405,14 +371,6 @@ img {
   .pdf-contact-list {
     gap: 2.4mm 3.6mm;
     margin-top: 4mm;
-  }
-
-  .pdf-link-list {
-    gap: 1.7mm;
-  }
-
-  .pdf-link-list a {
-    padding: 2mm 2.4mm;
   }
 
   .pdf-column {
