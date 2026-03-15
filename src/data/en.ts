@@ -352,8 +352,10 @@ I spent the last year in Oxford Brookes University, in the Msc in Computer Scien
       level: "Expert",
       startYear: 2011,
       related: ["CSS Modules", "SCSS/SASS", "Styled Components", "Emotion"],
-      description: `Almost all my work experiences included HTML and CSS developement, but in more recent roles it became a full-time focus.${lr}
-My current position involves multiples front-end single page app (React), using **HTML 5** and **CSS 3**.`,
+      description: `Expert knowledge of modern CSS and semantic HTML:${lr}
+- Grid, Flexbox and modern intrinsic sizing
+- container queries, container units and responsive component design
+- CSS Modules, Styled Components and Emotion for large-scale component styling`,
     },
     {
       name: "Node / Bun",
