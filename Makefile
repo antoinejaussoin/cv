@@ -33,5 +33,4 @@ install:
 	docker buildx inspect --bootstrap
 
 generate:
-	python3 generate_cv.py
 	npm run generate

@@ -6,7 +6,7 @@ Generate the downloadable documents with:
 
 - `make generate`
 
-This writes the DOCX and PDF files to `public/downloads/` and refreshes the built PDF in `dist/downloads/Antoine_Jaussoin_CV.pdf`.
+This writes the plain RTF and PDF files to `public/downloads/` and refreshes the built copies in `dist/downloads/`.
 
 Build the static site with:
 
