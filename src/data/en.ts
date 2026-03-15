@@ -330,7 +330,11 @@ For UI component libraries, I used **Material UI** extensively across multiple p
       level: "Expert",
       startYear: 2017,
       related: ["ESLint", "Vite", "Vitest"],
-      description: `All my projects have been in TypeScript since 2017.`,
+      description: `I started using TypeScript around 2017, roughly in the TypeScript 2.4 era, and have used it across all my projects since then.${lr}
+Comfortable with the parts that make TypeScript valuable in large codebases:${lr}
+- generics, utility types, and strongly typed API design
+- discriminated unions, narrowing, strict null checks, and custom type guards
+- mapped types, conditional types, and inference-heavy helper types`,
     },
     {
       name: "JavaScript",
