@@ -15,7 +15,7 @@ build-frontend:
 	.
 
 run:
-	docker run -p 3000:80 antoinejaussoin/cv:latest
+	docker run -p 3100:80 antoinejaussoin/cv:latest
 
 update:
 	ssh drawbridge 'cd /home/antoine/docker/cv && make update'
