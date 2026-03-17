@@ -1,5 +1,4 @@
 import retrospectedImage from "../images/projects/retrospected-new.png";
-import vrPlayerImage1x from "../images/projects/vr-player-1x.jpg";
 import vrPlayerImage2x from "../images/projects/vr-player-2x.jpg";
 import portraitImage1x from "../images/portrait2026.jpeg";
 import type { Cv } from "../types";
@@ -452,7 +451,7 @@ Available on GitHub: [github.com/antoinejaussoin/retro-board](https://github.com
       website: "https://antoinejaussoin.github.io",
       pictures: [
         {
-          src: vrPlayerImage1x,
+          src: vrPlayerImage2x,
           width: 430,
           height: 225,
         },

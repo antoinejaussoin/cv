@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jaussoin.com/sitemap.xml
+Sitemap: https://www.jaussoin.com/sitemap.xml
