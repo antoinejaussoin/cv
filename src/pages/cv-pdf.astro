@@ -1,8 +1,9 @@
 ---
 import PdfLayout from "../layouts/PdfLayout.astro";
-import ResponsiveImage from "../components/ResponsiveImage.astro";
+import { Picture } from "astro:assets";
 import "../css/pdf-cv.css";
 import cv from "../data/en";
+import portraitSrc from "../images/portrait2026.jpeg";
 import type { DateRange, Skill } from "../types";
 
 const sortedWork = [...cv.work].sort((left, right) =>
@@ -110,11 +111,13 @@ function buildSkillMeta(skill: Skill) {
 
         <aside class="pdf-hero__aside">
           <div class="pdf-portrait-frame">
-            <ResponsiveImage
-              sources={cv.portrait}
+            <Picture
+              src={portraitSrc}
+              formats={["avif", "webp"]}
+              widths={[150, 300]}
+              sizes="12rem"
               alt={`Portrait of ${cv.name}`}
               class="pdf-portrait"
-              sizes="12rem"
               loading="eager"
             />
           </div>

@@ -425,6 +425,7 @@ select {
 
 .portrait-card__image {
   width: 100%;
+  height: auto;
   aspect-ratio: 0.9;
   object-fit: cover;
   border-radius: calc(var(--radius-xl) - 0.25rem);

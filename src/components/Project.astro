@@ -1,7 +1,7 @@
 ---
 import type { Project } from "../types";
 import { marked } from "marked";
-import ResponsiveImage from "./ResponsiveImage.astro";
+import { Picture } from "astro:assets";
 
 interface Props {
   item: Project;
@@ -17,7 +17,13 @@ const descriptionHtml = await marked.parse(item.shortDescription);
     style="text-decoration: none; color: inherit; display: block; width: 430px; height: 400px;"
   >
     <div class="project-card">
-      <ResponsiveImage sources={item.pictures} alt={item.description} />
+      <Picture
+        src={item.pictures[0].src}
+        formats={["avif", "webp"]}
+        widths={[430, 860]}
+        sizes="430px"
+        alt={item.description}
+      />
       <div class="project-details">
         <h4>{item.name}</h4>
         <p class="link">{item.website}</p>
